@@ -187,7 +187,10 @@ function populateDescTableItem(description, index) {
 // Mouseover event to show description for image
 function showImg(index) {
     var divNode = document.getElementById("imageDiv");
-    divNode.innerHTML = "<img src =" + imgArray[index] + " class=\"col mx-auto index-image pointer-cursor\" onclick=\"openURL(" + index + ")\")>";
+    var imgNode = divNode.firstChild;
+    if(imgNode.src.search(imgArray[index])==-1){
+        divNode.innerHTML = "<img src =" + imgArray[index] + " class=\"col mx-auto index-image pointer-cursor\" onclick=\"openURL(" + index + ")\")>";
+    }
 }
 
 // Mouseout event to delete description
