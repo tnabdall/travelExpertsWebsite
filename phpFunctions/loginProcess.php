@@ -1,6 +1,7 @@
 <?php
 include("functions.php");
 if(isset($_POST['submit'])){
+    // Grab data from form and unset value of submit button
     $loginData = $_POST;
     unset($loginData["submit"]);
     if($loginData['username']!='' && $loginData['password']!='' && verifyUserCredentials($loginData['username'],$loginData['password'])){

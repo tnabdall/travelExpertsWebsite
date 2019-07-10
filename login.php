@@ -2,7 +2,6 @@
 include("header.php");
 include("menu.php");
 ?>
-<script src = "js/setNavActive.js"></script>
 
 <main>
     <form action="" method="POST">
@@ -20,6 +19,7 @@ include("menu.php");
                 </div>
             </div>
             <div class="row container-fluid centered" style="justify-content: center;">
+            <!-- If failure to login, echo message goes here -->
                 <?php
                 include("phpFunctions/loginProcess.php");
                 ?>

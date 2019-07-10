@@ -13,6 +13,8 @@ if(isset($_POST['submit'])){
     $agentData = $_POST;
     unset($agentData["submit"]);
 
+
+    // Allows us to pass null value for middle initial if left blank
     if($agentData['AgtMiddleInitial']==''){
         unset($agentData['AgtMiddleInitial']);
     }
@@ -27,6 +29,7 @@ if(isset($_POST['submit'])){
     else{
         echo "<p>Failed to insert new agent into the database.</p>";
     }
+    // Try to write to log
     try{   
         $logFile = fopen("logs/agentRegisterLog.txt","a");
         if(!$logFile){
@@ -41,6 +44,7 @@ if(isset($_POST['submit'])){
         fclose($logFile);
     }
     catch(Exception $e){
+        // Try to write to super log if write to agent register log fails
         $log = fopen("logs/superErrorLog.txt","a");
         fwrite($log,$e->getMessage());
         fwrite("Agent Register Log: ");

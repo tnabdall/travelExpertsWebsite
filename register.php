@@ -8,7 +8,6 @@
 include("header.php");
 include("menu.php");
 ?>
-<script src="js/setNavActive.js"></script>
 <script src="js/register.js"></script>
 <main>
     <form action="http://localhost:1234/bouncer.php" method="POST">

@@ -13,6 +13,7 @@
             <a class="nav-link" href="links.php">Links</a>
         </li>
         <?php
+        // Shows login or logout on menu bar depending on session variable
         if(isset($_SESSION['login_user'])){
             echo "<li class='nav-item'><a class='nav-link' href='logout.php'>Logout ".$_SESSION['login_user'].  "</a></li>";
         }

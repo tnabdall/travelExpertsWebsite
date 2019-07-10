@@ -11,7 +11,6 @@ if(!isset($_SESSION['login_user'])){
     header("Location: login.php");
 }
 ?>
-<script src="js/setNavActive.js"></script>
 
 <main>
     <form action="" method="POST">

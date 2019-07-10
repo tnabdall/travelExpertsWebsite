@@ -30,6 +30,7 @@ function bodyLoad() {
     checkImage(bouncingImgPath,function(){startBouncingImage(bouncingImgPath)},function(){});
 }
 
+// Check to see if image exists in file path
 function checkImage(imageSrc, loadedFunc, errorFunc) {
     var img = new Image();
     img.onload = loadedFunc; 
@@ -38,31 +39,39 @@ function checkImage(imageSrc, loadedFunc, errorFunc) {
 }
 
 function startBouncingImage(path) {
+    // Create an image within the body of main. Give it a path and id.
     var mainBody = document.getElementsByTagName("main")[0];
     var imageNode = document.createElement("img");
     imageNode.src = path;
     imageNode.id = "bouncingImg";
-
+    // Set img width and retrieve width and height of broswer window
     var imgWidth = 100;
     var windowHeight = $(document).height();
     var windowWidth = $(document).width();
-    // alert(windowHeight);
     imageNode.style.maxWidth = imgWidth + "px";
     imageNode.style.position = "absolute";
+    // Choose a random position within the window
     var pxi =Math.floor(Math.random() * (windowHeight / 2));
     var pyi = Math.floor(Math.random() * (windowWidth - imgWidth));
+    // Set the position
     imageNode.style.top = pxi + "px";
     imageNode.style.left = pyi + "px";
-    var speed = 20;
+
+    // Create an image object with velocity x and y components
+    var speed = 8;
     var randomAngle = Math.random()*2*Math.PI;
     var vxi = Math.floor(speed*Math.cos(randomAngle));
     var vyi = Math.floor(speed*Math.sin(randomAngle));
-    var image={node:imageNode, px:pxi, py:pyi, vx: vxi, vy:vyi, width:imgWidth}
+    var image={node:imageNode, px:pxi, py:pyi, vx: vxi, vy:vyi, width:imgWidth, hueRotate:0};
+
+    // Give the image a mouseover event
     imageNode.addEventListener("mouseover",function(){mouseOverBouncingImg(image)},false);
     mainBody.appendChild(imageNode);
+    // Start the recursive function to move the image
     moveBouncingImage(image);
 }
 
+// Moves the image to a random location within the window boundaries and change the color
 function mouseOverBouncingImg(image){
     var windowHeight = $(document).height();
     var windowWidth = $(document).width();
@@ -70,25 +79,36 @@ function mouseOverBouncingImg(image){
     image.py=Math.floor(Math.random() * (windowWidth - image.width-10));
     image.node.style.top = image.px + "px";
     image.node.style.left = image.py + "px";
+
+    // Changes the image color
+    image.hueRotate+=40;
+    if(image.hueRotate>=360){
+        image.hueRotate=0;
+    }
+    image.node.style.webkitFilter = "hue-rotate("+image.hueRotate+"deg)";
 }
 
+// Animates the image based on the velocity x and y components
 function moveBouncingImage(image) {
-    // imageNode.addEventListener("click",function(){alert(this.height)},false);
+    // Get window and image dimensions
     var windowHeight = $(document).height();
     var windowWidth = $(document).width();
     var imgWidth = image.node.width;
     var imgHeight = image.node.height;
+    // If image wants to go out of bounds, reverse the direction of the velocity vector
     if (image.px < 0 || image.px > (windowWidth - imgWidth - image.vx)) {
         image.vx = -image.vx;
     }
     if (image.py < 0 || image.py > (windowHeight - imgHeight - image.vy)) {
         image.vy = -image.vy;
     }
+    // Update image location
     image.px = image.px + image.vx;
     image.py = image.py + image.vy;
     image.node.style.left = image.px + "px";
     image.node.style.top = image.py + "px";
-    setTimeout(function(){moveBouncingImage(image)},20);
+    // Call the function again after set time
+    setTimeout(function(){moveBouncingImage(image)},10);
 }
 
 // Loads all the descriptions

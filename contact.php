@@ -8,7 +8,6 @@
 include("header.php");
 include("menu.php");
 ?>
-<script src = "js/setNavActive.js"></script>
 <main class="container-fluid" onload='populateDescTable()'>
     <div class="pl-4 pr-3 pt-1 pb-1 mt-3 rounded sectionBox">
         <p class="row centered">Feel free to contact our agency by phone (403-200-0000), email

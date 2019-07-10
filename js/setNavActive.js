@@ -12,6 +12,7 @@ $(document).ready(function () {
             links[i].className += ' active';
             }
         }
+        // General case
         else if (links[i].href.indexOf(fileName[0]) != -1) {
             links[i].className += ' active';
         }

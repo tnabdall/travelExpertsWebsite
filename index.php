@@ -63,7 +63,6 @@ echo $bannerCode;
 
 include("menu.php");
 ?>
-<script src="js/setNavActive.js"></script>
 <script src="js/index.js"></script>
 
 <main class="container-fluid">

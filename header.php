@@ -23,6 +23,8 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/393c960404.js"></script>
+
+    <script src="js/setNavActive.js"></script>
 </head>
 <div id="holder">
     <!-- Used holder div to fix footer to bottom

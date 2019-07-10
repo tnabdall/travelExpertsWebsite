@@ -1,5 +1,6 @@
 <?php
 
+// Ensures the entered password hashed matches that in the db for the specified user
 function verifyUserCredentials($user,$pass){
     $dsn = "mysql:host=localhost;dbname=travelexperts";
     $dbUser='root';
@@ -18,6 +19,7 @@ function verifyUserCredentials($user,$pass){
     }
 }
 
+// Inserts an associative array of colummns and values into the specified table and database
 function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     // Attempt connecting to sql server. Stop execution if unable to connect.
     $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
