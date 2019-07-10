@@ -62,7 +62,7 @@ function startBouncingImage(path) {
     var randomAngle = Math.random()*2*Math.PI;
     var vxi = Math.floor(speed*Math.cos(randomAngle));
     var vyi = Math.floor(speed*Math.sin(randomAngle));
-    var image={node:imageNode, px:pxi, py:pyi, vx: vxi, vy:vyi, width:imgWidth, hueRotate:0};
+    var image={node:imageNode, px:pxi, py:pyi, vx: vxi, vy:vyi, width:imgWidth, hueRotate:0, lag:false};
 
     // Give the image a mouseover event
     imageNode.addEventListener("mouseover",function(){mouseOverBouncingImg(image)},false);
@@ -77,8 +77,6 @@ function mouseOverBouncingImg(image){
     var windowWidth = $(document).width();
     image.px=Math.floor(Math.random() * (windowHeight-10));
     image.py=Math.floor(Math.random() * (windowWidth - image.width-10));
-    image.node.style.top = image.px + "px";
-    image.node.style.left = image.py + "px";
 
     // Changes the image color
     image.hueRotate+=40;
@@ -86,6 +84,9 @@ function mouseOverBouncingImg(image){
         image.hueRotate=0;
     }
     image.node.style.webkitFilter = "hue-rotate("+image.hueRotate+"deg)";
+
+    // Prevents jittery animation by skipping the next run of moveBouncingImage
+    image.lag=true;
 }
 
 // Animates the image based on the velocity x and y components
@@ -102,11 +103,16 @@ function moveBouncingImage(image) {
     if (image.py < 0 || image.py > (windowHeight - imgHeight - image.vy)) {
         image.vy = -image.vy;
     }
-    // Update image location
-    image.px = image.px + image.vx;
-    image.py = image.py + image.vy;
-    image.node.style.left = image.px + "px";
-    image.node.style.top = image.py + "px";
+    // Update image location. Lags once if a mouseover event happened.
+    if(image.lag==false){
+        image.px = image.px + image.vx;
+        image.py = image.py + image.vy;
+        image.node.style.left = image.px + "px";
+        image.node.style.top = image.py + "px";
+    }
+    else{
+        image.lag = false;
+    }
     // Call the function again after set time
     setTimeout(function(){moveBouncingImage(image)},10);
 }
