@@ -1,0 +1,305 @@
+@font-face {
+    font-family: "Bebas";
+    src: url("fonts/BebasNeue-Bold.otf");
+}
+
+@font-face {
+    font-family: "Ikaros";
+    src: url("fonts/Ikaros\_Regular.otf");
+}
+
+@font-face {
+    font-family: "Bavro";
+    src: url("fonts/Bavro-Regular.otf");
+}
+
+html,
+body,
+main {
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/skyscrapers.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+main {
+    padding-bottom: 120px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-left: 1%;
+}
+
+#holder {
+    min-height: 100%;
+    position: relative;
+}
+
+header {
+    background-color: #E63946;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: 'Bavro', Arial, sans-serif;
+    font-weight: 700;
+    color: #F1FAEE;
+    /* text-shadow: 1px 1px 1px #1d3557; */
+}
+
+h2 {
+    color: #1D3557;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 530px) {
+    h1 {
+        font-size: 70px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    h1 {
+        font-size: 90px;
+    }
+}
+
+header h1 {
+    text-align: center;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #f1faee;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer>p {
+    color: black;
+    font-weight: 700;
+}
+
+dl>dt {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #E63946;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Example of text indentation (alignment) */
+dl>dd {
+    text-indent: 15px;
+    margin-top: 1px;
+    color: #F1FAEE;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+legend {
+    display: block;
+    width: auto;
+    padding: 0 5px;
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: inherit;
+    border: auto;
+    border-bottom: none;
+    color: #E63946;
+    /* -webkit-text-stroke-color: #1D3557; */
+    /* -webkit-text-stroke-width: 0.5px; */
+    /* text-shadow: -0.5px 0 #1D3557, 0 0.5px #1D3557, 0.5px 0 #1D3557, 0 -1px #1D3557; */
+    text-shadow: 3px -1px 1px #1D3557;
+}
+
+fieldset {
+    font-weight: 700;
+    font-size: 18px;
+    border: 3px solid #E63946;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #1d3557;
+}
+
+fieldset label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F1FAEE;
+}
+
+footer>p {
+    font-size: 12px;
+    color: #F1FAEE;
+}
+
+/* Light background color */
+form .form-group>input,
+.form-group>select {
+    background-color: #F1FAEE;
+}
+
+form .form-inline>input,
+.form-inline>textarea {
+    background-color: #F1FAEE;
+}
+
+.btn-primary:hover {
+    background-color: #F1FAEE;
+    border-color: #F1FAEE;
+    color: #1d3557;
+
+}
+
+.btn-primary {
+    background-color: #1d3557;
+    color: #f1faee;
+    font-weight: 700;
+    border: 3px solid #E63946;
+}
+
+.nav>.nav-item>.nav-link {
+    color: #F1FAEE;
+    font-weight: 700;
+}
+
+.nav>.nav-item>.active {
+    color: #1d3557;
+    background-color: #F1FAEE;
+    border-radius: 0px;
+}
+
+.nav>.nav-item :hover {
+    background-color: #F1FAEE;
+    color: #1d3557;
+    border-radius: 0px;
+}
+
+section>.img-thumbnail {
+    background-color: #1d3557;
+    border-radius: 10px;
+    border-color: #E63946;
+}
+
+
+.bordered {
+    border: 2px solid black;
+}
+
+.img-thumbnail {
+    border: 2px solid black;
+}
+
+.row {
+    padding: 10px;
+}
+
+.small-image {
+    max-height: 50px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.carousel-item>img {
+    transition: all 1.5s ease 0s;
+    transform: perspective(100vw) translateZ(15vw);
+    border-radius: 20px;
+}
+
+.active>img {
+    opacity: 1;
+    transform: perspective(100vw) translateZ(0);
+}
+
+.index-image {
+    border: 10px solid #E63946;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.container-fluid.row.centered {
+    margin: auto;
+}
+
+.sectionBox {
+    border: 3px solid #E63946;
+    border-radius: 10px;
+    background-color: #1d3557;
+}
+
+.table {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.table th,
+td,
+a {
+    color: #F1FAEE;
+}
+
+.table th {
+    font-weight: 700;
+    border: none;
+}
+
+a:hover {
+    color: #E63946;
+}
+
+#my-carousel {
+    border: 5px solid #FFE6AA;
+    border-radius: 20px;
+    background-color: #FFE6AA;
+}
+
+#descTable {
+    /* background-color: #457b9d; */
+    background-color: #F1FAEE;
+    border: 10px solid #E63946;
+    border-radius: 5px;
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+#logo {
+    max-height: 120px;
+    vertical-align: middle;
+}
+
+#headingMessage {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#linkSection {
+    max-height: 100px;
+}
+
+#navBarHead {
+    background-color: #1D3557;
+}
