@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: "Bebas";
     src: url("fonts/BebasNeue-Bold.otf");
@@ -265,6 +267,7 @@ a {
     border: none;
 }
 
+
 a:hover {
     color: #E63946;
 }
@@ -303,3 +306,4 @@ a:hover {
 #navBarHead {
     background-color: #1D3557;
 }
+

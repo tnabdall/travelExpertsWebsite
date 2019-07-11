@@ -69,7 +69,7 @@ if(!isset($_SESSION['login_user'])){
                     <input type="text" class="form-control" id="Username" name = "Username" required="required">
                 </div>
                 <div class="form-group col centered">
-                    <label id='passwordLabel' for="Password">Email Address</label>
+                    <label id='passwordLabel' for="Password">Password</label>
                     <input type="password" class="form-control" id="Password" name = "Password" required="required">
                 </div>
             </div>
