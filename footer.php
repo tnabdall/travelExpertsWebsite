@@ -10,5 +10,5 @@
             </footer>
         </body>
     </div>
-
+<script src = "js/footerPlane.js"></script>
 </html>

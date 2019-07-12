@@ -29,7 +29,7 @@ function bodyLoad() {
     populateDescTable();
     bouncingImgPath="images/bouncing_earth.png";
     checkImage(bouncingImgPath,function(){startBouncingImage(bouncingImgPath)},function(){});
-    animatePlane(0);
+    
 }
 
 // Check to see if image exists in file path
@@ -209,35 +209,3 @@ function openURL(index) {
     }, 10000);
 }
 
-function animatePlane(percent){
-    var plane = document.getElementById("planeImg");
-    percent+=0.1;
-    plane.style.left = ""+percent+"%";
-
-    if(percent<20){
-        plane.style.bottom=""+0+"%";
-    }
-    else if (percent<30){
-        var height = 7*((-0.000520833)*percent**5 + 0.058593750*percent**4 - 2.609375000*percent**3 + 57.578125000*percent**2 - 629.929166668*percent + 2734);
-        plane.style.bottom=""+height+"%";
-        
-    }
-    else if (percent<70){
-        var x =3;
-    }
-    else if (percent<80){
-        var height = 7*(0.000520833*percent**5 - 0.201822917*percent**4 + 31.255208332*percent**3 - 2417.942708258*percent**2 + 93437.220830501*percent - 1442810.999957430);
-        plane.style.bottom=""+height+"%";
-        console.log(height);
-    }
-    else{
-        plane.style.bottom=""+0+"%";
-    }
-
-    if(percent>100){
-        percent=0;
-    }
-
-
-    setTimeout(function(){animatePlane(percent)},10);
-}

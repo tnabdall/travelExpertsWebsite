@@ -22,7 +22,7 @@ if (array_key_exists('timezone', $ipData)) {
 } else {
     date_default_timezone_set("America/Edmonton");
 }
-
+ 
 $time = date("h:i a");
 $greeting= '';
 $icon='';
