@@ -5,38 +5,95 @@ $(document).ready(function () {
         on: 'blur',
         inline: true,
         fields: {
-            // empty: {
-            //     identifier: 'empty',
-            //     rules: [{
-            //         type: 'empty',
-            //         prompt: 'Please enter a value'
-            //     }]
-            // },
             firstName: {
                 identifier: 'firstName',
-                rules: [{
-                    type: 'regexp',
-                    prompt: 'Type Tim',
-                    value: /Tim/i
-                }]
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your first name.',
+                }
+            ]
+            },
+            middleName: {
+                identifier: 'middleName',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your middle name.',
+                }
+            ]
+            },
+            lastName: {
+                identifier: 'lastName',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your last name.',
+                }
+            ]
+            },
+            streetAddress: {
+                identifier: 'streetAddress',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your street address.',
+                }
+            ]
+            },
+            city: {
+                identifier: 'city',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your city.',
+                }
+            ]
+            },
+            postalCode: {
+                identifier: 'postalCode',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your postal code.',
+                },
+                {
+                    type   : 'regExp[/^[A-Za-z]\\d[A-Za-z] ?\\d[A-Za-z]\\d$/]',
+                    prompt : 'Please enter a proper postal code format eg. T1A 1A1'
+                }
+            ]
+            },
+            email: {
+                identifier: 'email',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your email address.',
+                },
+                {
+                    type   : 'email',
+                    prompt : 'Please enter a proper email eg. john@gmail.com'
+                }
+            ]
+            },
+            pWord: {
+                identifier: 'pWord',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your password.',
+                }
+            ]
+            },
+            province:{
+                identifier:'province',
+                rules: [
+                    {
+                        type: 'empty',
+                        prompt: 'Please choose your province.',
+                    }
+                ]
             }
-            // field2: {
-            //     rules: [{
-            //         type: 'exactly[dog]',
-            //         prompt: '{name} is set to "{value}" that is totally wrong. It should be {ruleValue}'
-            //     }]
-            // },
-            // field3: {
-            //     rules: [{
-            //         type: 'exactly[cat]',
-            //         prompt: function (value) {
-            //             if (value == 'dog') {
-            //                 return 'I told you to put cat, not dog!';
-            //             }
-            //             return 'That is not cat';
-            //         }
-            //     }]
-            // },
         }
     });
 })

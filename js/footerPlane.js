@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     // Plane object so that the click event can change the speed that the plane is rendered at
     var planeObj={node:plane, speed:500};
-    plane.addEventListener("click",function(){clickPlane(planeObj)});
+    plane.addEventListener("mouseover",function(){hoverPlane(planeObj)});
     animatePlane(planeObj,0,0);
 })
 
@@ -15,18 +15,18 @@ var heightArray=[1.01, 1.05, 1.09, 1.13, 1.18, 1.23, 1.27, 1.32, 1.38, 1.43, 1.4
 var degreeArray=[0, -7.69, -7.96, -8.24, -8.52, -8.82, -9.12, -9.42, -9.73, -10.05, -10.38, -10.7, -11.04, -11.38, -11.72, -12.07, -12.43, -12.78, -13.14, -13.5, -13.86, -14.23, -14.59, -14.96, -15.32, -15.69, -16.05, -16.41, -16.77, -17.13, -17.48, -17.83, -18.17, -18.51, -18.85, -19.18, -19.5, -19.82, -20.13, -20.43, -20.73, -21.02, -21.31, -21.59, -21.86, -22.12, -22.38, -22.62, -22.87, -23.1, -23.33, -23.55, -23.76, -23.97, -24.17, -24.36, -24.54, -24.72, -24.9, -25.06, -25.22, -25.38, -25.53, -25.67, -25.8, -25.94, -26.06, -26.18, -26.3, -26.41, -26.52, -26.62, -26.72, -26.81, -26.9, -26.98, -27.06, -27.14, -27.21, -27.28, -27.34, -27.4, -27.46, -27.52, -27.57, -27.61, -27.66, -27.7, -27.74, -27.77, -27.8, -27.83, -27.86, -27.88, -27.9, -27.91, -27.93, -27.94, -27.95, -27.95, -27.96, -27.96, -27.95, -27.95, -27.94, -27.93, -27.91, -27.9, -27.88, -27.86, -27.83, -27.8, -27.77, -27.74, -27.7, -27.66, -27.61, -27.57, -27.52, -27.46, -27.4, -27.34, -27.28, -27.21, -27.14, -27.06, -26.98, -26.9, -26.81, -26.72, -26.62, -26.52, -26.41, -26.3, -26.18, -26.06, -25.94, -25.8, -25.67, -25.53, -25.38, -25.22, -25.06, -24.9, -24.72, -24.54, -24.36, -24.17, -23.97, -23.76, -23.55, -23.33, -23.1, -22.87, -22.62, -22.38, -22.12, -21.86, -21.59, -21.31, -21.02, -20.73, -20.43, -20.13, -19.82, -19.5, -19.18, -18.85, -18.51, -18.17, -17.83, -17.48, -17.13, -16.77, -16.41, -16.05, -15.69, -15.32, -14.96, -14.59, -14.23, -13.86, -13.5, -13.14, -12.78, -12.43, -12.07, -11.72, -11.38, -11.04, -10.7, -10.38, -10.05, -9.73, -9.42, -9.12, -8.82, -8.52, -8.24, -7.96, -7.69];
 
 // Changes plane type and speed
-function clickPlane(planeObj){
+function hoverPlane(planeObj){
     var plane = planeObj.node;
-    if(plane.className.match("fas fa-fighter-jet")){
-        plane.className="fas fa-helicopter";
+    if(plane.className.match("space shuttle icon")){
+        plane.className="plane icon";
         planeObj.speed = 100;
     }
-    else if(plane.className.match("fas fa-helicopter")){
-        plane.className="fas fa-plane";
+    else if(plane.className.match("plane icon")){
+        plane.className="fighter jet icon";
         planeObj.speed = 150;
     }
     else{
-        plane.className="fas fa-fighter-jet";
+        plane.className="space shuttle icon";
         planeObj.speed = 500;
     }
 }
