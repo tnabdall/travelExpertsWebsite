@@ -32,6 +32,7 @@ main {
     padding-bottom: 120px;
     padding-left: 1%;
     padding-right: 1%;
+    margin-top: 20px;
 }
 
 footer {
@@ -47,15 +48,17 @@ footer {
     position: relative;
 }
 
-header {
+h1.ui.header {
     background-color: #E63946;
 }
 
-h1 {
-    font-size: 30px;
+h1.ui.header>.content {
+    font-size: 60px;
     font-family: 'Bavro', Arial, sans-serif;
     font-weight: 700;
     color: #F1FAEE;
+    padding: 15px;
+    line-height: normal;
     /* text-shadow: 1px 1px 1px #1d3557; */
 }
 
@@ -65,14 +68,14 @@ h2 {
 }
 
 @media screen and (min-width: 530px) {
-    h1 {
-        font-size: 70px;
+    h1.ui.header>.content {
+        font-size: 30px;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    h1 {
-        font-size: 90px;
+    h1.ui.header>.content {
+        font-size: 50px;
     }
 }
 
@@ -131,11 +134,12 @@ fieldset {
     font-size: 18px;
     border: 3px solid #E63946;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
     background-color: #1d3557;
 }
 
-fieldset label {
+ form.ui.form>fieldset>.field>label,
+ form.ui.form>fieldset>.fields>.field>label{
     font-size: 14px;
     font-weight: 700;
     color: #F1FAEE;
@@ -147,13 +151,14 @@ footer>p {
 }
 
 /* Light background color */
-form .form-group>input,
-.form-group>select {
+form.ui.form>fieldset>.field>input,
+form.ui.form>fieldset>.fields>.field>input,
+form.ui.form>fieldset>.fields>.field>select,
+form.ui.form>fieldset>.field>textarea {
     background-color: #F1FAEE;
 }
 
-form .form-inline>input,
-.form-inline>textarea {
+form >textarea.field {
     background-color: #F1FAEE;
 }
 
@@ -171,21 +176,26 @@ form .form-inline>input,
     border: 3px solid #E63946;
 }
 
-.nav>.nav-item>.nav-link {
+.menu.ui>.item {
     color: #F1FAEE;
     font-weight: 700;
 }
 
-.nav>.nav-item>.active {
+.menu.ui>.item.active {
     color: #1d3557;
     background-color: #F1FAEE;
     border-radius: 0px;
+    font-weight: 700;
 }
 
-.nav>.nav-item :hover {
+.ui.stackable.menu .dropdown.item:hover,
+.ui.stackable.menu .link.item:hover,
+.ui.stackable.menu a.item:hover,
+.ui.link.stackable.menu .item:hover {
     background-color: #F1FAEE;
     color: #1d3557;
     border-radius: 0px;
+    font-weight: 700;
 }
 
 section>.img-thumbnail {
@@ -209,10 +219,6 @@ section>.img-thumbnail {
 
 .small-image {
     max-height: 50px;
-}
-
-.centered {
-    text-align: center;
 }
 
 .justify-center {
@@ -272,11 +278,6 @@ a:hover {
     color: #E63946;
 }
 
-#my-carousel {
-    border: 5px solid #FFE6AA;
-    border-radius: 20px;
-    background-color: #FFE6AA;
-}
 
 #descTable {
     /* background-color: #457b9d; */
@@ -307,3 +308,22 @@ a:hover {
     background-color: #1D3557;
 }
 
+div#welcomeBanner {
+    margin-top: 0px;
+    padding: 5px;
+}
+
+h1#headerRow {
+    margin-bottom: 0px;
+    overflow: unset;
+}
+
+div#navBarHead {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+section#travelImageSection{
+    align-items: center;
+}
