@@ -6,6 +6,7 @@
 -->
 <?php
 include("header.php");
+include("menu.php");
 // Creates a welcome banner
 
 // Tries to get user timezone
@@ -61,23 +62,23 @@ $bannerCode = "<div id = 'welcomeBanner' class = 'container-fluid w-100 pt-2 pb-
 
 echo $bannerCode;
 
-include("menu.php");
+
 ?>
 <script src="js/index.js"></script>
 
 <main class="container-fluid">
     <!-- Holds the images on home page and changes format depending on screen size -->
-    <section id="travelImageSection" class="centered container-fluid row align-items-center mt-3">
+    <section id="travelImageSection" class="ui grid">
         <!--Section for travel images-->
 
     </section>
     <section id="linkSection" class="container-fluid mt-3 p-1 ml-1 mr-1 justify-center-around">
         <!--Section to hold links to other pages-->
-        <div class="row centered">
-            <a href="contact.php" class="col-5 offset-1">
+        <div class="ui grid two columns centered">
+            <a href="contact.php" class="column">
                 <img class="small-image img-fluid" src="images/contact.png" alt="Contact Us" title="Contact Us">
             </a>
-            <a href="register.php" class="col-5">
+            <a href="register.php" class="column">
                 <img class="small-image img-fluid" src="images/register.png" alt="Register" title="Register">
             </a>
         </div>

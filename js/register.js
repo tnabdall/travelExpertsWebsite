@@ -1,6 +1,47 @@
 $(document).ready(function () {
     setTimeout('$("#container").css("opacity", 1)', 1000);
+    $('.ui.form')
+    .form({
+        on: 'blur',
+        inline: true,
+        fields: {
+            // empty: {
+            //     identifier: 'empty',
+            //     rules: [{
+            //         type: 'empty',
+            //         prompt: 'Please enter a value'
+            //     }]
+            // },
+            firstName: {
+                identifier: 'firstName',
+                rules: [{
+                    type: 'regexp',
+                    prompt: 'Type Tim',
+                    value: /Tim/i
+                }]
+            }
+            // field2: {
+            //     rules: [{
+            //         type: 'exactly[dog]',
+            //         prompt: '{name} is set to "{value}" that is totally wrong. It should be {ruleValue}'
+            //     }]
+            // },
+            // field3: {
+            //     rules: [{
+            //         type: 'exactly[cat]',
+            //         prompt: function (value) {
+            //             if (value == 'dog') {
+            //                 return 'I told you to put cat, not dog!';
+            //             }
+            //             return 'That is not cat';
+            //         }
+            //     }]
+            // },
+        }
+    });
 })
+
+
 
 function validate() {
     errorInfo = "";

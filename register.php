@@ -10,41 +10,39 @@ include("menu.php");
 ?>
 <script src="js/register.js"></script>
 <main>
-    <form action="http://localhost:1234/bouncer.php" method="POST">
-        <fieldset class="container-fluid mt-2">
-            <!--First grouping for required information-->
-            <legend class="w-auto">Customer Information</legend>
-            <div class="row container-fluid">
-                <div class="form-group col centered">
+    <form class = "ui form" action="http://localhost:1234/bouncer.php" method="POST">
+        <fieldset>
+            <div class="three fields">
+                <div class="required field">
                     <label id='nameLabel' for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" required="required"
+                    <input type="text"  id="firstName" required="required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
-                <div class="form-group col centered">
+                <div class="required field">
                     <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" placeholder="Not required"
+                    <input type="text"  id="middleName" placeholder="Not required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
-                <div class="form-group col centered">
+                <div class="required field">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" required="required"
+                    <input type="text"  id="lastName" required="required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
             </div>
-            <div class="row container-fluid">
-                <div class="form-group col centered">
-                    <label class="container-fluid" for="streetAddress">Street address</label>
-                    <input type="text" class="form-control" id="streetAddress" required="required"
+            
+                <div class="required field">
+                    <label for="streetAddress">Street address</label>
+                    <input type="text"  id="streetAddress" required="required"
                         placeholder="Eg. 123 Main St" onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
-            </div>
-            <div class="row container-fluid">
-                <div class="form-group col centered">
+            
+            <div class="three fields">
+                <div class="required field">
                     <label id='cityLabel' for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="Eg. Calgary" required="required"
+                    <input type="text"  id="city" placeholder="Eg. Calgary" required="required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
-                <div class="form-group col centered">
+                <div class="required field">
                     <label id="provinceLabel" for="province">Province</label>
                     <select id="province" class="browser-default custom-select">
                         <option selected value="AB">Alberta</option>
@@ -62,47 +60,47 @@ include("menu.php");
                         <option value="YT">Yukon</option>
                     </select>
                 </div>
-                <div class="form-group col centered">
+                <div class="required field">
                     <label id='postalLabel' for="postalCode">Postal Code</label>
-                    <input type="text" class="form-control" id="postalCode" placeholder="Eg. T1A 1A1"
+                    <input type="text"  id="postalCode" placeholder="Eg. T1A 1A1"
                         pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" required="required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
             </div>
-            <div class="row container-fluid">
-                <div class="form-group col centered">
+            <div class="two fields">
+                <div class="required field">
                     <label id='emailLabel' for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Eg. john.doe@gmail.com"
+                    <input type="email"  id="email" placeholder="Eg. john.doe@gmail.com"
                         required="required" onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
-                <div class="form-group col centered">
+                <div class="required field">
                     <label id='emailLabel' for="pWord">Password</label>
-                    <input type="password" class="form-control" id="pWord" required="required"
+                    <input type="password"  id="pWord" required="required"
                         onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
             </div>
 
-        </fieldset><br />
-        <fieldset class="container-fluid">
-            <!--Second grouping for optional information-->
-            <legend class="w-auto">Optional Information</legend>
-            <div class="form-inline row">
-                <label class="col-3 m-1 centered" for="preferredDestinations">Preferred Destinations</label>
-                <input type="text" class="form-control col-8 m-2" id="preferredDestinations" placeholder=""
+            <div class="field">
+                <label for="preferredDestinations">Preferred Destinations</label>
+                <input type="text" class=" col-8 m-2" id="preferredDestinations" placeholder=""
                     onfocus="focusFunc(this.id)" onblur="blurFunc()">
             </div>
-            <div class="form-inline row centered">
-                <label class="col-3 m-1" for="additionalInfo">Additional Information</label>
-                <textarea type="text" class="form-control col-8 m-2" id="additionalInfo" placeholder=""
+            <div class="field">
+                <label for="additionalInfo">Additional Information</label>
+                <textarea type="text" class=" col-8 m-2" id="additionalInfo" placeholder=""
                     onfocus="focusFunc(this.id)" onblur="blurFunc()"></textarea>
             </div>
-        </fieldset>
-        <div class="container-fluid row centered">
+        <div class="ui two buttons">
             <button id="submitButton" type="submit" value="Submit" onclick="return submitClick()"
-                class="btn btn-primary m-2 col">Submit</button>
-            <button type="reset" value="Reset" class="btn btn-primary m-2 col"
+                class="positive ui button">Submit</button>
+            <button type="reset" value="Reset" class="negative ui button"
                 onclick="return resetClick()">Reset</button>
         </div>
+        <div class="ui success message">
+            <div class="header">Form Completed</div>
+            <p>You're all signed up.</p>
+        </div>
+    </fieldset>
     </form>
 </main>
 <?php

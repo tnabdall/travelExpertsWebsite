@@ -130,7 +130,7 @@ function populateDescTable() {
     // Create empty div to hold image, give it an id we can reference
     var imageDiv = document.createElement("div");
     imageDiv.id = "imageDiv";
-    imageDiv.className += "col";
+    imageDiv.className += "ten wide column";
     // Add both table and div to section holding travel images
     section.appendChild(table);
     section.appendChild(imageDiv);
@@ -171,6 +171,7 @@ function populateDescTableItem(description, index) {
     // trNode.addEventListener("mouseout",function(){hideImg()},false);
 
     // Style table row
+    // table.className+="four wide column";
     tdNode.className += "m-xs-2 m-md-3 m-lg-4";
     trNode.style.textAlign = "center";
     trNode.className += "justify-center pointer-cursor";
