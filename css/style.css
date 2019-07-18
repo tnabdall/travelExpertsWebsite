@@ -22,10 +22,9 @@ main {
 }
 
 body {
-    background-image: url("../images/skyscrapers.jpg");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed;
+    background: #FF8008;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF8008, #FFC837);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF8008, #FFC837); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 main {
@@ -49,7 +48,9 @@ footer {
 }
 
 h1.ui.header {
-    background-color: #E63946;
+    background-image: url("../images/capturing-the-human-heart-trhlcn1abmu-unsplash.jpg");
+    background-position: center;
+    background-size: 100%;
 }
 
 h1.ui.header>.content {
@@ -326,4 +327,8 @@ div#navBarHead {
 
 section#travelImageSection{
     align-items: center;
+}
+
+table tr{
+    padding: 10px;
 }

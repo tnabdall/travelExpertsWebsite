@@ -31,7 +31,7 @@ include("menu.php");
             </div>
             
                 <div class="required field">
-                    <label class="container-fluid" for="streetAddress">Street address</label>
+                    <label for="streetAddress">Street address</label>
                     <input type="text"  id="streetAddress" required="required"
                         placeholder="Eg. 123 Main St" onfocus="focusFunc(this.id)" onblur="blurFunc()">
                 </div>
@@ -81,12 +81,12 @@ include("menu.php");
             </div>
 
             <div class="field">
-                <label class="col-3 m-1 centered" for="preferredDestinations">Preferred Destinations</label>
+                <label for="preferredDestinations">Preferred Destinations</label>
                 <input type="text" class=" col-8 m-2" id="preferredDestinations" placeholder=""
                     onfocus="focusFunc(this.id)" onblur="blurFunc()">
             </div>
             <div class="field">
-                <label class="col-3 m-1" for="additionalInfo">Additional Information</label>
+                <label for="additionalInfo">Additional Information</label>
                 <textarea type="text" class=" col-8 m-2" id="additionalInfo" placeholder=""
                     onfocus="focusFunc(this.id)" onblur="blurFunc()"></textarea>
             </div>
@@ -95,6 +95,10 @@ include("menu.php");
                 class="positive ui button">Submit</button>
             <button type="reset" value="Reset" class="negative ui button"
                 onclick="return resetClick()">Reset</button>
+        </div>
+        <div class="ui success message">
+            <div class="header">Form Completed</div>
+            <p>You're all signed up.</p>
         </div>
     </fieldset>
     </form>
