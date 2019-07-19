@@ -19,11 +19,11 @@ function hoverPlane(planeObj){
     var plane = planeObj.node;
     if(plane.className.match("space shuttle icon")){
         plane.className="plane icon";
-        planeObj.speed = 100;
+        planeObj.speed = 50;
     }
     else if(plane.className.match("plane icon")){
         plane.className="fighter jet icon";
-        planeObj.speed = 150;
+        planeObj.speed = 100;
     }
     else{
         plane.className="space shuttle icon";
