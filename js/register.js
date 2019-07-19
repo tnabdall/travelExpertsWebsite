@@ -14,15 +14,6 @@ $(document).ready(function () {
                 }
             ]
             },
-            middleName: {
-                identifier: 'middleName',
-                rules: [
-                {
-                    type: 'empty',
-                    prompt: 'Please enter your middle name.',
-                }
-            ]
-            },
             lastName: {
                 identifier: 'lastName',
                 rules: [
