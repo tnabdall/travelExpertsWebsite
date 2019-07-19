@@ -253,3 +253,20 @@ table tr{
 .item { 
     width: 50%; 
 }
+
+#cardCarousel{
+    padding: 5px;
+}
+
+.item.card{
+    background-color: white;
+    height: 30em;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+}
+
+img{
+    width: -webkit-fill-available;
+}

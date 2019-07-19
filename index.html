@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="semanticUI/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link
         href="https://fonts.googleapis.com/css?family=Arima+Madurai:200,300,400,500,700,800%7CCinzel+Decorative:400,700,900&display=swap"
         rel="stylesheet">
@@ -27,7 +29,6 @@
     <!-- Bootstrap -->
     <script src="js/jquery.min.js"></script>
     <script src="semanticUI/semantic.min.js"></script>
-    <script src="js/multislider.min.js"></script>
 
 
     <script src="https://kit.fontawesome.com/393c960404.js"></script>
@@ -68,9 +69,9 @@
 
         <main class="container-fluid">
             <!-- Holds the images on home page and changes format depending on screen size -->
-            <section id="travelImageSection" class="ui grid">
-                <div id="vacations">
-                    <div class="ui link cards">
+            <section id="travelImageSection">
+                
+                    <div class="ui cards" id="cardCarousel">
 
                         <div class="item card">
                             <div class="image">
@@ -106,7 +107,7 @@
 
                         <div class="item card">
                             <div class="image">
-                                <img src="/images/avatar2/large/molly.png">
+                                <img src="images/colloseum.jpg">
                             </div>
                             <div class="content">
                                 <div class="header">Molly</div>
@@ -197,11 +198,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="MS-controls">
-                        <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                    </div>
-                </div>
+                    
+                
                 <!--Section for travel images-->
             </section>
 
@@ -214,6 +212,11 @@
             </div>
             <p>&copy; Tawico 2019 </p>
         </footer>
+        
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+				
     </body>
 </div>
 <script src="js/footerPlane.js"></script>

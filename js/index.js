@@ -1,41 +1,32 @@
 $(document).ready(function(){
-    addAccordionEvents();
-    $('#vacations').multislider({
-        interval:5000,
-        slideAll:true
-    });
- });
-
- function addAccordionEvents(){
-    var links = document.getElementsByClassName("ui styled fluid accordion");
-    for(var i=0; i< links.length; i++){
-        var sublinks = links[i].childNodes;
-        var titleNode;
-        var contentNode;
-        for(var j = 0; j<sublinks.length; j++){
-            if(sublinks[j].className=='title'){
-                titleNode=sublinks[j];
-            }
-            if(sublinks[j].className=='content'){
-                contentNode=sublinks[j];
-            }
-        }
-        titleNode.addEventListener("click",function(){accordionClick(titleNode,contentNode)},false);
-        
-    }
-    
- }
-
- function accordionClick(titleNode, contentNode){
-    if(contentNode.className=="content"){ 
-        titleNode.className="active title";
-        contentNode.className="active content";
+    // addAccordionEvents();
+    if($(window).width()>1000){
+        $('#cardCarousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
     }
     else{
-        titleNode.className="title";
-        contentNode.className="content";
+        $('#cardCarousel').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
     }
- }
+    $('.title').on('click', function(){
+        if($(this).attr("class")=='title'){
+            $(this).attr("class","active title");
+            $(this).next().attr("class","active content");
+        }
+        else{
+            $(this).attr("class","title");
+            $(this).next().attr("class","content");
+        }
+    });
+ });
 
 
  
