@@ -39,22 +39,38 @@ h1.ui.header {
     background-size: 100%;
 }
 
+
+
 h1.ui.header>.content {
     font-family: 'Cinzel Decorative', cursive;
     font-weight: 700;
     color: #0C4A60;
     padding: 15px;
-    line-height: normal;
     text-shadow: 5px 5px #ABDFF1;
+    font-size: 240%;
+    
+}
+@media screen and (max-width: 740px) {
+    #headingTextDiv{
+        font-size: 190%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #headingTextDiv{
+        font-size: 150%;
+    }
+}
+@media screen and (max-width: 490px){
+    h1#headerRow{
+        line-height: 150% !important;
+    }
 }
 
-#headingTextDiv {
-    font-size: 4em;
-
-}
-
-header h1 {
+h1#headerRow {
+    margin-bottom: 0px;
+    height: 200px;
     text-align: center;
+    line-height: 630%;
 }
 
 p {
@@ -206,11 +222,7 @@ div#welcomeBanner {
     padding: 5px;
 }
 
-h1#headerRow {
-    margin-bottom: 0px;
-    overflow: unset;
-    height: 200px;
-}
+
 
 
 section#travelImageSection{
