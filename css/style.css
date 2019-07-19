@@ -1,4 +1,225 @@
 
+html,
+body,
+main {
+    height: 100%;
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Arima Madurai', cursive;
+}
+
+body {
+    background: #E8CBC0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+main {
+    padding-bottom: 120px;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top: 20px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-left: 1%;
+}
+
+#holder {
+    min-height: 100%;
+    position: relative;
+}
+
+h1.ui.header {
+    background-image: url("../images/capturing-the-human-heart-trhlcn1abmu-unsplash.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+h1.ui.header>.content {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+    color: #0C4A60;
+    padding: 15px;
+    line-height: normal;
+    text-shadow: 5px 5px #ABDFF1;
+}
+
+#headingTextDiv {
+    font-size: 4em;
+
+}
+
+header h1 {
+    text-align: center;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+dl>dt {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color:#FFFFFF;
+    font-size: 1.4em;
+    font-family: 'Arima Madurai', cursive;
+}
+
+/* Example of text indentation (alignment) */
+dl>dd {
+    text-indent: 15px;
+    margin-top: 1px;
+    color: #000000;
+    font-size: 1.25em;
+    font-family: 'Arima Madurai', cursive;
+}
+
+fieldset {
+    font-weight: 700;
+    font-size: 1.3em;
+    border: 3px solid #EF6C33;
+    border-radius: 10px;
+    padding: 15px;
+    background-color:#C0B3A0;
+}
+
+ form.ui.form>fieldset>.field>label,
+ form.ui.form>fieldset>.fields>.field>label{
+    font-size: 1em;
+    font-weight: 700;
+    color: #0000000S;
+}
+
+footer>p {
+    font-size: 1.5em;
+    color: #FFFFFF;
+}
+
+/* Light background color */
+form.ui.form>fieldset>.field>input,
+form.ui.form>fieldset>.fields>.field>input,
+form.ui.form>fieldset>.fields>.field>select,
+form.ui.form>fieldset>.field>textarea {
+    background-color: #F1FAEE;
+}
+
+form >textarea.field {
+    background-color: #F1FAEE;
+}
+
+.menu.ui>.item {
+    color: #EF6C33;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.menu.ui>.item.active {
+    color: #EF6C33;
+    background-color: #ABDFF1;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.ui.stackable.menu .dropdown.item:hover,
+.ui.stackable.menu .link.item:hover,
+.ui.stackable.menu a.item:hover,
+.ui.link.stackable.menu .item:hover {
+    background-color: #ABDFF1;
+    color: #EF6C33;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+section>.img-thumbnail {
+    background-color:#0C4A60;
+    border-radius: 10px;
+    border-color: #EF6C33;
+}
+
+.row {
+    padding: 10px;
+}
+
+.small-image {
+    max-height: 50px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.sectionBox {
+    border: 3px solid #EF6C33;
+    border-radius: 10px;
+    background-color:#C0B3A0;
+}
+
+.table {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+a:hover {
+    color: #EF6C33;
+}
+
+
+#descTable {
+    /* background-color: #457b9d; */
+    background-color: #FFFFFF;
+    border: 10px solid #EF6C33;
+    border-radius: 5px;
+}
+
+#logo {
+    max-height: 120px;
+    vertical-align: middle;
+}
+
+#headingMessage {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#linkSection {
+    max-height: 100px;
+    
+}
+
+#navBarHead {
+    background-color:#0C4A60;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
+}
+
+div#welcomeBanner {
+    margin-top: 0px;
+    padding: 5px;
+}
+
+h1#headerRow {
+    margin-bottom: 0px;
+    overflow: unset;
+    height: 200px;
+}
+
+
+section#travelImageSection{
+    align-items: center;
+}
+
+table tr{
+    padding: 10px;
+}
 
 html,
 body,

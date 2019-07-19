@@ -137,8 +137,8 @@ function focusFunc(textId) {
     // Adds text to p node and styles it
     pNode.appendChild(textElement);
     pNode.className += "col";
-    // pNode.style.color = "#1D3557";
-    pNode.style.fontSize = "12px";
+    pNode.style.color = "#FFFFFF";
+    pNode.style.fontSize = "1em";
     // Creates a div to hold the p node and center it
     var container = document.createElement("div");
     container.className += "container-fluid row centered";
