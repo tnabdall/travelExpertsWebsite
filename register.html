@@ -66,39 +66,35 @@
             <form class="ui form" action="http://localhost:1234/bouncer.html" method="POST">
                 <fieldset>
                     <div class="three fields">
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id='nameLabel' for="firstName">First Name</label>
-                            <input type="text" id="firstName" required="required" onfocus="focusFunc(this.id)"
-                                onblur="blurFunc()">
+                            <input type="text" id="firstName" required="required">
                         </div>
-                        <div class="required field">
+                        <div class="focus required field">
                             <label for="middleName">Middle Name</label>
-                            <input type="text" id="middleName" placeholder="Not required" onfocus="focusFunc(this.id)"
-                                onblur="blurFunc()">
+                            <input type="text" id="middleName" placeholder="Not required">
                         </div>
-                        <div class="required field">
+                        <div class="focus required field">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" required="required" onfocus="focusFunc(this.id)"
-                                onblur="blurFunc()">
+                            <input type="text" id="lastName" required="required">
                         </div>
                     </div>
 
-                    <div class="required field">
+                    <div class="focus required field">
                         <label for="streetAddress">Street address</label>
-                        <input type="text" id="streetAddress" required="required" placeholder="Eg. 123 Main St"
-                            onfocus="focusFunc(this.id)" onblur="blurFunc()">
+                        <input type="text" id="streetAddress" required="required" placeholder="Eg. 123 Main St">
                     </div>
 
                     <div class="three fields">
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id='cityLabel' for="city">City</label>
-                            <input type="text" id="city" placeholder="Eg. Calgary" required="required"
-                                onfocus="focusFunc(this.id)" onblur="blurFunc()">
+                            <input type="text" id="city" placeholder="Eg. Calgary" required="required">
                         </div>
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id="provinceLabel" for="province">Province</label>
-                            <select id="province" class="browser-default custom-select">
-                                <option selected value="AB">Alberta</option>
+                            <select id="province">
+                                <option value="">Province</option>
+                                <option value="AB">Alberta</option>
                                 <option value="BC">British Columbia</option>
                                 <option value="MB">Manitoba</option>
                                 <option value="NB">New Brunswick</option>
@@ -113,40 +109,35 @@
                                 <option value="YT">Yukon</option>
                             </select>
                         </div>
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id='postalLabel' for="postalCode">Postal Code</label>
                             <input type="text" id="postalCode" placeholder="Eg. T1A 1A1"
-                                pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" required="required"
-                                onfocus="focusFunc(this.id)" onblur="blurFunc()">
+                                pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" required="required">
                         </div>
                     </div>
                     <div class="two fields">
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id='emailLabel' for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Eg. john.doe@gmail.com" required="required"
-                                onfocus="focusFunc(this.id)" onblur="blurFunc()">
+                            <input type="email" id="email" placeholder="Eg. john.doe@gmail.com" required="required">
                         </div>
-                        <div class="required field">
+                        <div class="focus required field">
                             <label id='emailLabel' for="pWord">Password</label>
-                            <input type="password" id="pWord" required="required" onfocus="focusFunc(this.id)"
-                                onblur="blurFunc()">
+                            <input type="password" id="pWord" required="required">
                         </div>
                     </div>
 
                     <div class="field">
                         <label for="preferredDestinations">Preferred Destinations</label>
-                        <input type="text" class=" col-8 m-2" id="preferredDestinations" placeholder=""
-                            onfocus="focusFunc(this.id)" onblur="blurFunc()">
+                        <input type="text" class=" col-8 m-2" id="preferredDestinations" placeholder="">
                     </div>
                     <div class="field">
                         <label for="additionalInfo">Additional Information</label>
-                        <textarea type="text" class=" col-8 m-2" id="additionalInfo" placeholder=""
-                            onfocus="focusFunc(this.id)" onblur="blurFunc()"></textarea>
+                        <textarea type="text" class=" col-8 m-2" id="additionalInfo" placeholder=""></textarea>
                     </div>
                     <div class="ui two buttons">
                         <button id="submitButton" type="submit" value="Submit" onclick="return submitClick()"
-                            class="positive ui button">Submit</button>
-                        <button type="reset" value="Reset" class="negative ui button"
+                            class="positive ui inverted button">Submit</button>
+                        <button type="reset" value="Reset" class="negative ui inverted button"
                             onclick="return resetClick()">Reset</button>
                     </div>
                     <div class="ui success message">
@@ -159,7 +150,7 @@
         <footer>
             <!--Contains info fixed to bottom of page-->
             <div>
-                <i id="planeImg" class="fas fa-fighter-jet"
+                <i id="planeImg" class="fighter jet icon"                "
                     style="position: absolute; bottom: 0%; font-size: 50px; color: #EF6C33;"></i><br />
             </div>
             <p>&copy; Tawico 2019 </p>
