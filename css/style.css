@@ -220,3 +220,36 @@ section#travelImageSection{
 table tr{
     padding: 10px;
 }
+
+
+#vacations {
+    position: relative;      /* recommended */
+}
+#vacations .MS-content {
+    white-space: nowrap;     /* required */
+    overflow: hidden;        /* required */
+    margin: 0 5%;            /* makes room for L/R arrows */
+}
+#vacations .MS-content .item {
+    display: inline-block;   /* required */
+    width: 20%;              /* required * Determines number of visible slides */ 
+    position: relative;      /* required */
+    vertical-align: top;     /* required */
+    overflow: hidden;        /* required */
+    height: 100%;            /* recommended */
+    white-space: normal;     /* recommended */
+}
+#vacations .MS-controls button {
+    position: absolute;      /* recommended */
+    top: 35px;
+}
+#vacations .MS-controls .MS-left {
+    left: 10px;
+}
+#vacations .MS-controls .MS-right {
+    right: 10px;
+}
+
+.item { 
+    width: 50%; 
+}

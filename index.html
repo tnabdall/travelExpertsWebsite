@@ -16,7 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="semanticUI/semantic.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:200,300,400,500,700,800%7CCinzel+Decorative:400,700,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Arima+Madurai:200,300,400,500,700,800%7CCinzel+Decorative:400,700,900&display=swap"
+        rel="stylesheet">
 
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all"> -->
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all"> -->
@@ -25,9 +27,10 @@
     <!-- Bootstrap -->
     <script src="js/jquery.min.js"></script>
     <script src="semanticUI/semantic.min.js"></script>
+    <script src="js/multislider.min.js"></script>
+
 
     <script src="https://kit.fontawesome.com/393c960404.js"></script>
-
     <script src="js/setNavActive.js"></script>
 </head>
 <div id="holder">
@@ -66,8 +69,142 @@
         <main class="container-fluid">
             <!-- Holds the images on home page and changes format depending on screen size -->
             <section id="travelImageSection" class="ui grid">
+                <div id="vacations">
+                    <div class="ui link cards">
+
+                        <div class="item card">
+                            <div class="image">
+                                <img src="images/colloseum.jpg">
+                            </div>
+
+                            <div class="content">
+                                <div class="right floated meta">$699</div>
+                                <div class="header">Rome</div>
+                                <div class="meta">
+                                    <div class="ui styled fluid accordion">
+                                        <div class="title">
+                                            <i class="dropdown icon"></i>
+                                            Overview
+                                        </div>
+                                        <div class="content">
+                                            <p class="transition">Tour Italy for 10 days</p>
+                                            <a href="https://www.tourradar.com/t/83000#p=2_">Full Itinerary</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    Colosseum
+                                </div>
+                            </div>
+
+                            <div class="extra content">
+                                <span>
+                                    August 7th, 2019 - August 17th, 2019
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="item card">
+                            <div class="image">
+                                <img src="/images/avatar2/large/molly.png">
+                            </div>
+                            <div class="content">
+                                <div class="header">Molly</div>
+                                <div class="meta">
+                                    <span class="date">Coworker</span>
+                                </div>
+                                <div class="description">
+                                    Molly is a personal assistant living in Paris.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <span class="right floated">
+                                    Joined in 2011
+                                </span>
+                                <span>
+                                    <i class="user icon"></i>
+                                    35 Friends
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item card">
+                            <div class="image">
+                                <img src="/images/avatar2/large/elyse.png">
+                            </div>
+                            <div class="content">
+                                <div class="header">Elyse</div>
+                                <div class="meta">
+                                    <a>Coworker</a>
+                                </div>
+                                <div class="description">
+                                    Elyse is a copywriter working in New York.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <span class="right floated">
+                                    Joined in 2014
+                                </span>
+                                <span>
+                                    <i class="user icon"></i>
+                                    151 Friends
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item card">
+                            <div class="image">
+                                <img src="/images/avatar2/large/elyse.png">
+                            </div>
+                            <div class="content">
+                                <div class="header">Elyse</div>
+                                <div class="meta">
+                                    <a>Coworker</a>
+                                </div>
+                                <div class="description">
+                                    Elyse is a copywriter working in New York.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <span class="right floated">
+                                    Joined in 2014
+                                </span>
+                                <span>
+                                    <i class="user icon"></i>
+                                    151 Friends
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item card">
+                            <div class="image">
+                                <img src="/images/avatar2/large/elyse.png">
+                            </div>
+                            <div class="content">
+                                <div class="header">Elyse</div>
+                                <div class="meta">
+                                    <a>Coworker</a>
+                                </div>
+                                <div class="description">
+                                    Elyse is a copywriter working in New York.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <span class="right floated">
+                                    Joined in 2014
+                                </span>
+                                <span>
+                                    <i class="user icon"></i>
+                                    151 Friends
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MS-controls">
+                        <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
                 <!--Section for travel images-->
             </section>
+
         </main>
         <footer>
             <!--Contains info fixed to bottom of page-->
