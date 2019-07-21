@@ -26,10 +26,25 @@ $(document).ready(function(){
             $(this).next().attr("class","content");
         }
     });
+    resizeCardHeight();
+   
  });
 
 
- 
+ function resizeCardHeight(){
+    var maxHeight=0;    
+    $('.item.card').each(function(){
+        $('.title').each(function(){$(this).attr("class","active title");});
+        $('.content').each(function(){$(this).attr("class","active content");});
+        if($(this).height()>maxHeight){
+            maxHeight=$(this).height();
+        }
+    })
+    console.log(maxHeight);
+    $('.item.card').height(maxHeight);
+    $('.title').each(function(){$(this).attr("class","title");});
+    $('.content').each(function(){$(this).attr("class","content");});
+ }
 
 // $(document).ready(function () {
 //     setTimeout('$("#container").css("opacity", 1)', 1000);
