@@ -12,27 +12,76 @@ body {
     background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+body.pushable>.pusher {
+    background: #E8CBC0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 
 main {
     padding-bottom: 120px;
     padding-left: 1%;
     padding-right: 1%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 footer {
+    height: 75px;
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 30px;
     padding-left: 1%;
     background-image: url("../images/airportRunwayBigScreen.png");
     background-size: 100% 100%;
 }
 
+.mainContent{
+    margin-bottom: 28px;
+}
+
 @media screen and (max-width: 740px) {
     footer{
         background-image: url("../images/airportRunwayMobile.png");
+    }
+}
+
+#footerText {
+    font-size: 0.8em;    
+    color: #FFFFFF;
+}
+
+
+
+#footerTextDiv{
+    color: #FFFFFF;
+    position: relative;
+    bottom:-60px;
+    left: 0px;
+    display: flex;
+    font-size: 1.6em;
+}
+
+.icon.footerIcon {
+    color: white;
+}
+
+.socialMediaIcons {
+    position: absolute;
+    bottom: 30%;
+}
+
+@media screen and (min-width: 740px) {
+    .socialMediaIcons {
+        left: 47%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .socialMediaIcons {
+        left: none;
+        right: 5%;
     }
 }
 
@@ -121,10 +170,7 @@ fieldset {
     color: #0000000S;
 }
 
-footer>p {
-    font-size: 1.5em;
-    color: #FFFFFF;
-}
+
 
 /* Light background color */
 form.ui.form>fieldset>.field>input,
@@ -217,11 +263,36 @@ a:hover {
     
 }
 
-#navBarHead {
+#desktopNavBar {
     background-color:#0C4A60;
     margin-top: 0px;
     margin-bottom: 0px;
     border: none;
+    visibility: visible;
+}
+
+#mobileNavBar{
+    visibility: hidden;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+    border: none;
+}
+
+#menuButton{
+    background-color:#0C4A60;
+}
+#menuButton>a{
+    color: #EF6C33;
+}
+
+#sidebar{
+    background-color: #0C4A60;
+    font-size: 0.8em;
+}
+
+#sidebar i{
+    color: #EF6C33;
 }
 
 div#welcomeBanner {
@@ -283,5 +354,22 @@ table tr{
 }
 
 img{
-    width: 500px;
+    width: -moz-available;
+}
+
+#welcomeBanner{
+    color: #ABDFF1;
+    /* display: inline; */
+    font-size: 1.2em;
+    text-align: center;
+}
+#welcomeBanner>h4{
+    font-size: 1.2em;
+    display: inline;
+}
+
+#sidebar>a{
+    height: 20%;
+    display: flex;
+    justify-content: center;
 }

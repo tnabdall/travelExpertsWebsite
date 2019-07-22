@@ -3,7 +3,7 @@ include("pageSections/header.php");
 ?>
 
 <main>
-    <form class="ui form" action="" method="POST">
+    <form class="ui form mainContent" action="" method="POST">
         <fieldset >
  
                 <div class="required field">
