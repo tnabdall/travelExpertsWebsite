@@ -1,0 +1,51 @@
+<?php session_start() ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Travel Experts
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Semantic UI and Slick reference -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="semanticUI/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:200,300,400,500,700,800%7CCinzel+Decorative:400,700,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Personal styling sheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Jquery, Slick, and Semantic UI -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="semanticUI/semantic.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <!-- Sets the active page in the nav bar -->
+    <script src="js/setNavActive.js"></script>
+</head>
+<div id="holder">
+    <!-- Used holder div to fix footer to bottom
+            of page without floating behaviour when window is resized.
+            Without this formatting, resizing the window would make the footer appear
+            fixed at the bottom when resizing the window.-->
+
+    <body>
+        <header>
+            <!--Logo and welcome message-->
+            <h1 id="headerRow" class="ui center aligned header">
+                <a href="index.html" class="ui image">
+                    <img class="img-fluid align-self-center m-4 centered" id='logo' src="images/logo.png"
+                        title="Travel Experts" alt="Travel Experts Logo">
+                </a>
+                <div id="headingTextDiv" class="content">
+                    Travel Experts
+                </div>
+            </h1>
+        </header>
+        <?php include("menu.php") ?>

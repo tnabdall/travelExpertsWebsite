@@ -1,17 +1,9 @@
-<!--
-    Document Heading
-    Author: Tarik Abdalla
-    Date: 6/24/2019
-    Version 2
--->
 <?php
-include("header.php");
-include("menu.php");
+include("pageSections/header.php");
 if(!isset($_SESSION['login_user'])){
     header("Location: login.php");
 }
 ?>
-
 <main>
     <form class="ui form" action="" method="POST">
         <fieldset>
@@ -93,5 +85,5 @@ if(!isset($_SESSION['login_user'])){
     </form>
 </main>
 <?php
-include("footer.php")
+include("pageSections/footer.php")
 ?>

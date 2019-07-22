@@ -1,6 +1,5 @@
 <?php
-include("header.php");
-include("menu.php");
+include("pageSections/header.php");
 ?>
 
 <main>
@@ -36,5 +35,5 @@ include("menu.php");
     </form>
 </main>
 <?php
-include("footer.php");
+include("pageSections/footer.php");
 ?>

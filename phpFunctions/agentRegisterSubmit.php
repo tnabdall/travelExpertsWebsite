@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
         // Try to write to super log if write to agent register log fails
         $log = fopen("logs/superErrorLog.txt","a");
         fwrite($log,$e->getMessage());
-        fwrite("Agent Register Log: ");
+        fwrite($log,"Agent Register Log: ");
         if($success){
             fwrite($log,"Successfully inserted new agent into the database.\n");
         }

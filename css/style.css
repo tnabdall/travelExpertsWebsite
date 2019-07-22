@@ -1,30 +1,16 @@
 
-
-@font-face {
-    font-family: "Bebas";
-    src: url("fonts/BebasNeue-Bold.otf");
-}
-
-@font-face {
-    font-family: "Ikaros";
-    src: url("fonts/Ikaros\_Regular.otf");
-}
-
-@font-face {
-    font-family: "Bavro";
-    src: url("fonts/Bavro-Regular.otf");
-}
-
 html,
 body,
 main {
     height: 100%;
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Arima Madurai', cursive;
 }
 
 body {
-    background: #FF8008;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF8008, #FFC837);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF8008, #FFC837); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #E8CBC0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 main {
@@ -40,6 +26,14 @@ footer {
     left: 0;
     bottom: 0;
     padding-left: 1%;
+    background-image: url("../images/airportRunwayBigScreen.png");
+    background-size: 100% 100%;
+}
+
+@media screen and (max-width: 740px) {
+    footer{
+        background-image: url("../images/airportRunwayMobile.png");
+    }
 }
 
 #holder {
@@ -53,102 +47,83 @@ h1.ui.header {
     background-size: 100%;
 }
 
+
+
 h1.ui.header>.content {
-    font-size: 60px;
-    font-family: 'Bavro', Arial, sans-serif;
+    font-family: 'Cinzel Decorative', cursive;
     font-weight: 700;
-    color: #F1FAEE;
+    color: #0C4A60;
     padding: 15px;
-    line-height: normal;
-    /* text-shadow: 1px 1px 1px #1d3557; */
+    text-shadow: 5px 5px #ABDFF1;
+    font-size: 240%;
+    
 }
-
-h2 {
-    color: #1D3557;
-    font-weight: 700;
+@media screen and (max-width: 740px) {
+    #headingTextDiv{
+        font-size: 190%;
+    }
 }
-
-@media screen and (min-width: 530px) {
-    h1.ui.header>.content {
-        font-size: 30px;
+@media screen and (max-width: 600px) {
+    #headingTextDiv{
+        font-size: 150%;
+    }
+}
+@media screen and (max-width: 490px){
+    h1#headerRow{
+        line-height: 150% !important;
     }
 }
 
-@media screen and (min-width: 1000px) {
-    h1.ui.header>.content {
-        font-size: 50px;
-    }
-}
-
-header h1 {
+h1#headerRow {
+    margin-bottom: 0px;
+    height: 200px;
     text-align: center;
+    line-height: 630%;
 }
 
 p {
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #f1faee;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-footer>p {
-    color: black;
-    font-weight: 700;
+    color: #000000;
+    font-size: 1.5em;
 }
 
 dl>dt {
     font-weight: 700;
     margin-bottom: 2px;
-    color: #E63946;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+    font-size: 1.4em;
+    font-family: 'Arima Madurai', cursive;
 }
 
 /* Example of text indentation (alignment) */
 dl>dd {
     text-indent: 15px;
     margin-top: 1px;
-    color: #F1FAEE;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-legend {
-    display: block;
-    width: auto;
-    padding: 0 5px;
-    margin-bottom: 0;
-    font-size: inherit;
-    line-height: inherit;
-    border: auto;
-    border-bottom: none;
-    color: #E63946;
-    /* -webkit-text-stroke-color: #1D3557; */
-    /* -webkit-text-stroke-width: 0.5px; */
-    /* text-shadow: -0.5px 0 #1D3557, 0 0.5px #1D3557, 0.5px 0 #1D3557, 0 -1px #1D3557; */
-    text-shadow: 3px -1px 1px #1D3557;
+    color: #000000;
+    font-size: 1.25em;
+    font-family: 'Arima Madurai', cursive;
 }
 
 fieldset {
     font-weight: 700;
-    font-size: 18px;
-    border: 3px solid #E63946;
+    font-size: 1.3em;
+    border: 3px solid #EF6C33;
     border-radius: 10px;
     padding: 15px;
-    background-color: #1d3557;
+    background-color:#C0B3A0;
 }
 
  form.ui.form>fieldset>.field>label,
  form.ui.form>fieldset>.fields>.field>label{
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 700;
-    color: #F1FAEE;
+    color: #0000000S;
 }
 
 footer>p {
-    font-size: 12px;
-    color: #F1FAEE;
+    font-size: 1.5em;
+    color: #FFFFFF;
 }
 
 /* Light background color */
@@ -163,28 +138,15 @@ form >textarea.field {
     background-color: #F1FAEE;
 }
 
-.btn-primary:hover {
-    background-color: #F1FAEE;
-    border-color: #F1FAEE;
-    color: #1d3557;
-
-}
-
-.btn-primary {
-    background-color: #1d3557;
-    color: #f1faee;
-    font-weight: 700;
-    border: 3px solid #E63946;
-}
-
 .menu.ui>.item {
-    color: #F1FAEE;
+    color: #EF6C33;
     font-weight: 700;
+    font-size: 1.5em;
 }
 
 .menu.ui>.item.active {
-    color: #1d3557;
-    background-color: #F1FAEE;
+    color: #EF6C33;
+    background-color: #ABDFF1;
     border-radius: 0px;
     font-weight: 700;
 }
@@ -193,25 +155,16 @@ form >textarea.field {
 .ui.stackable.menu .link.item:hover,
 .ui.stackable.menu a.item:hover,
 .ui.link.stackable.menu .item:hover {
-    background-color: #F1FAEE;
-    color: #1d3557;
+    background-color: #ABDFF1;
+    color: #EF6C33;
     border-radius: 0px;
     font-weight: 700;
 }
 
 section>.img-thumbnail {
-    background-color: #1d3557;
+    background-color:#0C4A60;
     border-radius: 10px;
-    border-color: #E63946;
-}
-
-
-.bordered {
-    border: 2px solid black;
-}
-
-.img-thumbnail {
-    border: 2px solid black;
+    border-color: #EF6C33;
 }
 
 .row {
@@ -226,35 +179,10 @@ section>.img-thumbnail {
     justify-content: center;
 }
 
-.carousel-item>img {
-    transition: all 1.5s ease 0s;
-    transform: perspective(100vw) translateZ(15vw);
-    border-radius: 20px;
-}
-
-.active>img {
-    opacity: 1;
-    transform: perspective(100vw) translateZ(0);
-}
-
-.index-image {
-    border: 10px solid #E63946;
-    border-radius: 5px;
-    padding: 0px;
-}
-
-.pointer-cursor {
-    cursor: pointer;
-}
-
-.container-fluid.row.centered {
-    margin: auto;
-}
-
 .sectionBox {
-    border: 3px solid #E63946;
+    border: 3px solid #EF6C33;
     border-radius: 10px;
-    background-color: #1d3557;
+    background-color:#C0B3A0;
 }
 
 .table {
@@ -263,36 +191,19 @@ section>.img-thumbnail {
     text-align: center;
 }
 
-.table th,
-td,
-a {
-    color: #F1FAEE;
-}
-
-.table th {
-    font-weight: 700;
-    border: none;
-}
-
-
 a:hover {
-    color: #E63946;
+    color: #EF6C33;
 }
 
 
 #descTable {
     /* background-color: #457b9d; */
-    background-color: #F1FAEE;
-    border: 10px solid #E63946;
+    background-color: #FFFFFF;
+    border: 10px solid #EF6C33;
     border-radius: 5px;
 }
 
-.carousel-inner {
-    border-radius: 20px;
-}
-
 #logo {
-    max-height: 120px;
     vertical-align: middle;
 }
 
@@ -303,10 +214,14 @@ a:hover {
 
 #linkSection {
     max-height: 100px;
+    
 }
 
 #navBarHead {
-    background-color: #1D3557;
+    background-color:#0C4A60;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
 }
 
 div#welcomeBanner {
@@ -314,16 +229,8 @@ div#welcomeBanner {
     padding: 5px;
 }
 
-h1#headerRow {
-    margin-bottom: 0px;
-    overflow: unset;
-}
 
-div#navBarHead {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border: none;
-}
+
 
 section#travelImageSection{
     align-items: center;
@@ -331,4 +238,50 @@ section#travelImageSection{
 
 table tr{
     padding: 10px;
+}
+
+
+#vacations {
+    position: relative;      /* recommended */
+}
+#vacations .MS-content {
+    white-space: nowrap;     /* required */
+    overflow: hidden;        /* required */
+    margin: 0 5%;            /* makes room for L/R arrows */
+}
+#vacations .MS-content .item {
+    display: inline-block;   /* required */
+    width: 20%;              /* required * Determines number of visible slides */ 
+    position: relative;      /* required */
+    vertical-align: top;     /* required */
+    overflow: hidden;        /* required */
+    height: 100%;            /* recommended */
+    white-space: normal;     /* recommended */
+}
+#vacations .MS-controls button {
+    position: absolute;      /* recommended */
+    top: 35px;
+}
+#vacations .MS-controls .MS-left {
+    left: 10px;
+}
+#vacations .MS-controls .MS-right {
+    right: 10px;
+}
+
+#cardCarousel{
+    padding: 5px;
+}
+
+.item.card{
+    background-color: white;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+}
+
+img{
+    width: 500px;
 }

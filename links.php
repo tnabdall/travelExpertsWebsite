@@ -5,15 +5,14 @@
     Version 2
 -->
 <?php
-include("header.php");
-include("menu.php");
+include("pageSections/header.php");
 ?>
 
 
 <main class="container-fluid">
     <section class="pl-4 pr-4 pt-1 pb-1 mt-3 rounded sectionBox">
         <?php
-            include("variables.php");
+            include("phpFunctions/variables.php");
             // Code to autopopoulate table of links
             $tableCode = "<table class = 'table'><thead><tr><th scope = 'col'>Website</th><th scope = 'col'>Page Link</th></tr></thead><tbody>";
 
@@ -28,5 +27,5 @@ include("menu.php");
 </main>
 
 <?php
-include("footer.php");
+include("pageSections/footer.php");
 ?>
