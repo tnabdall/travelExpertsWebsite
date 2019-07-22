@@ -53,10 +53,14 @@
                         pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" required="required">
                 </div>
             </div>
+            <div class="focus required field">
+                <label id='emailLabel' for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Eg. john.doe@gmail.com" required="required">
+            </div>
             <div class="two fields">
                 <div class="focus required field">
-                    <label id='emailLabel' for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Eg. john.doe@gmail.com" required="required">
+                    <label id='userLabel' for="username">Username</label>
+                    <input type="text" id="username" required="required">
                 </div>
                 <div class="focus required field">
                     <label id='emailLabel' for="pWord">Password</label>

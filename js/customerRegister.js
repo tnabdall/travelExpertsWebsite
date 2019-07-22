@@ -67,6 +67,15 @@ $(document).ready(function () {
                 }
             ]
             },
+            username: {
+                identifier: 'username',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter your username.',
+                }
+            ]
+            },
             pWord: {
                 identifier: 'pWord',
                 rules: [
