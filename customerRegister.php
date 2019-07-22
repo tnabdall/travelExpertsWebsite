@@ -1,7 +1,7 @@
 <?php include("pageSections/header.php") ?>
 <script src="js/customerRegister.js"></script>
 <main>
-    <form class="ui form" action="http://localhost:1234/bouncer.php" method="POST">
+    <form class="ui form mainContent" action="http://localhost:1234/bouncer.php" method="POST">
         <fieldset>
             <div class="three fields">
                 <div class="focus required field">

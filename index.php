@@ -24,38 +24,37 @@ $hour = intval(substr($time,0,2));
 if ($is_am){
     if($hour>=5 && $hour!=12){
         $greeting="Good Morning";
-        $icon = 'fas fa-sun';
+        $icon = 'coffee icon';
     }
     else{
         $greeting="Good Evening";
-        $icon = 'fas fa-moon';
+        $icon = 'beer icon';
     }
 }
 else{
     if($hour>=5 && $hour!=12){
         $greeting="Good Evening";
-        $icon = 'fas fa-moon';
+        $icon = 'beer icon';
     }
     else{
         $greeting="Good Afternoon";
-        $icon = 'fas fa-cloud-sun';
+        $icon = 'utensils icon';
     }
 }
 // Removes leading 0 in hour
 if($time[0]=="0"){
     $time=substr($time,1,strlen($time));
 }
-$bannerCode = "<div id = 'welcomeBanner' class = 'container-fluid w-100 pt-2 pb-2' style='background-color:#a8dadc; text-align: center; '>
-<h4 class = 'pr-2' style='font-size:26px; color: #E63946; display:inline'>$greeting!</h4>
-<i class='$icon pr-2' style='font-size:30px; color: #E63946;'></i>
-<h4 style='font-size:26px; color: #E63946; display:inline'>The time is $time</h4>
+$bannerCode = "<div id = 'welcomeBanner'>
+<h4>$greeting!</h4>
+<i class='$icon' ></i>
 </div>";
  echo $bannerCode;
 ?>
 <script src="js/index.js"></script>
 <main>
     <!-- Holds the images on home page and changes format depending on screen size -->
-    <section id="travelImageSection">
+    <section class = "mainContent" id="travelImageSection">
 
         <div class="ui cards" id="cardCarousel">
 

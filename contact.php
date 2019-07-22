@@ -1,7 +1,7 @@
 <?php include("pageSections/header.php") ?>
 <script src="js/contact.js"></script>
 <main>
-    <div class="rounded sectionBox">
+    <div class="rounded sectionBox mainContent">
 
         <section class="company-info">
             <ul class="agency-info">

@@ -5,7 +5,9 @@ $(document).ready(function(){
             slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000
+            autoplaySpeed: 2000,
+            pauseOnHover: true,
+            arrows: false
         });
     }
     else{
@@ -13,7 +15,9 @@ $(document).ready(function(){
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000
+            autoplaySpeed: 2000,
+            pauseOnHover: true,
+            arrows: false
         });
     }
     $('.title').on('click', function(){
@@ -24,6 +28,7 @@ $(document).ready(function(){
         else{
             $(this).attr("class","title");
             $(this).next().attr("class","content");
+            $('#cardCarousel').slick('slickPlay');
         }
     });
     resizeCardHeight();
