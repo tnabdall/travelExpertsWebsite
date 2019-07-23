@@ -373,3 +373,11 @@ img{
     display: flex;
     justify-content: center;
 }
+
+#mobileNavBar{
+    margin-bottom: 10px;
+}
+
+#desktopNavBar{
+    margin-bottom: 10px;
+}
