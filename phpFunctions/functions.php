@@ -37,6 +37,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         return false;
     }
     
+    
     // Build columns and values strings for sql statement from array
     $columns='';
     $values='';
