@@ -69,6 +69,7 @@
                                     <!-- Agent Contact Information -->
                                     <p>Phone#: '.$agent['AgtBusPhone'].'</p>
                                     <p>Email: '.$agent['AgtEmail'].'</p>
+                                    <p>'.$agent['Description'].'</p>
                                 </div>
                             </div>
 
@@ -89,10 +90,10 @@
                         <div class="content">
                             <a class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</a>
                             <div class="meta">
-                                <span class="date">'.$agent['AgtPosition'].'</span>
+                                <span class="date">"'.$agent['Title'].'"</span>
                             </div>
                             <div class="description">
-                            '.$agent['Description'].'
+                            '.$agent['AgtPosition'].'
                             </div>
                         </div>
                         <div class="extra">
