@@ -26,7 +26,7 @@ $(document).ready(function () {
     // Sets mobile or desktop nav bar based on window width
     // Also, makes menu sticky to top of view
     var windowWidth = $(window).width();
-    if(windowWidth<=720){
+    if(windowWidth<=752){
         $('#mobileNavBar').css('visibility','visible');
         $('#desktopNavBar').remove();
         // $('#menuButton').sticky();

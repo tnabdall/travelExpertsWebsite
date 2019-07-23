@@ -3,78 +3,137 @@
 <main>
     <form class="ui form mainContent" action="http://localhost:1234/bouncer.php" method="POST">
         <fieldset>
-            <div class="three fields">
+            <div class="two fields">
                 <div class="focus required field">
-                    <label id='nameLabel' for="firstName">First Name</label>
-                    <input type="text" id="firstName" required="required">
-                </div>
-                <div class="focus field">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" id="middleName">
+                    <label id='nameLabel' for="CustFirstName">First Name</label>
+                    <input type="text" id="CustFirstName" required="required">
                 </div>
                 <div class="focus required field">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" required="required">
+                    <label for="CustLastName">Last Name</label>
+                    <input type="text" id="CustLastName" required="required">
                 </div>
             </div>
 
             <div class="focus required field">
-                <label for="streetAddress">Street address</label>
-                <input type="text" id="streetAddress" required="required" placeholder="Eg. 123 Main St">
+                <label for="CustAddress">Street address</label>
+                <input type="text" id="CustAddress" required="required" placeholder="Eg. 123 Main St">
             </div>
 
-            <div class="three fields">
+            <div class="four fields">
                 <div class="focus required field">
-                    <label id='cityLabel' for="city">City</label>
-                    <input type="text" id="city" placeholder="Eg. Calgary" required="required">
+                    <label id='cityLabel' for="CustCity">City</label>
+                    <input type="text" id="CustCity" placeholder="Eg. Calgary" required="required">
                 </div>
                 <div class="focus required field">
-                    <label id="provinceLabel" for="province">Province</label>
-                    <select id="province">
-                        <option value="">Province</option>
-                        <option value="AB">Alberta</option>
-                        <option value="BC">British Columbia</option>
-                        <option value="MB">Manitoba</option>
-                        <option value="NB">New Brunswick</option>
-                        <option value="NL">Newfoundland and Labrador</option>
-                        <option value="NS">Nova Scotia</option>
-                        <option value="NT">Northwest Territories</option>
-                        <option value="NU">Nunavut</option>
-                        <option value="ON">Ontario</option>
-                        <option value="PE">Prince Edward Island</option>
-                        <option value="QC">Quebec</option>
-                        <option value="SK">Saskatchewan</option>
-                        <option value="YT">Yukon</option>
+                    <label id="provinceLabel" for="CustProvince">Province/State</label>
+                    <select id="CustProvince">
+                        <option id = "blankSelectProvince" value="">Please choose your country first</option>
+                        <optgroup id ="provinces" label = "Provinces">
+                            <option class = "canProv" value="AB">Alberta</option>
+                            <option class = "canProv" value="BC">British Columbia</option>
+                            <option class = "canProv" value="MB">Manitoba</option>
+                            <option class = "canProv" value="NB">New Brunswick</option>
+                            <option class = "canProv" value="NL">Newfoundland and Labrador</option>
+                            <option class = "canProv" value="NS">Nova Scotia</option>
+                            <option class = "canProv" value="NT">Northwest Territories</option>
+                            <option class = "canProv" value="NU">Nunavut</option>
+                            <option class = "canProv" value="ON">Ontario</option>
+                            <option class = "canProv" value="PE">Prince Edward Island</option>
+                            <option class = "canProv" value="QC">Quebec</option>
+                            <option class = "canProv" value="SK">Saskatchewan</option>
+                            <option class = "canProv" value="YT">Yukon</option>
+                        </optgroup>
+                            <optgroup id="states" label = "States">
+                            <option class = "usState" value="AL">Alabama</option>
+                            <option class = "usState" value="AK">Alaska</option>
+                            <option class = "usState" value="AZ">Arizona</option>
+                            <option class = "usState" value="AR">Arkansas</option>
+                            <option class = "usState" value="CA">California</option>
+                            <option class = "usState" value="CO">Colorado</option>
+                            <option class = "usState" value="CT">Connecticut</option>
+                            <option class = "usState" value="DE">Delaware</option>
+                            <option class = "usState" value="DC">District Of Columbia</option>
+                            <option class = "usState" value="FL">Florida</option>
+                            <option class = "usState" value="GA">Georgia</option>
+                            <option class = "usState" value="HI">Hawaii</option>
+                            <option class = "usState" value="ID">Idaho</option>
+                            <option class = "usState" value="IL">Illinois</option>
+                            <option class = "usState" value="IN">Indiana</option>
+                            <option class = "usState" value="IA">Iowa</option>
+                            <option class = "usState" value="KS">Kansas</option>
+                            <option class = "usState" value="KY">Kentucky</option>
+                            <option class = "usState" value="LA">Louisiana</option>
+                            <option class = "usState" value="ME">Maine</option>
+                            <option class = "usState" value="MD">Maryland</option>
+                            <option class = "usState" value="MA">Massachusetts</option>
+                            <option class = "usState" value="MI">Michigan</option>
+                            <option class = "usState" value="MN">Minnesota</option>
+                            <option class = "usState" value="MS">Mississippi</option>
+                            <option class = "usState" value="MO">Missouri</option>
+                            <option class = "usState" value="MT">Montana</option>
+                            <option class = "usState" value="NE">Nebraska</option>
+                            <option class = "usState" value="NV">Nevada</option>
+                            <option class = "usState" value="NH">New Hampshire</option>
+                            <option class = "usState" value="NJ">New Jersey</option>
+                            <option class = "usState" value="NM">New Mexico</option>
+                            <option class = "usState" value="NY">New York</option>
+                            <option class = "usState" value="NC">North Carolina</option>
+                            <option class = "usState" value="ND">North Dakota</option>
+                            <option class = "usState" value="OH">Ohio</option>
+                            <option class = "usState" value="OK">Oklahoma</option>
+                            <option class = "usState" value="OR">Oregon</option>
+                            <option class = "usState" value="PA">Pennsylvania</option>
+                            <option class = "usState" value="RI">Rhode Island</option>
+                            <option class = "usState" value="SC">South Carolina</option>
+                            <option class = "usState" value="SD">South Dakota</option>
+                            <option class = "usState" value="TN">Tennessee</option>
+                            <option class = "usState" value="TX">Texas</option>
+                            <option class = "usState" value="UT">Utah</option>
+                            <option class = "usState" value="VT">Vermont</option>
+                            <option class = "usState" value="VA">Virginia</option>
+                            <option class = "usState" value="WA">Washington</option>
+                            <option class = "usState" value="WV">West Virginia</option>
+                            <option class = "usState" value="WI">Wisconsin</option>
+                            <option class = "usState" value="WY">Wyoming</option>
+                        </optgroup>
                     </select>
                 </div>
                 <div class="focus required field">
-                    <label id='postalLabel' for="postalCode">Postal Code</label>
-                    <input type="text" id="postalCode" placeholder="Eg. T1A 1A1"
-                        pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" required="required">
+                    <label id='postalLabel' for="CustPostal">Postal/Zip Code</label>
+                    <input type="text" id="CustPostal" placeholder="Eg. T1A 1A1 or 90210" required="required">
+                </div>
+                <div class="focus required field">
+                    <label id="countryLabel" for="CustCountry">Country</label>
+                    <select id="CustCountry">
+                        <option value="">Country</option>
+                        <option value="Canada">Canada</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+            </div>
+            <div class = "two fields">
+                <div class="focus required field">
+                    <label id='personalPhoneLabel' for="CustHomePhone">Home Phone</label>
+                    <input type="text" id="CustHomePhone" required="required">
+                </div>
+                <div class="focus field">
+                    <label id="businessPhoneLabel" for="CustBusPhone">Work Phone</label>
+                    <input type="text" id="CustBusPhone">
                 </div>
             </div>
             <div class="focus required field">
-                <label id='emailLabel' for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Eg. john.doe@gmail.com" required="required">
+                <label id='emailLabel' for="CustEmail">Email Address</label>
+                <input type="email" id="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
             </div>
             <div class="two fields">
                 <div class="focus required field">
-                    <label id='userLabel' for="username">Username</label>
-                    <input type="text" id="username" required="required">
+                    <label id='userLabel' for="Username">Username</label>
+                    <input type="text" id="Username" required="required">
                 </div>
                 <div class="focus required field">
-                    <label id='emailLabel' for="pWord">Password</label>
-                    <input type="password" id="pWord" required="required">
+                    <label id='emailLabel' for="Password">Password</label>
+                    <input type="password" id="Password" required="required">
                 </div>
-            </div>
-
-            <div class="field">
-                <label for="preferredDestinations">Preferred Destinations</label>
-                <input type="text" class=" col-8 m-2" id="preferredDestinations" placeholder="">
-            </div>
-            <div class="field">
-                <label for="additionalInfo">Additional Information</label>
-                <textarea type="text" class=" col-8 m-2" id="additionalInfo" placeholder=""></textarea>
             </div>
             <div class="ui two buttons">
                 <button id="submitButton" type="submit" value="Submit" onclick="return submitClick()"

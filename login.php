@@ -3,7 +3,7 @@ include("pageSections/header.php");
 ?>
 
 <main>
-    <form class="ui form mainContent" action="" method="POST">
+    <form id='loginForm' class="ui form mainContent" action="" method="POST">
         <fieldset >
  
                 <div class="required field">
@@ -24,12 +24,12 @@ include("pageSections/header.php");
                 ?>
             </div>
         
-        <div class="ui two buttons">
-            <button id="submitButton" type="submit" name = "submit" value="Submit"
-                class="ui positive button" onclick="return confirm('Do you want to submit?')">Submit</button>
-            <button type="reset" value="Reset" class="ui negative button" onclick="return confirm('Do you want to clear the form?')"
-            >Reset</button>
-        </div>
+            <div class="ui two buttons">
+                <button id="submitButton" type="submit" value="Submit" onclick="return submitClick()"
+                    class="positive ui inverted button">Submit</button>
+                <button type="reset" value="Reset" class="negative ui inverted button"
+                    onclick="return resetClick()">Reset</button>
+            </div>
         </fieldset>
         
     </form>
