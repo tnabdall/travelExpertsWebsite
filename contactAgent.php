@@ -59,7 +59,52 @@
         <main class="container-fluid">
             <div class="pl-4 pr-3 pt-1 pb-1 mt-3 rounded sectionBox">
                 
-                
+            <?php
+            require "classes/dbConnect.php";
+            // $conn = getDatabase();
+            $db = new Database();
+            $conn = $db -> getConn();
+            $sql = "SELECT *
+                    FROM agencies;";
+
+            $result = $conn->query($sql);
+
+            if ($result === false) {
+                var_dump($conn->errorInfo());
+             } else {
+                $agencies = $result->fetchAll(PDO::FETCH_ASSOC);
+             }
+
+            echo "<table class='agencies table table-dark col-3 ml-3' align='left' border='1' cellpadding='3' cellspacing='0' border='1'>
+            <thead class ='thead-light'>   
+                <tr class='de-flex'>
+                    <th class='col-sm-1'>Agency</th>
+                    <th class='col-sm-2'>Agency Address</th>
+                    <th class='col-sm-1'>Agency City</th>
+                    <th class='col-sm-1'>Agency Prov</th>
+                    <th class='col-sm-1'>Agency Postal</th>
+                    <th class='col-sm-2'>Agency Country</th>
+                    <th class='col-sm-2'>Agency Phone</th>
+                    <th class='col-sm-2'>Agency Fax</th>
+                </tr>
+            </thead>";
+
+            foreach ($agencies as $agency)
+            {
+                echo "<tr class='d-flex>";
+                    echo "<td class='col-sm-1'>" . $agency['AgencyId'] . "</td>";
+                    echo "<td class='col-sm-2'>" . $agency['AgncyName'] . "</td>";
+                    echo "<td class='col-sm-2'>" . $agency['AgncyAddress'] . "</td>";
+                    echo "<td class='col-sm-1'>" . $agency['AgncyCity'] . "</td>";
+                    echo "<td class='col-sm-1'>" . $agency['AgncyProv'] . "</td>";
+                    echo "<td class='col-sm-1'>" . $agency['AgncyPostal'] . "</td>";
+                    echo "<td class='col-sm-2'>" . $agency['AgncyCountry'] . "</td>";
+                    echo "<td class='col-sm-2'>" . $agency['AgncyPhone'] . "</td>";
+                    echo "<td class='col-sm-2'>" . $agency['AgncyFax'] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        ?>    
                 
             </div>
         </main>
