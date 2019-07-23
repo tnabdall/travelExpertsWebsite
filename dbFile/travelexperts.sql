@@ -79,7 +79,7 @@ CREATE TABLE `agencies` (
 
 INSERT INTO `agencies` (`AgencyId`, `AgncyName`, `AgncyAddress`, `AgncyCity`, `AgncyProv`, `AgncyPostal`, `AgncyCountry`, `AgncyPhone`, `AgncyFax`) VALUES
 (1, 'Classical Travel', '123 Love Street', 'Calgary', 'AB', 'T2P1N3', 'Canada', '4032719873', '4032719872'),
-(2, 'Agency Name: Rock & Roll Travel', '666 Heartbreak Blvd', 'Calgary', 'AB', 'T7R3J5', 'Canada', '4035632381', '4035632382');
+(2, 'Rock & Roll Travel', '666 Heartbreak Blvd', 'Calgary', 'AB', 'T7R3J5', 'Canada', '4035632381', '4035632382');
 
 -- --------------------------------------------------------
 
