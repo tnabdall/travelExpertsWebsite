@@ -1,5 +1,5 @@
 <?php include("pageSections/header.php") ?>
-<script src="js/contact.js"></script>
+
 <main>
     <div class="rounded sectionBox mainContent">
 
@@ -46,25 +46,26 @@
                     // <section class="company-info">
                     //     <ul class="agency-info">
                     //         <!-- Company Contact Information -->
-                    //         <h2><b>Agency Name: Classical Travel</b></h2>
-                    //         <p>Address: 123 Love Street, Heaven</p>
+                    //         <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
+                    //         <p>Address: '.$agent['AgncyAddress'].'</p>
+                    //         <p>Address: '.$agent['AgncyPhone'].'</p>
                     //     </ul>
                     // </section>
-                    //     '
+                    //     ';
                     
                     echo '
                     <div id="contactCard'.$counter.'" class="ui card">
-                        <!-- MODAL CODE -->
-                        <div id="modal'.$counter.'" class="ui modal test">
+                        <!-- MODAL '.$counter.' CODE -->
+                        <div id="modal'.$counter.'" class="ui modal">
                             <div class="header">
                                 Agent Contact Information
                             </div>
                             <div class="image content">
-                                <div class="ui small centered image">
+                                <div class="ui medium centered image">
                                     <img src="'.$agent['Image'].'">
                                 </div>
                                 <div class="description">
-                                    <div class="ui header">'.$agent['AgtFirstName'].'" "'.$agent['AgtLastName'].'</div>
+                                    <div class="ui header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</div>
                                     <!-- Agent Contact Information -->
                                     <p>Phone#: '.$agent['AgtBusPhone'].'</p>
                                     <p>Email: '.$agent['AgtEmail'].'</p>
@@ -81,12 +82,12 @@
 
                             </div>
                         </div>
-                        <!-- CONTACT CARD 1 -->
+                        <!-- CONTACT CARD '.$counter.' -->
                         <div class="ui centered small image">
                             <img id="'.$agent['AgtLastName'].'" src="'.$agent['Image'].'">
                         </div>
                         <div class="content">
-                            <a class="header">'.$agent['AgtFirstName'].'" "'.$agent['AgtLastName'].'</a>
+                            <a class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</a>
                             <div class="meta">
                                 <span class="date">'.$agent['AgtPosition'].'</span>
                             </div>
@@ -96,7 +97,7 @@
                         </div>
                         <div class="extra">
                             Rating:
-                            <div id="rating'.$counter.'" class="ui star rating"></div>
+                            <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>
                         </div>
                     </div>
                     ';
@@ -108,4 +109,5 @@
         </div>
     </div>
 </main>
+<script src="js/contact.js"></script>
 <?php include ("pageSections/footer.php") ?>
