@@ -366,6 +366,7 @@ img{
 #welcomeBanner>h4{
     font-size: 1.2em;
     display: inline;
+    font-family: 'Arima Madurai', cursive;
 }
 
 #sidebar>a{
@@ -391,4 +392,11 @@ img{
     #loginForm {
         width:100%;
     }
+}
+
+.menu.ui{
+    font-family: 'Arima Madurai', cursive;
+}
+.ui.button{
+    font-family: 'Arima Madurai', cursive;
 }
