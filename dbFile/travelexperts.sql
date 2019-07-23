@@ -706,7 +706,7 @@ INSERT INTO `fees` (`FeeId`, `FeeName`, `FeeAmt`, `FeeDesc`) VALUES
 
 CREATE TABLE `packages` (
   `PackageId` int(11) NOT NULL,
-  `PkgName` varchar(50) NOT NULL,
+  `PkgName` varchar(255) NOT NULL,
   `Image` varchar(255) NOT NULL,
   `Partner` varchar(255) NOT NULL,
   `AirfairInclusion` int(11) NOT NULL,
@@ -749,8 +749,8 @@ INSERT INTO `packages` (`PackageId`, `PkgName`, `Image`, `Partner`, `AirfairIncl
 (21, 'South Africa: From the Cape to Kruger', 'images/Package_Pics/South Africa.jpg', 'https://www.tourradar.com/t/100309#p=1_', 1, '2019-11-03 00:00:00', '2019-11-16 00:00:00', 'Start in Cape Town and end in Johannesburg! A 14 day tour package taking you through Cape Town and 18 other destinations in South Africa.', '3548.0000', '280.0000'),
 (22, 'Uganda Wildlife Safari, Gorilla Trekking and Batwa', 'images/Package_Pics/Uganda.jpg', 'https://www.tourradar.com/t/164408#p=13_', 1, '2020-04-19 00:00:00', '2020-05-02 00:00:00', 'Start and end in Entebbe! A 14 day tour package taking you through Entebbe, Uganda and 8 other destinations in Uganda.', '5674.0000', '280.0000'),
 (23, 'Aussie Adventure with Queenstown & Fiji', 'images/Package_Pics/Australia.jpg', 'https://www.tourradar.com/t/84654#', 1, '2020-02-01 00:00:00', '2020-02-21 00:00:00', 'Start in Cairns and end in Nadi! A 21 day tour package taking you from Cairns to Nadi and through Cairns, Australia and 10 other destinations in Australia/Oceania.', '6824.0000', '280.0000'),
-(24, 'New Zealand Encompassed', 'images/Package_Pics/New Zealand.jpg', 'https://www.tourradar.com/t/46441#p=13_', 1, '2020-10-21 00:00:00', '2020-11-13 00:00:00', 'Start in Auckland and end in Wellington! A 24 day tour package taking you from Auckland to Wellington and through Auckland, New Zealand and 15 other destinations in New Zealand.', '17935.0000', '280.0000');
-(25, 'Antarctic Peninsula, Falkland Islands and South Georgia: From Buenos Aires', 'images/Package_Pics/Antarctica.jpg', 'https://www.tourradar.com/t/85049#p=6_', 1, '2019-11-14 00:00:00', '2019-12-03 00:00:00', 'Start and end in Buenos Aires! A 20 day tour package taking you through Buenos Aires, Argentina and 12 other destinations in Latin America.', '17935.0000', '280.0000');
+(24, 'New Zealand Encompassed', 'images/Package_Pics/New Zealand.jpg', 'https://www.tourradar.com/t/46441#p=13_', 1, '2020-10-21 00:00:00', '2020-11-13 00:00:00', 'Start in Auckland and end in Wellington! A 24 day tour package taking you from Auckland to Wellington and through Auckland, New Zealand and 15 other destinations in New Zealand.', '17935.0000', '280.0000'),
+(25, "Antarctic Peninsula, Falkland Islands and South Georgia: From Buenos Aires", 'images/Package_Pics/Antarctica.jpg', 'https://www.tourradar.com/t/85049#p=6_', 1, '2019-11-14 00:00:00', '2019-12-03 00:00:00', 'Start and end in Buenos Aires! A 20 day tour package taking you through Buenos Aires, Argentina and 12 other destinations in Latin America.', '17935.0000', '280.0000');
 
 -- --------------------------------------------------------
 
