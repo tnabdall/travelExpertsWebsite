@@ -3,8 +3,9 @@
 // Ensures the entered password hashed matches that in the db for the specified user
 function verifyUserCredentials($user,$pass){
     $dsn = "mysql:host=localhost;dbname=travelexperts";
-    $dbUser='root';
-    $dbPasswd='';
+    $dbUser='dbAdmin';
+    $dbPasswd='L0g1n2db!';
+    echo "x";
     $pdo = new PDO($dsn, $dbUser, $dbPasswd);
     $results = $pdo ->prepare("SELECT Password from agents where Username = ?;");
     $results->execute([$user]);
