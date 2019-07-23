@@ -26,8 +26,8 @@
     <script src="semanticUI/semantic.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
-    <!-- Sets the active page in the nav bar -->
-    <script src="js/setNavActive.js"></script>
+    <!-- Sets the active page in the nav bar and formats as desktop or mobile menu-->
+    <script src="js/menu.js"></script>
 </head>
 <div id="holder">
     <!-- Used holder div to fix footer to bottom
@@ -47,5 +47,6 @@
                     Travel Experts
                 </div>
             </h1>
+            <?php include("menu.php") ?>
         </header>
-        <?php include("menu.php") ?>
+        

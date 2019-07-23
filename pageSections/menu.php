@@ -38,21 +38,3 @@
         </div>
     </div>
 </div>
-
-
-    <script>
-        $(document).ready(function () {
-            $('#menuButton').click(function () {
-                $("#sidebar").sidebar('toggle');
-                $(body).css("background", "linear-gradient(to right, #636FA4, #E8CBC0);");
-            })
-            var windowWidth = $(window).width();
-            if(windowWidth<=1000){
-                $('#mobileNavBar').css('visibility','visible');
-                $('#desktopNavBar').remove();
-            }
-            else{
-                $('#mobileNavBar').remove();
-            }
-        })
-    </script>
