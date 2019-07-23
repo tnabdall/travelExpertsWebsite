@@ -167,7 +167,7 @@ fieldset {
  form.ui.form>fieldset>.fields>.field>label{
     font-size: 1em;
     font-weight: 700;
-    color: #0000000S;
+    color: #000000;
 }
 
 
@@ -380,4 +380,15 @@ img{
 
 #desktopNavBar{
     margin-bottom: 10px;
+}
+
+#loginForm{
+    width: 34%;
+    margin: auto;
+}
+
+@media screen and (max-width: 770px) {
+    #loginForm {
+        width:100%;
+    }
 }
