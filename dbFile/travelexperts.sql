@@ -113,7 +113,7 @@ CREATE TABLE `agents` (
 -- Dumping data for table `agents`
 --
 
-INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `UserName`, `PassWord`) VALUES
+INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `UserName`, `PassWord`) VALUES
 (1, 'Albert', NULL, 'Einstein', '(403) 210-7833', 'albert.einstein@travelexperts.com', 'Intermediate Agent', 2, 2,'“Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.”', 'The Father of Modern Physics', 'aeinstein', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (2, 'Ching', NULL, 'Shih', '(403) 210-7833', 'ching.shih@travelexperts.com', 'Senior Agent', 2, 5,  '“Under the leadership of a man you have all chosen to flee. We shall see how you prove yourselves under the hand of woman.”', 'Princess of the Chinese Seas', 'cshih', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (3, 'Edward', 'B.', 'Teach', '(403) 210-7833', 'edward.teach@travelexperts.com', 'Senior Agent', 2, 5, '“Damnation seize my soul if I give you quarters, or take any from you”', 'Blackbeard', 'eteach', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),

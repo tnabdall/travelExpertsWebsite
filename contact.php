@@ -36,7 +36,7 @@
                             Back
                         </div>
                         <div class="ui positive right labeled icon button">
-                            <a href="contactAgent.html">Contact Agent</a>
+                            <a href="contactAgent.php">Contact Agent</a>
                             <!--Contact Agent
                                 <i class="checkmark icon"></i>-->
                         </div>
