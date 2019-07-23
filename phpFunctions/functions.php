@@ -1,11 +1,9 @@
 <?php
 
-// Ensures the entered password hashed matches that in the db for the specified user
 function verifyUserCredentials($user,$pass){
     $dsn = "mysql:host=localhost;dbname=travelexperts";
     $dbUser='dbAdmin';
     $dbPasswd='L0g1n2db!';
-    echo "x";
     $pdo = new PDO($dsn, $dbUser, $dbPasswd);
     $results = $pdo ->prepare("SELECT Password from agents where Username = ?;");
     $results->execute([$user]);
@@ -16,6 +14,16 @@ function verifyUserCredentials($user,$pass){
     else{
         $hashedPass = $results -> fetch();
         $pdo = null;
+
+        // Grab first name to personalize user experience
+        $pdo = new PDO($dsn, $dbUser, $dbPasswd);
+        $results = $pdo ->prepare("SELECT AgtFirstName from agents where Username = ?;");
+        $results->execute([$user]);
+        $firstName = $results ->fetch();
+        // Stores first name as session variable
+        $_SESSION['login_user'] = $firstName[0];
+
+        $pdo=null;
         return password_verify($pass,$hashedPass[0]);
     }
 }

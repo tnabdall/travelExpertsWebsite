@@ -100,8 +100,8 @@ CREATE TABLE `agents` (
   `Description` varchar(200) DEFAULT NULL,
   `Title` varchar(50) DEFAULT NULL,
   `Image` varchar(100) DEFAULT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `PassWord` varchar(255) NOT NULL
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
@@ -114,7 +114,7 @@ CREATE TABLE `agents` (
 -- Dumping data for table `agents`
 --
 
-INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `Image`, `UserName`, `PassWord`) VALUES
+INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `Image`, `Username`, `Password`) VALUES
 (1, 'Albert', NULL, 'Einstein', '(403) 210-7833', 'albert.einstein@travelexperts.com', 'Intermediate Agent', 2, 2,'“Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.”', 'The Father of Modern Physics', 'images/cards/AlbertEinstein.jpg', 'aeinstein', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (2, 'Ching', NULL, 'Shih', '(403) 210-7833', 'ching.shih@travelexperts.com', 'Senior Agent', 2, 5,  '“Under the leadership of a man you have all chosen to flee. We shall see how you prove yourselves under the hand of woman.”', 'Princess of the Chinese Seas', 'images/cards/ChingShih.jpg', 'cshih', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (3, 'Edward', 'B.', 'Teach', '(403) 210-7833', 'edward.teach@travelexperts.com', 'Senior Agent', 2, 5, '“Damnation seize my soul if I give you quarters, or take any from you”', 'Blackbeard', 'images/cards/EdwardTeach.jpg', 'eteach', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
@@ -580,8 +580,8 @@ CREATE TABLE `customers` (
   `CustHomePhone` varchar(20) DEFAULT NULL,
   `CustBusPhone` varchar(20) NOT NULL,
   `CustEmail` varchar(50) NOT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `PassWord` varchar(255) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `AgentId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -595,7 +595,7 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `UserName`, `PassWord`, `AgentId`) VALUES
+INSERT INTO `customers` (`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `Username`, `Password`, `AgentId`) VALUES
 (104, 'Laetia', 'Enison', '144-61 87th Ave, NE', 'Edmonton', 'AB', 'T2J 6B6', 'Canada', '4032791223', '4032557865', 'lenison@home.com', 'lenison', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 4),
 (105, 'Angel', 'Moskowitz', '320 John St., NE', 'Calgary', 'AB', 'T2J 7E3', 'Canada', '4032794228', '4036409874', 'amoskowitz@home.com', 'amoskowitz', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 3),
 (106, 'Judith', 'Olvsade', '29 Elmwood Ave.,', 'Calgary', 'AB', 'T2Z 3M9', 'Canada', '4032795652', '4036861598', 'jolvsade@aol.com', 'jolvsade', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 1),
