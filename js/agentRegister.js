@@ -4,6 +4,27 @@ $(document).ready(function () {
     setFormValidation();
 })
 
+function submitClick(){
+    if(confirm("Would you like to submit?")){
+        var image_name=$('#Image').val();
+        if(image_name==''){
+            alert("Please select Image");
+            return false;
+        }
+        else{
+            var extension = $("#Image").val().split(".").pop().toLowerCase();
+            if(jQuery.inArray(extension, ['gif','png','jpg','jpeg'])==-1){
+                alert("Invalid image file extension");
+                $('#Image').val('');
+                return false;
+            }
+        }
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 function setFormValidation(){
     $('#agentForm')
@@ -100,6 +121,24 @@ function setFormValidation(){
                 {
                     type: 'empty',
                     prompt: 'Please enter your password.',
+                }
+            ]
+            },
+            Title: {
+                identifier: 'Title',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter an epithet to describe the new agent.',
+                }
+            ]
+            },
+            Description: {
+                identifier: 'Description',
+                rules: [
+                {
+                    type: 'empty',
+                    prompt: 'Please enter a quote from the agent.',
                 }
             ]
             }
