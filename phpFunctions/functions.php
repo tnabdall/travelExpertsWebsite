@@ -47,7 +47,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         // so that we can exclude the last comma for poper formatting
         if($counter==count($dataArray)-1){
             $columns.="$column";
-            if(is_numeric($value)){
+            if(is_numeric($value) && strlen($value)<10){
                 $values.="$value";
             }
             else{
@@ -56,7 +56,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         }
         else{
             $columns.="$column,";
-            if(is_numeric($value)){
+            if(is_numeric($value) && strlen($value)<10){
                 $values.="$value,";
             }
             else{
