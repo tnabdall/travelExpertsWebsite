@@ -3,7 +3,7 @@
 <main>
     <div class="rounded sectionBox mainContent">
 
-        <div class="ui five stackable cards">
+        
             
             <?php
                 require "classes/dbConnect.php";
@@ -37,23 +37,17 @@
                     $agents = $result->fetchAll(PDO::FETCH_ASSOC);
                 }
 
-                
+                $numberOfAgents = count($agents);
                 $counter = 1;
+                $heavenData = [];
+                $hellData = [];
+                
+                $heavenHeader = '';
+                $hellHeader = '';
                 
                 foreach ($agents as $agent)
                 {
-                    // echo '
-                    // <section class="company-info">
-                    //     <ul class="agency-info">
-                    //         <!-- Company Contact Information -->
-                    //         <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
-                    //         <p>Address: '.$agent['AgncyAddress'].'</p>
-                    //         <p>Address: '.$agent['AgncyPhone'].'</p>
-                    //     </ul>
-                    // </section>
-                    //     ';
-                    
-                    echo '
+                    $currentCard = '
                     <div id="contactCard'.$counter.'" class="ui card">
                         <!-- MODAL '.$counter.' CODE -->
                         <div id="modal'.$counter.'" class="ui modal">
@@ -103,11 +97,63 @@
                     </div>
                     ';
 
+                    if ($agent['AgencyId'] == 1) //heaven
+                    {
+                        $heavenData[] = $currentCard;
+                        if ($counter == $numberOfAgents or $heavenHeader == '')
+                        {
+                            $heavenHeader = '
+                            <section class="company-info">
+                                <ul class="agency-info">
+                                    <!-- Company Contact Information -->
+                                    <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
+                                    <p>Address: '.$agent['AgncyAddress'].'</p>
+                                    <p>Address: '.$agent['AgncyPhone'].'</p>
+                                </ul>
+                            </section>
+                                ';
+                        }
+                    }
+                    elseif ($agent['AgencyId'] == 2) //hell
+                    {
+                        $hellData[] = $currentCard;
+                        if ($counter == $numberOfAgents or $hellHeader == '')
+                        {
+                            $hellHeader = '
+                            <section class="company-info">
+                                <ul class="agency-info">
+                                    <!-- Company Contact Information -->
+                                    <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
+                                    <p>Address: '.$agent['AgncyAddress'].'</p>
+                                    <p>Address: '.$agent['AgncyPhone'].'</p>
+                                </ul>
+                            </section>
+                                ';
+                        }
+                    }
+                    
                     $counter++; //counter for each contact card and modal
                 }
+
+                echo "<div>".$heavenHeader."</div>";
+                echo '<div class="ui five stackable cards">';
+                $length = count($heavenData);
+                for ($i = 0; $i < $length; $i++) 
+                {
+                    echo $heavenData[$i];
+                }
+                
+                echo "<div>".$hellHeader."</div>";
+                echo '<div class="ui five stackable cards">';
+                $length = count($hellData);
+                for ($i = 0; $i < $length; $i++) 
+                {
+                    echo $hellData[$i];
+                }
+                echo '</div>';
             ?>
 
-        </div>
+        
     </div>
 </main>
 <script src="js/contact.js"></script>
