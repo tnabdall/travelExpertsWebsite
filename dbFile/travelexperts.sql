@@ -100,8 +100,8 @@ CREATE TABLE `agents` (
   `Description` varchar(200) DEFAULT NULL,
   `Title` varchar(50) DEFAULT NULL,
   `Image` varchar(100) DEFAULT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `PassWord` varchar(255) NOT NULL
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
@@ -114,22 +114,22 @@ CREATE TABLE `agents` (
 -- Dumping data for table `agents`
 --
 
-INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `Image`, `UserName`, `PassWord`) VALUES
+INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `Image`, `Username`, `Password`) VALUES
 (1, 'Albert', NULL, 'Einstein', '(403) 210-7833', 'albert.einstein@travelexperts.com', 'Intermediate Agent', 2, 2,'“Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.”', 'The Father of Modern Physics', 'images/cards/AlbertEinstein.jpg', 'aeinstein', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (2, 'Ching', NULL, 'Shih', '(403) 210-7833', 'ching.shih@travelexperts.com', 'Senior Agent', 2, 5,  '“Under the leadership of a man you have all chosen to flee. We shall see how you prove yourselves under the hand of woman.”', 'Princess of the Chinese Seas', 'images/cards/ChingShih.jpg', 'cshih', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (3, 'Edward', 'B.', 'Teach', '(403) 210-7833', 'edward.teach@travelexperts.com', 'Senior Agent', 2, 5, '“Damnation seize my soul if I give you quarters, or take any from you”', 'Blackbeard', 'images/cards/EdwardTeach.jpg', 'eteach', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (4, 'Genghis', NULL, 'Khan', '(403) 210-7833', 'genghis.khan@travelexperts.com', 'Intermediate Agent', 2, 4, '“I am the punishment of God...If you had not committed great sins, God would not have sent a punishment like me upon you.”', 'The Great Khan', 'images/cards/GenghisKhan.jpg', 'gkhan', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(5, 'Hayreddin', NULL, 'Barbarossa', '(403) 210-7833', 'hayreddin.barbarossa@travelexperts.com', 'Junior Agent', 2, 4, '“Whence on the seas horizon comes that roar?”', '“Redbeard”', 'images/cards/HayreddinBarbarossa.jpg', 'bbarbarossa', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(6, 'HoChi', NULL, 'Minh', '(403) 210-7833', 'hochi.minh@travelexperts.com', 'Junior Agent', 2, 1, '“Remember, the storm is a good opportunity for the pine and cypress to show their strength and their stability”', '“Communist Revolutionary”', 'images/cards/HoChiMinh.jpg', 'hminh', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(7, 'Jane', 'M.', 'Goodall', '(403) 210-7833', 'jane.goodall@travelexperts.com', 'Junior Agent', 1, 2, '“The greatest danger to our future is apathy”', '“Pioneering Chimpanzee Researcher”', 'images/cards/JaneGoodall.jpg', 'jgoodall', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(8, 'Mahatma', 'K.', 'Gandhi', '(403) 210-7833', 'mahatma.gandhi@travelexperts.com', 'Junior Agent', 1, 1, '“Happiness is when what you think, what you say, and what you do are in harmony.”', '“Father of India”', 'images/cards/MahatmaGandhi.jpg', 'mgandhi', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(9, 'Marie', 'S.', 'Curie', '(403) 210-7833', 'marie.curie@travelexperts.com', 'Junior Agent', 1, 3, '“Be less curious about the people and more curious about the ideas”', '“Winner of two Nobel Prizes”', 'images/cards/MarieCurie.jpg', 'mcurie', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(10, 'Neferneferuaten', NULL, 'Nefertiti', '(403) 210-7833', 'neferneferuaten.nefertiti@travelexperts.com', 'Intermediate Agent', 2, 3, '“You cannot change the desert. You can only take the fastest course through it. Wishing its an oasis wont make it so...”', '“The beautiful one has come”', 'images/cards/NeferneferuatenNefertiti.jpg', 'nnefertiti', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(5, 'Hayreddin', NULL, 'Barbarossa', '(403) 210-7833', 'hayreddin.barbarossa@travelexperts.com', 'Junior Agent', 2, 4, '“Whence on the seas horizon comes that roar?”', 'Redbeard', 'images/cards/HayreddinBarbarossa.jpg', 'bbarbarossa', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(6, 'HoChi', NULL, 'Minh', '(403) 210-7833', 'hochi.minh@travelexperts.com', 'Junior Agent', 2, 1, '“Remember, the storm is a good opportunity for the pine and cypress to show their strength and their stability”', 'Communist Revolutionary', 'images/cards/HoChiMinh.jpg', 'hminh', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(7, 'Jane', 'M.', 'Goodall', '(403) 210-7833', 'jane.goodall@travelexperts.com', 'Junior Agent', 1, 2, '“The greatest danger to our future is apathy”', 'Pioneering Chimpanzee Researcher', 'images/cards/JaneGoodall.jpg', 'jgoodall', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(8, 'Mahatma', 'K.', 'Gandhi', '(403) 210-7833', 'mahatma.gandhi@travelexperts.com', 'Junior Agent', 1, 1, '“Happiness is when what you think, what you say, and what you do are in harmony.”', 'Father of India', 'images/cards/MahatmaGandhi.jpg', 'mgandhi', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(9, 'Marie', 'S.', 'Curie', '(403) 210-7833', 'marie.curie@travelexperts.com', 'Junior Agent', 1, 3, '“Be less curious about the people and more curious about the ideas”', 'Winner of two Nobel Prizes', 'images/cards/MarieCurie.jpg', 'mcurie', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(10, 'Neferneferuaten', NULL, 'Nefertiti', '(403) 210-7833', 'neferneferuaten.nefertiti@travelexperts.com', 'Intermediate Agent', 2, 3, '“You cannot change the desert. You can only take the fastest course through it. Wishing its an oasis wont make it so...”', 'The beautiful one has come', 'images/cards/NeferneferuatenNefertiti.jpg', 'nnefertiti', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (11, 'Pablo', NULL, 'Escobar', '(403) 210-7833', 'pablo.escobar@travelexperts.com', 'Senior Agent', 2, 3, '“Everyone has a price, the important thing is to find out what it is.”', 'El Patrón', 'images/cards/PabloEscobar.jpg','pescobar', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(12, 'Robert', 'F.', 'Scott', '(403) 210-7833', 'robert.scott@travelexperts.com', 'Junior Agent', 1, 4, '“Hunger and fear are the only realities in dog life; an empty stomach makes a fierce dog.”', '“Antarctic Explorer”', 'images/cards/RobertFalconScott.jpg', 'rscott', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(13, 'SirDavid', 'F.', 'Attenborough', '(403) 210-7833', 'sirdavid.attenborough@travelexperts.com', 'Junior Agent', 1, 3, '“An understanding of the natural world and whats in it is a source of not only a great curiousity but great fulfillment.”', '“The Voice of Planet Earth”', 'images/cards/SirDavidAttenborough.jpg', 'sattenborough', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(14, 'Steve', 'R.', 'Irwin', '(403) 210-7833', 'steve.irwin@travelexperts.com', 'Senior Agent', 2, 4, '“So fear helps me from making mistakes, but I make lot of mistakes.”', '“The Crocodile Hunter”', 'images/cards/SteveIrwin.jpg', 'sirwin', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
-(15, 'Wayne', 'D.', 'Gretzky', '(403) 210-7833', 'wayne.gretzky@travelexperts.com', 'Junior Agent', 2, 5, '“I skate to where the puck is going to be, not where it has been”', '“The Great One”', 'images/cards/WayneGretzky.jpg', 'wgretzky', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm');
+(12, 'Robert', 'F.', 'Scott', '(403) 210-7833', 'robert.scott@travelexperts.com', 'Junior Agent', 1, 4, '“Hunger and fear are the only realities in dog life; an empty stomach makes a fierce dog.”', 'Antarctic Explorer', 'images/cards/RobertFalconScott.jpg', 'rscott', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(13, 'SirDavid', 'F.', 'Attenborough', '(403) 210-7833', 'sirdavid.attenborough@travelexperts.com', 'Junior Agent', 1, 3, '“An understanding of the natural world and whats in it is a source of not only a great curiousity but great fulfillment.”', 'The Voice of Planet Earth', 'images/cards/SirDavidAttenborough.jpg', 'sattenborough', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(14, 'Steve', 'R.', 'Irwin', '(403) 210-7833', 'steve.irwin@travelexperts.com', 'Senior Agent', 2, 4, '“So fear helps me from making mistakes, but I make lot of mistakes.”', 'The Crocodile Hunter', 'images/cards/SteveIrwin.jpg', 'sirwin', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
+(15, 'Wayne', 'D.', 'Gretzky', '(403) 210-7833', 'wayne.gretzky@travelexperts.com', 'Junior Agent', 2, 5, '“I skate to where the puck is going to be, not where it has been”', 'The Great One', 'images/cards/WayneGretzky.jpg', 'wgretzky', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm');
 
 -- --------------------------------------------------------
 
@@ -580,8 +580,8 @@ CREATE TABLE `customers` (
   `CustHomePhone` varchar(20) DEFAULT NULL,
   `CustBusPhone` varchar(20) NOT NULL,
   `CustEmail` varchar(50) NOT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `PassWord` varchar(255) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `AgentId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -595,7 +595,7 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `UserName`, `PassWord`, `AgentId`) VALUES
+INSERT INTO `customers` (`CustomerId`, `CustFirstName`, `CustLastName`, `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, `CustHomePhone`, `CustBusPhone`, `CustEmail`, `Username`, `Password`, `AgentId`) VALUES
 (104, 'Laetia', 'Enison', '144-61 87th Ave, NE', 'Edmonton', 'AB', 'T2J 6B6', 'Canada', '4032791223', '4032557865', 'lenison@home.com', 'lenison', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 4),
 (105, 'Angel', 'Moskowitz', '320 John St., NE', 'Calgary', 'AB', 'T2J 7E3', 'Canada', '4032794228', '4036409874', 'amoskowitz@home.com', 'amoskowitz', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 3),
 (106, 'Judith', 'Olvsade', '29 Elmwood Ave.,', 'Calgary', 'AB', 'T2Z 3M9', 'Canada', '4032795652', '4036861598', 'jolvsade@aol.com', 'jolvsade', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm', 1),

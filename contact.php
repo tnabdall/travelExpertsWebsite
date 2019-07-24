@@ -85,10 +85,10 @@
                         </div>
                         <!-- CONTACT CARD '.$counter.' -->
                         <div class="ui centered small image">
-                            <img id="'.$agent['AgtLastName'].'" src="'.$agent['Image'].'">
+                            <img class="ContactCardImage" id="'.$agent['AgtLastName'].'" src="'.$agent['Image'].'">
                         </div>
-                        <div class="content">
-                            <a class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</a>
+                        <div id="agentCardInfo" class="content">
+                            <p class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</p>
                             <div class="meta">
                                 <span class="date">"'.$agent['Title'].'"</span>
                             </div>

@@ -392,3 +392,8 @@ img{
         width:100%;
     }
 }
+
+#agentCardInfo {
+    margin-left: auto;
+    margin-right: auto;
+}

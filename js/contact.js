@@ -10,7 +10,11 @@ $(document).ready(function() {
         var cardId = '#contactCard'+i;
         
         $(cardId).click(function(){
-            var modalId = $(this).attr('id').replace('contactCard','#modal'); //get the id of 'cardId' variable  $(this).attr('id'); replace the word contactCard with #modal so the outer function loop counter is applied to our inner function with the required name!
+            //get the id of 'cardId' element from the $(document).ready(function.. scope; variable  $(this).attr('id'); 
+            //replace the word contactCard with #modal so the outer 
+            //function loop counter is applied to our inner function with the required name!
+            var modalId = $(this).attr('id').replace('contactCard','#modal'); 
+            console.log(modalId);
             $(modalId).modal('show');
         });
 
