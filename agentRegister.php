@@ -50,8 +50,8 @@ if(!isset($_SESSION['login_user'])){
                     <label id="agencyIdLabel" for="agencyId">Agency Location</label>
                     <select id="agencyId" name="AgencyId" class="browser-default custom-select" required="required">
                         <option selected value=''>Please select agency location</option>
-                        <option value=1>1155 8th Ave SW, Calgary</option>
-                        <option value=2>110 Main Street, Okotoks</option>
+                        <option value=1>Classical Travel</option>
+                        <option value=2>Rock and Roll Travel</option>
                     </select>
                 </div>
             </div>

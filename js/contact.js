@@ -5,7 +5,7 @@ $(document).ready(function() {
     //grab from db all agents get the required values set them
     
     
-    for (var i=1; i<16; i++)
+    for (var i=1; i<$('.ui.card').length+1; i++)
     {
         var cardId = '#contactCard'+i;
         

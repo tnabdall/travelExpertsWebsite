@@ -452,3 +452,8 @@ img{
     font-family: 'Arima Madurai', cursive;
 
 }
+
+p#bookingName{
+    text-align: center;
+    line-height: 250%;
+}
