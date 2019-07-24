@@ -124,8 +124,8 @@ function setFormValidation(postalRegex){
                 }
             ]
             },
-            CustProvince:{
-                identifier:'CustProvince',
+            CustProv:{
+                identifier:'CustProv',
                 rules: [
                     {
                         type: 'empty',

@@ -1,9 +1,11 @@
 <?php
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']) && isset($_FILES['Image'])){
+
+    $dbUser = 'dbAdmin';
+    $dbPass = 'L0g1n2db!';
 
     // Ensure that the user can only submit if they have logged in to access this page
-    
     if(!isset($_SESSION['login_user'])){
         echo "<p>You do not have access. Please go to the login page.</p>";
         exit(); // Gets rid of submit and reset buttons.
@@ -11,18 +13,24 @@ if(isset($_POST['submit'])){
 
     include("functions.php");
     $agentData = $_POST;
+
     unset($agentData["submit"]);
 
-
+    // Put image file path in agent data and move from temp folder to cards folder
+    $name = basename($_FILES["Image"]["name"]);
+    $agentData['Image'] = "images/cards/$name";
+    move_uploaded_file($_FILES['Image']['tmp_name'],$agentData['Image']);
+    
     // Allows us to pass null value for middle initial if left blank
     if($agentData['AgtMiddleInitial']==''){
         unset($agentData['AgtMiddleInitial']);
     }
 
+    // Encrypts password
     $agentData['Password'] = password_hash($agentData['Password'],PASSWORD_DEFAULT);
     
-  
-    $success = insertData($agentData,'agents', 'travelexperts','root','');
+    // Insert into table
+    $success = insertData($agentData,'agents', 'travelexperts',$dbUser,$dbPass);
     if($success){
         echo "<p>Successfully inserted new agent into the database.</p>";
     }

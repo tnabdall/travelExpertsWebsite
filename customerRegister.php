@@ -1,32 +1,34 @@
-<?php include("pageSections/header.php") ?>
+<?php 
+include("pageSections/header.php");
+?>
 <script src="js/customerRegister.js"></script>
 <main>
-    <form class="ui form mainContent" action="http://localhost:1234/bouncer.php" method="POST">
+    <form class="ui form mainContent" action="" method="POST">
         <fieldset>
             <div class="two fields">
                 <div class="focus required field">
                     <label id='nameLabel' for="CustFirstName">First Name</label>
-                    <input type="text" id="CustFirstName" required="required">
+                    <input type="text" id="CustFirstName" name="CustFirstName" required="required">
                 </div>
                 <div class="focus required field">
                     <label for="CustLastName">Last Name</label>
-                    <input type="text" id="CustLastName" required="required">
+                    <input type="text" id="CustLastName" name="CustLastName" required="required">
                 </div>
             </div>
 
             <div class="focus required field">
                 <label for="CustAddress">Street address</label>
-                <input type="text" id="CustAddress" required="required" placeholder="Eg. 123 Main St">
+                <input type="text" id="CustAddress" name="CustAddress" required="required" placeholder="Eg. 123 Main St">
             </div>
 
             <div class="four fields">
                 <div class="focus required field">
                     <label id='cityLabel' for="CustCity">City</label>
-                    <input type="text" id="CustCity" placeholder="Eg. Calgary" required="required">
+                    <input type="text" id="CustCity" name="CustCity" placeholder="Eg. Calgary" required="required">
                 </div>
                 <div class="focus required field">
-                    <label id="provinceLabel" for="CustProvince">Province/State</label>
-                    <select id="CustProvince">
+                    <label id="provinceLabel" for="CustProv">Province/State</label>
+                    <select id="CustProv" name = "CustProv">
                         <option id = "blankSelectProvince" value="">Please choose your country first</option>
                         <optgroup id ="provinces" label = "Provinces">
                             <option class = "canProv" value="AB">Alberta</option>
@@ -100,11 +102,11 @@
                 </div>
                 <div class="focus required field">
                     <label id='postalLabel' for="CustPostal">Postal/Zip Code</label>
-                    <input type="text" id="CustPostal" placeholder="Eg. T1A 1A1 or 90210" required="required">
+                    <input type="text" id="CustPostal" name="CustPostal" placeholder="Eg. T1A 1A1 or 90210" required="required">
                 </div>
                 <div class="focus required field">
                     <label id="countryLabel" for="CustCountry">Country</label>
-                    <select id="CustCountry">
+                    <select id="CustCountry" name="CustCountry">
                         <option value="">Country</option>
                         <option value="Canada">Canada</option>
                         <option value="USA">USA</option>
@@ -114,29 +116,29 @@
             <div class = "two fields">
                 <div class="focus required field">
                     <label id='personalPhoneLabel' for="CustHomePhone">Home Phone</label>
-                    <input type="text" id="CustHomePhone" required="required">
+                    <input type="text" id="CustHomePhone" name="CustHomePhone" required="required">
                 </div>
                 <div class="focus field">
                     <label id="businessPhoneLabel" for="CustBusPhone">Work Phone</label>
-                    <input type="text" id="CustBusPhone">
+                    <input type="text" id="CustBusPhone" name ="CustBusPhone">
                 </div>
             </div>
             <div class="focus required field">
                 <label id='emailLabel' for="CustEmail">Email Address</label>
-                <input type="email" id="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
+                <input type="email" id="CustEmail" name="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
             </div>
             <div class="two fields">
                 <div class="focus required field">
                     <label id='userLabel' for="Username">Username</label>
-                    <input type="text" id="Username" required="required">
+                    <input type="text" id="Username" name="Username" required="required">
                 </div>
                 <div class="focus required field">
                     <label id='emailLabel' for="Password">Password</label>
-                    <input type="password" id="Password" required="required">
+                    <input type="password" id="Password" name="Password" required="required">
                 </div>
             </div>
             <div class="ui two buttons">
-                <button id="submitButton" type="submit" value="Submit" onclick="return submitClick()"
+                <button id="submitButton" type="submit" value="Submit" name="submit" onclick="return confirm('Would you like to submit?')"
                     class="positive ui inverted button">Submit</button>
                 <button type="reset" value="Reset" class="negative ui inverted button"
                     onclick="return resetClick()">Reset</button>
@@ -145,6 +147,7 @@
                 <div class="header">Form Completed</div>
                 <p>You're all signed up.</p>
             </div>
+            <?php include("phpFunctions/customerRegisterSubmit.php"); ?>
         </fieldset>
     </form>
 </main>

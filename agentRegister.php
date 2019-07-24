@@ -4,15 +4,16 @@ if(!isset($_SESSION['login_user'])){
     header("Location: login.php");
 }
 ?>
+<script src="js/agentRegister.js"></script>
 <main>
-    <form class="ui form mainContent" action="" method="POST">
+    <form id="agentForm" class="ui form mainContent" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
             <div class="three fields">
                 <div class="required field">
                     <label id='nameLabel' for="firstName">First Name</label>
                     <input type="text" id="firstName" name="AgtFirstName" required="required">
                 </div>
-                <div class="required field">
+                <div class="field">
                     <label for="middleName">Middle Initial</label>
                     <input type="text" id="middleName" name="AgtMiddleInitial" placeholder="Not required"
                         pattern="[A-Za-z]{1}\.?">
@@ -64,6 +65,20 @@ if(!isset($_SESSION['login_user'])){
                     <input type="password" id="Password" name="Password" required="required">
                 </div>
             </div>
+            <div class="two fields">
+                <div class="required field">
+                    <label id='titleLabel' for="Title">Personal Title</label>
+                    <input type="text" id="Title" name="Title" required="required">
+                </div>
+                <div class="required field">
+                    <label id='imageLabel' for="Image">Profile Photo</label>
+                    <input type="file" id="Image" name="Image" accept="image/*" required="required">
+                </div>
+            </div>
+            <div class = "required field">
+                <label id='descriptionLabel' for="Description">Favourite Quote</label>
+                <input type="text" id="Description" name="Description" required="required">
+            </div>
             <div class="centered">
                 <?php
                 include("phpFunctions/agentRegisterSubmit.php"); // Submits form to agent table in DB
@@ -72,9 +87,9 @@ if(!isset($_SESSION['login_user'])){
 
 
             <div class="ui two buttons">
-                <button id="submitButton" type="submit" name="submit" value="Submit" class="ui positive button"
-                    onclick="return confirm('Do you want to submit?')">Submit</button>
-                <button type="reset" value="Reset" class="ui negative button"
+                <button id="submitButton" type="submit" name="submit" value="Submit" class="positive ui inverted button"
+                    onclick="return submitClick()">Submit</button>
+                <button type="reset" value="Reset" class="ui negative inverted button"
                     onclick="return confirm('Do you want to clear the form?')">Reset</button>
             </div>
             <div id="successMessage" class="ui success message">

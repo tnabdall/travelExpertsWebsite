@@ -115,6 +115,7 @@ CREATE TABLE `agents` (
 --
 
 INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`, `AgtPosition`, `AgencyId`, `Rating`, `Description`, `Title`, `Image`, `Username`, `Password`) VALUES
+
 (1, 'Albert', NULL, 'Einstein', '(403) 210-7833', 'albert.einstein@travelexperts.com', 'Intermediate Agent', 2, 5,'“Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.”', 'The Father of Modern Physics', 'images/cards/AlbertEinstein.jpg', 'aeinstein', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (2, 'Ching', NULL, 'Shih', '(403) 210-7833', 'ching.shih@travelexperts.com', 'Senior Agent', 2, 5,  '“Under the leadership of a man you have all chosen to flee. We shall see how you prove yourselves under the hand of woman.”', 'Princess of the Chinese Seas', 'images/cards/ChingShih.jpg', 'cshih', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
 (3, 'Edward', 'B.', 'Teach', '(403) 210-7833', 'edward.teach@travelexperts.com', 'Senior Agent', 2, 5, '“Damnation seize my soul if I give you quarters, or take any from you”', 'Blackbeard', 'images/cards/EdwardTeach.jpg', 'eteach', '$2y$10$qFAv/LKft6hr/6a7b1Rt.O6CAMeVTKzMm9QHtR4BlBOUvLrT1JvTm'),
@@ -577,8 +578,8 @@ CREATE TABLE `customers` (
   `CustProv` varchar(2) NOT NULL,
   `CustPostal` varchar(7) NOT NULL,
   `CustCountry` varchar(25) DEFAULT NULL,
-  `CustHomePhone` varchar(20) DEFAULT NULL,
-  `CustBusPhone` varchar(20) NOT NULL,
+  `CustHomePhone` varchar(20) NOT NULL,
+  `CustBusPhone` varchar(20) DEFAULT NULL,
   `CustEmail` varchar(50) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(255) NOT NULL,

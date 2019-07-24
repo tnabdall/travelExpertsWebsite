@@ -1,11 +1,9 @@
 <?php
 
-// Ensures the entered password hashed matches that in the db for the specified user
 function verifyUserCredentials($user,$pass){
     $dsn = "mysql:host=localhost;dbname=travelexperts";
     $dbUser='dbAdmin';
     $dbPasswd='L0g1n2db!';
-    echo "x";
     $pdo = new PDO($dsn, $dbUser, $dbPasswd);
     $results = $pdo ->prepare("SELECT Password from agents where Username = ?;");
     $results->execute([$user]);
@@ -16,6 +14,16 @@ function verifyUserCredentials($user,$pass){
     else{
         $hashedPass = $results -> fetch();
         $pdo = null;
+
+        // Grab first name to personalize user experience
+        $pdo = new PDO($dsn, $dbUser, $dbPasswd);
+        $results = $pdo ->prepare("SELECT AgtFirstName from agents where Username = ?;");
+        $results->execute([$user]);
+        $firstName = $results ->fetch();
+        // Stores first name as session variable
+        $_SESSION['login_user'] = $firstName[0];
+
+        $pdo=null;
         return password_verify($pass,$hashedPass[0]);
     }
 }
@@ -29,6 +37,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         return false;
     }
     
+    
     // Build columns and values strings for sql statement from array
     $columns='';
     $values='';
@@ -38,7 +47,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         // so that we can exclude the last comma for poper formatting
         if($counter==count($dataArray)-1){
             $columns.="$column";
-            if(is_numeric($value)){
+            if(is_numeric($value) && strlen($value)<10){
                 $values.="$value";
             }
             else{
@@ -47,7 +56,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         }
         else{
             $columns.="$column,";
-            if(is_numeric($value)){
+            if(is_numeric($value) && strlen($value)<10){
                 $values.="$value,";
             }
             else{
