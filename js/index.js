@@ -21,6 +21,12 @@ $(document).ready(function(){
         });
     }
     $('.title').on('click', function(){
+        if($('#travelImageSection').css('margin-bottom')=='200px'){
+            $('#travelImageSection').css('margin-bottom','30px');
+        }
+        else{
+            $('#travelImageSection').css('margin-bottom','200px');
+        }
         if($(this).attr("class")=='title'){
             $(this).attr("class","active title");
             $(this).next().attr("class","active content");
@@ -31,7 +37,7 @@ $(document).ready(function(){
             $('#cardCarousel').slick('slickPlay');
         }
     });
-    resizeCardHeight();
+    // resizeCardHeight();
    
  });
 
@@ -41,8 +47,13 @@ $(document).ready(function(){
     $('.item.card').each(function(){
         $('.title').each(function(){$(this).attr("class","active title");});
         $('.content').each(function(){$(this).attr("class","active content");});
-        if($(this).height()>maxHeight){
-            maxHeight=$(this).height();
+        var img = $(this).children(".image");
+        var imgHeight = img.height();
+        // console.log(imgHeight);
+        var cardHeight = $(this).height()-imgHeight+300;
+        console.log(cardHeight);
+        if(cardHeight>maxHeight){
+            maxHeight=cardHeight;
         }
     })
     console.log(maxHeight);
