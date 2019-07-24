@@ -78,8 +78,8 @@
                             </div>
                         </div>
                         <!-- CONTACT CARD '.$counter.' -->
-                        <div class="ui centered small image">
-                            <img class="ContactCardImage" id="'.$agent['AgtLastName'].'" src="'.$agent['Image'].'">
+                        <div class="ui centered small image imageDiv">
+                            <img class="contactCardImage" id="'.$agent['AgtLastName'].'" src="'.$agent['Image'].'">
                         </div>
                         <div id="agentCardInfo" class="content">
                             <p class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</p>
@@ -93,6 +93,7 @@
                         <div class="extra">
                             Rating:
                             <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>
+                            <button class="ui olive basic button right floated">Info</button>
                         </div>
                     </div>
                     ';
@@ -142,7 +143,8 @@
                 {
                     echo $heavenData[$i];
                 }
-                
+                echo '</div>';
+
                 echo "<div>".$hellHeader."</div>";
                 echo '<div class="ui five stackable cards">';
                 $length = count($hellData);

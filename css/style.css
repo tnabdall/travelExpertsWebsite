@@ -397,3 +397,49 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
+
+#packageContent {
+    padding-top:10px;
+}
+
+.ui.card>.image>img.contactCardImage {
+    width:100%; 
+    height:200px; 
+    /* object-fit: contain; 172.7 x 446.56 */
+}
+.imageDiv { 
+    width:auto; 
+    text-align:center; 
+} 
+.packageImageDiv { 
+    width:auto; 
+    text-align:center; 
+} 
+.packageImage { 
+    max-width:100%; 
+    height:333px; 
+} 
+
+#travelImageSection{
+    margin-bottom: 200px;
+}
+
+.packageWarning {
+    color:red;
+    font-weight: 900;
+}
+
+.orangeColour {
+    color:#EF6C33;
+}
+
+.ui.centered.small.image.imageDiv{
+    padding: 10px;
+    width:100%;
+}
+
+.ui.five.stackable.cards {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}

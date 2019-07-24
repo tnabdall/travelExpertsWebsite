@@ -10,130 +10,108 @@ include("pageSections/welcomeBanner.php");
 
         <div class="ui cards" id="cardCarousel">
 
-            <div class="item card">
-                <div class="image">
-                    <img src="images/colloseum.jpg">
-                </div>
+        <?php
+            require "classes/dbConnect.php";
+            // $conn = getDatabase();
+            $db = new Database();
+            $conn = $db -> getConn();
+            $sql = 'SELECT `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
 
-                <div class="content">
-                    <div class="right floated meta">$699</div>
-                    <div class="header">Rome</div>
-                    <div class="meta">
-                        <div class="ui styled fluid accordion">
-                            <div class="title">
-                                <i class="dropdown icon"></i>
-                                Overview
+            $result = $conn->query($sql);
+
+            if ($result === false) {
+                var_dump($conn->errorInfo());
+             } else {
+                $packages = $result->fetchAll(PDO::FETCH_ASSOC);
+             }
+
+             foreach ($packages as $package)
+             { 
+                if( strtotime($package['PkgEndDate']) < strtotime('now'))   //package starts now or later and package ends now or later
+                {
+                    $packageDisplay=''; 
+                }
+                else if ( strtotime($package['PkgStartDate']) < strtotime('now') ) //dont apply CSS
+                {
+                    $packageDateInfo = '
+                    <div class="extra content">
+                    <span class="packageWarning">
+                    '.$package['PkgStartDate'].'</span> - <span>'.$package['PkgEndDate'].'
+                    </span>
+                    </div>
+                    ';
+                    $packageDisplay = '
+                    <div class="item card">
+                        <div class="image packageImageDiv">
+                            <img class="packageImage" src="'.$package['Image'].'">
+                        </div>
+                        
+                        <div id="packageContent" class="content">
+                            <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="meta">
+                                <div class="ui styled fluid accordion">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        Overview
+                                    </div>
+                                    <div class="content">
+                                        <p class="transition">'.$package['PkgDesc'].'</p>
+                                        <a href="'.$package['Partner'].'">Full Itinerary</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="content">
-                                <p class="transition">Tour Italy for 10 days</p>
-                                <a href="https://www.tourradar.com/t/83000#p=2_">Full Itinerary</a>
+                            <div id="packageContent" class="description">
+                            '.$package['Duration'].'
                             </div>
                         </div>
+                            '.$packageDateInfo.'
+                            <button class="ui olive basic button right floated">Info</button>
+                    </div>';
+                }
+                else //apply CSS
+                {
+                    $packageDateInfo = '
+                    <div class="extra content">
+                    <span>
+                    '.$package['PkgStartDate'].' - '.$package['PkgEndDate'].'
+                    </span>
                     </div>
-                    <div class="description">
-                        Colosseum
-                    </div>
-                </div>
+                    ';
+                    $packageDisplay = '
+                    <div class="item card">
+                        <div class="image packageImageDiv">
+                            <img class="packageImage" src="'.$package['Image'].'">
+                        </div>
+                        
+                        <div id="packageContent" class="content">
+                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="meta">
+                                <div class="ui styled fluid accordion">
+                                    <div class="title">
+                                        <i class="dropdown icon"></i>
+                                        Overview
+                                    </div>
+                                    <div class="content">
+                                        <p class="transition">'.$package['PkgDesc'].'</p>
+                                        <a href="'.$package['Partner'].'">Full Itinerary</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="packageContent" class="description">
+                            '.$package['Duration'].'
+                            </div>
+                        </div>
+                            '.$packageDateInfo.'
+                            <button class="ui olive basic button right floated">Info</button>
+                    </div>';
+                }
 
-                <div class="extra content">
-                    <span>
-                        August 7th, 2019 - August 17th, 2019
-                    </span>
-                </div>
-            </div>
+                echo $packageDisplay;
+            }
+            ?>
 
-            <div class="item card">
-                <div class="image">
-                    <img src="images/colloseum.jpg">
-                </div>
-                <div class="content">
-                    <div class="header">Molly</div>
-                    <div class="meta">
-                        <span class="date">Coworker</span>
-                    </div>
-                    <div class="description">
-                        Molly is a personal assistant living in Paris.
-                    </div>
-                </div>
-                <div class="extra content">
-                    <span class="right floated">
-                        Joined in 2011
-                    </span>
-                    <span>
-                        <i class="user icon"></i>
-                        35 Friends
-                    </span>
-                </div>
-            </div>
-            <div class="item card">
-                <div class="image">
-                    <img src="/images/avatar2/large/elyse.png">
-                </div>
-                <div class="content">
-                    <div class="header">Elyse</div>
-                    <div class="meta">
-                        <a>Coworker</a>
-                    </div>
-                    <div class="description">
-                        Elyse is a copywriter working in New York.
-                    </div>
-                </div>
-                <div class="extra content">
-                    <span class="right floated">
-                        Joined in 2014
-                    </span>
-                    <span>
-                        <i class="user icon"></i>
-                        151 Friends
-                    </span>
-                </div>
-            </div>
-            <div class="item card">
-                <div class="image">
-                    <img src="/images/avatar2/large/elyse.png">
-                </div>
-                <div class="content">
-                    <div class="header">Elyse</div>
-                    <div class="meta">
-                        <a>Coworker</a>
-                    </div>
-                    <div class="description">
-                        Elyse is a copywriter working in New York.
-                    </div>
-                </div>
-                <div class="extra content">
-                    <span class="right floated">
-                        Joined in 2014
-                    </span>
-                    <span>
-                        <i class="user icon"></i>
-                        151 Friends
-                    </span>
-                </div>
-            </div>
-            <div class="item card">
-                <div class="image">
-                    <img src="/images/avatar2/large/elyse.png">
-                </div>
-                <div class="content">
-                    <div class="header">Elyse</div>
-                    <div class="meta">
-                        <a>Coworker</a>
-                    </div>
-                    <div class="description">
-                        Elyse is a copywriter working in New York.
-                    </div>
-                </div>
-                <div class="extra content">
-                    <span class="right floated">
-                        Joined in 2014
-                    </span>
-                    <span>
-                        <i class="user icon"></i>
-                        151 Friends
-                    </span>
-                </div>
-            </div>
         </div>
 
 
