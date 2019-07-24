@@ -366,6 +366,7 @@ img{
 #welcomeBanner>h4{
     font-size: 1.2em;
     display: inline;
+    font-family: 'Arima Madurai', cursive;
 }
 
 #sidebar>a{
@@ -392,6 +393,7 @@ img{
         width:100%;
     }
 }
+
 
 #agentCardInfo {
     margin-left: auto;
@@ -442,4 +444,11 @@ img{
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
+
+.menu.ui{
+    font-family: 'Arima Madurai', cursive;
+}
+.ui.button{
+    font-family: 'Arima Madurai', cursive;
+
 }
