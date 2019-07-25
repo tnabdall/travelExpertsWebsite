@@ -24,7 +24,10 @@ if(isset($_POST['submit'])){
             // $conn = getDatabase();
             $db = new Database();
             $conn = $db -> getConn();
+
             $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
+
+
 
             $result = $conn->query($sql);
 
@@ -56,16 +59,18 @@ if(isset($_POST['submit'])){
                         <div class="image packageImageDiv">
                             <img class="packageImage" src="'.$package['Image'].'">
                         </div>
+                        <br/>
                         
                         <div id="packageContent" class="content">
                             <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         Overview
                                     </div>
+                                    
                                     <div class="content">
                                         <p class="transition">'.$package['PkgDesc'].'</p>
                                         <a href="'.$package['Partner'].'">Full Itinerary</a>
@@ -73,11 +78,14 @@ if(isset($_POST['submit'])){
                                 </div>
                             </div>
                             <div id="packageContent" class="description">
-                            '.$package['Duration'].'
+                            <br/>
+                            '.$package['Duration'].' days
                             </div>
                         </div>
                             '.$packageDateInfo.'
+
                             <button type="submit" name="submit" class="ui olive basic button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
+
                     </div>';
                 }
                 else //apply CSS
@@ -94,28 +102,31 @@ if(isset($_POST['submit'])){
                         <div class="image packageImageDiv">
                             <img class="packageImage" src="'.$package['Image'].'">
                         </div>
-                        
+                        <br/>
                         <div id="packageContent" class="content">
-                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         Overview
                                     </div>
-                                    <div class="content">
-                                        <p class="transition">'.$package['PkgDesc'].'</p>
-                                        <a href="'.$package['Partner'].'">Full Itinerary</a>
+                                    <div class="content ">
+                                        <p class="dropdown transition">'.$package['PkgDesc'].'</p>
+                                        <a class="itinerary" href="'.$package['Partner'].'" target="_blank">Full Itinerary</a>
                                     </div>
                                 </div>
                             </div>
                             <div id="packageContent" class="description">
-                            '.$package['Duration'].'
+                            <br/>
+                            '.$package['Duration'].' days
                             </div>
                             </div>
                             '.$packageDateInfo.'
+
                             <button type="submit" name="submit" class="ui olive basic button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
+
                     </div>';
                 }
 

@@ -2,7 +2,6 @@
     <a class="item" href="index.php"><i class='home icon'></i> Home</a>
     <a class="item" href="contact.php"><i class='address card icon'></i> Contact</a>
     <a class="item" href="customerRegister.php"> <i class='user plus icon'></i> Create Profile</a>
-    <a class="item" href="links.php"><i class='linkify icon'></i> Partners</a>
     <?php
     // Shows login or logout on menu bar depending on session variable
     if(isset($_SESSION['login_user'])){
@@ -25,7 +24,6 @@
             <a class="item" href="index.php"><i class='home icon'></i> Home</a>
             <a class="item" href="contact.php"><i class='address card icon'></i> Contact</a>
             <a class="item" href="customerRegister.php"> <i class='user plus icon'></i> Create Profile</a>
-            <a class="item" href="links.php"><i class='linkify icon'></i> Partners</a>
             <?php
     // Shows login or logout on menu bar depending on session variable
     if(isset($_SESSION['login_user'])){
