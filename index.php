@@ -15,7 +15,7 @@ include("pageSections/welcomeBanner.php");
             // $conn = getDatabase();
             $db = new Database();
             $conn = $db -> getConn();
-            $sql = 'SELECT `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF("PkgStartDate", "PkgEndDate") AS `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
+            $sql = 'SELECT `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate, PkgStartDate) AS `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
 
             $result = $conn->query($sql);
 
@@ -45,16 +45,18 @@ include("pageSections/welcomeBanner.php");
                         <div class="image packageImageDiv">
                             <img class="packageImage" src="'.$package['Image'].'">
                         </div>
+                        <br/>
                         
                         <div id="packageContent" class="content">
                             <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         Overview
                                     </div>
+                                    
                                     <div class="content">
                                         <p class="transition">'.$package['PkgDesc'].'</p>
                                         <a href="'.$package['Partner'].'">Full Itinerary</a>
@@ -62,7 +64,8 @@ include("pageSections/welcomeBanner.php");
                                 </div>
                             </div>
                             <div id="packageContent" class="description">
-                            '.$package['Duration'].'
+                            <br/>
+                            '.$package['Duration'].' days
                             </div>
                         </div>
                             '.$packageDateInfo.'
@@ -83,10 +86,10 @@ include("pageSections/welcomeBanner.php");
                         <div class="image packageImageDiv">
                             <img class="packageImage" src="'.$package['Image'].'">
                         </div>
-                        
+                        <br/>
                         <div id="packageContent" class="content">
                             <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="trip header">'.$package['PkgName'].'</div>
+                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
@@ -100,7 +103,8 @@ include("pageSections/welcomeBanner.php");
                                 </div>
                             </div>
                             <div id="packageContent" class="description">
-                            '.$package['Duration'].'
+                            <br/>
+                            '.$package['Duration'].' days
                             </div>
                         </div>
                             '.$packageDateInfo.'

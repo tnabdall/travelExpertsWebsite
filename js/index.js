@@ -45,19 +45,19 @@ $(document).ready(function(){
  function resizeCardHeight(){
     var maxHeight=0;    
     $('.item.card').each(function(){
-        $('.title').each(function(){$(this).attr("class","active title");});
-        $('.content').each(function(){$(this).attr("class","active content");});
+        // $('.title').each(function(){$(this).attr("class","active title");});
+        // $('.content').each(function(){$(this).attr("class","active content");});
         var img = $(this).children(".image");
         var imgHeight = img.height();
         // console.log(imgHeight);
-        var cardHeight = $(this).height()-imgHeight+300;
+        var cardHeight = $(this).height()-imgHeight+500;
         console.log(cardHeight);
         if(cardHeight>maxHeight){
             maxHeight=cardHeight;
         }
     })
     console.log(maxHeight);
-    $('.item.card').height(maxHeight);
+    $('.item.card').css("min-height",maxHeight);
     $('.title').each(function(){$(this).attr("class","title");});
     $('.content').each(function(){$(this).attr("class","content");});
  }
