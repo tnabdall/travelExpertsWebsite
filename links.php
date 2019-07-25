@@ -9,8 +9,8 @@ include("pageSections/header.php");
 ?>
 
 
-<main class="container-fluid">
-    <section class="mainContent rounded sectionBox">
+<main>
+    <section id="partners" class="mainContent rounded sectionBox">
         <?php
             include("phpFunctions/variables.php");
             // Code to autopopoulate table of links

@@ -282,6 +282,7 @@ a:hover {
 #menuButton{
     background-color:#0C4A60;
 }
+
 #menuButton>a{
     color: #EF6C33;
 }
@@ -298,6 +299,7 @@ a:hover {
 div#welcomeBanner {
     margin-top: 0px;
     padding: 5px;
+    
 }
 
 
@@ -305,6 +307,7 @@ div#welcomeBanner {
 
 section#travelImageSection{
     align-items: center;
+    font-size: 1.2em;
 }
 
 table tr{
@@ -345,9 +348,9 @@ table tr{
 }
 
 .item.card{
-    background-color: white;
+    background-color: #C0B3A0;
     height: auto;
-    border: 3px solid black;
+    border: 3px solid #EF6C33;
     border-radius: 8px;
     padding: 10px;
     margin: 5px;
@@ -363,8 +366,9 @@ img{
     font-size: 1.2em;
     text-align: center;
 }
+
 #welcomeBanner>h4{
-    font-size: 1.2em;
+    font-size: 1.5em;
     display: inline;
     font-family: 'Arima Madurai', cursive;
 }
@@ -409,17 +413,21 @@ img{
     height:200px; 
     /* object-fit: contain; 172.7 x 446.56 */
 }
+
 .imageDiv { 
     width:auto; 
     text-align:center; 
 } 
+
 .packageImageDiv { 
     width:auto; 
     text-align:center; 
 } 
+
 .packageImage { 
     max-width:100%; 
     height:333px; 
+    border: 2px solid black;
 } 
 
 #travelImageSection{
@@ -431,10 +439,6 @@ img{
     font-weight: 900;
 }
 
-.orangeColour {
-    color:#EF6C33;
-}
-
 .ui.centered.small.image.imageDiv{
     padding: 10px;
     width:100%;
@@ -444,16 +448,75 @@ img{
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
-
-.menu.ui{
-    font-family: 'Arima Madurai', cursive;
 }
+
+.menu.ui,
 .ui.button{
     font-family: 'Arima Madurai', cursive;
-
 }
+
+
 
 p#bookingName{
     text-align: center;
     line-height: 250%;
+}
+
+p.dropdown{
+    font-size: 1em;
+}
+
+a.itinerary {
+    font-size: 1em;
+}
+
+div.trip {
+    font-size: 1.5em;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-weight:900;
+    color: #0C4A60;
+}
+
+div.cost {
+    color: #0C4A60;
+    font-weight:600;
+}
+
+#orderButton,
+#infoButton,
+#contactButton {
+    color: black;
+    background-color: #ABDFF1;
+}
+
+a.contactButton{
+    color: black;S
+}
+
+div.modalCard {
+    
+}
+
+section.company-info,
+p.company-info {
+    color: #0C4A60;
+    font-weight:600;
+}
+
+#modalCard {
+    width:200px; 
+    height:200px; 
+}
+
+#partners{
+    width: 34%;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 770px) {
+    #partners {
+        width:100%;
+    }
 }

@@ -85,17 +85,17 @@ include("pageSections/welcomeBanner.php");
                         </div>
                         
                         <div id="packageContent" class="content">
-                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div>
+                            <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="trip header">'.$package['PkgName'].'</div>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         Overview
                                     </div>
-                                    <div class="content">
-                                        <p class="transition">'.$package['PkgDesc'].'</p>
-                                        <a href="'.$package['Partner'].'">Full Itinerary</a>
+                                    <div class="content ">
+                                        <p class="dropdown transition">'.$package['PkgDesc'].'</p>
+                                        <a class="itinerary" href="'.$package['Partner'].'" target="_blank">Full Itinerary</a>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ include("pageSections/welcomeBanner.php");
                             </div>
                         </div>
                             '.$packageDateInfo.'
-                            <button class="ui olive basic button right floated">Info</button>
+                            <button id="orderButton" class="ui button right floated">Order</button>
                     </div>';
                 }
 
