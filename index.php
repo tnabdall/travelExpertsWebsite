@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
             $db = new Database();
             $conn = $db -> getConn();
 
-            $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
+            $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate,PkgStartDate) AS "Duration", `PkgBasePrice` FROM `packages` WHERE 1;';
 
 
 
@@ -125,7 +125,7 @@ if(isset($_POST['submit'])){
                             </div>
                             '.$packageDateInfo.'
 
-                            <button type="submit" name="submit" class="ui olive basic button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
+                            <button type="submit" name="submit" class="ui button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
 
                     </div>';
                 }
