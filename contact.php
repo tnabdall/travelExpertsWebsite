@@ -47,6 +47,10 @@
                 
                 foreach ($agents as $agent)
                 {
+                    $ratingMessage=' Rating pending';
+                    if($agent['Rating']!=NULL){
+                        $ratingMessage='Rating: <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>';
+                    }
                     $currentCard = '
                     <div id="contactCard'.$counter.'" class="ui card">
                         <!-- MODAL '.$counter.' CODE -->
@@ -91,9 +95,9 @@
                             </div>
                         </div>
                         <div class="extra">
-                            Rating:
-                            <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>
-                            <button id="infoButton" class="ui button right floated">Info</button>
+                            '.
+                            $ratingMessage.
+                            '<button id="infoButton" class="ui button right floated">Info</button>
                         </div>
                     </div>
                     ';
