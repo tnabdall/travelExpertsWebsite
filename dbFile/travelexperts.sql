@@ -1751,6 +1751,11 @@ ALTER TABLE `suppliercontacts`
   ADD CONSTRAINT `suppliercontacts_ibfk_1` FOREIGN KEY (`SupplierId`) REFERENCES `suppliers` (`SupplierId`),
   ADD CONSTRAINT `suppliercontacts_ibfk_2` FOREIGN KEY (`AffiliationId`) REFERENCES `affiliations` (`AffilitationId`);
 
+ALTER TABLE `agents` ADD UNIQUE(`AgtEmail`);
+ALTER TABLE `agents` ADD UNIQUE(`Username`);
+ALTER TABLE `customers` ADD UNIQUE(`CustEmail`);
+ALTER TABLE `customers` ADD UNIQUE(`Username`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

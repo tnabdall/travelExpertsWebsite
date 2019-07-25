@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // addAccordionEvents();
-    if($(window).width()>1000){
+    if($(window).width()>530){
         $('#cardCarousel').slick({
             slidesToShow: 3,
             slidesToScroll: 1,

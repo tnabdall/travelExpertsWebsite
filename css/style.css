@@ -459,6 +459,13 @@ img{
 }
 
 
+#bookingName{
+    text-align: center;
+    line-height: 250%;
+    color:#EF6C33;
+}
+
+
 
 p#bookingName{
     text-align: center;
@@ -538,3 +545,4 @@ section.mainContent.rounded.sectionBox{
     font-weight: 700;
     color: #000000;
 }
+
