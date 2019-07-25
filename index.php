@@ -15,7 +15,7 @@ include("pageSections/welcomeBanner.php");
             // $conn = getDatabase();
             $db = new Database();
             $conn = $db -> getConn();
-            $sql = 'SELECT `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
+            $sql = 'SELECT `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF("PkgStartDate", "PkgEndDate") AS `Duration`, `PkgBasePrice` FROM `packages` WHERE 1;';
 
             $result = $conn->query($sql);
 

@@ -444,7 +444,7 @@ img{
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
-
+}
 .menu.ui{
     font-family: 'Arima Madurai', cursive;
 }
@@ -456,4 +456,14 @@ img{
 p#bookingName{
     text-align: center;
     line-height: 250%;
+}
+
+#checkBoxDiv{
+    align-self: center
+}
+
+#checkBoxLabel{
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000000;
 }
