@@ -7,11 +7,36 @@ function verifyUserCredentials($user,$pass){
     $pdo = new PDO($dsn, $dbUser, $dbPasswd);
     $results = $pdo ->prepare("SELECT Password from agents where Username = ?;");
     $results->execute([$user]);
-    if($results==false){
-        $pdo = null;
-        return false;
+    $number_of_rows = $results->rowCount();
+    if($number_of_rows==0){
+        echo "here";
+        $pdo = new PDO($dsn, $dbUser, $dbPasswd);
+        $results = $pdo ->prepare("SELECT Password from customers where Username = ?;");
+        $results->execute([$user]);
+        $number_of_rows = $results->rowCount();
+        if($number_of_rows==0){
+            $pdo=null;
+            return false;
+        }
+        else{
+            $hashedPass = $results -> fetch();
+            $pdo = null;
+
+            // Grab first name to personalize user experience
+            $pdo = new PDO($dsn, $dbUser, $dbPasswd);
+            $results = $pdo ->prepare("SELECT CustFirstName from customers where Username = ?;");
+            $results->execute([$user]);
+            $firstName = $results ->fetch();
+            // Stores first name as session variable
+            $_SESSION['login_user'] = $firstName[0];
+            $_SESSION['user_type']='registeredCustomer';
+
+            $pdo=null;
+            return password_verify($pass,$hashedPass[0]);
+        }
     }
     else{
+        
         $hashedPass = $results -> fetch();
         $pdo = null;
 
@@ -22,6 +47,7 @@ function verifyUserCredentials($user,$pass){
         $firstName = $results ->fetch();
         // Stores first name as session variable
         $_SESSION['login_user'] = $firstName[0];
+        $_SESSION['user_type']='agent';
 
         $pdo=null;
         return password_verify($pass,$hashedPass[0]);
