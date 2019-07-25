@@ -26,6 +26,8 @@
     <script src="semanticUI/semantic.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
+    <script src="js/header.js"></script>
+
     <!-- Sets the active page in the nav bar and formats as desktop or mobile menu-->
     <script src="js/menu.js"></script>
 </head>
