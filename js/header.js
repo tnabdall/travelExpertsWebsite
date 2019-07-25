@@ -14,11 +14,11 @@ $(document).ready(function(){
 });
 
 function scrollFunction(){
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.documentElement.scrollTop > 100) {
         document.getElementById("headerRow").style.height = "100px";
         $("#headerRow").css("line-height",initialLineHeight/2.2+"px");
     } 
-    else if ((document.body.scrollTop < 15 || document.documentElement.scrollTop < 15)) {
+    else if ((document.documentElement.scrollTop < 10)) {
       document.getElementById("headerRow").style.height = "200px";
       $("#headerRow").css("line-height",initialLineHeight+"px");
     }
