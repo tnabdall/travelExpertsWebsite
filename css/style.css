@@ -448,6 +448,10 @@ img{
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
+
+}
+.menu.ui{
+    font-family: 'Arima Madurai', cursive;
 }
 
 .menu.ui,
@@ -524,4 +528,12 @@ section.mainContent.rounded.sectionBox{
 .ui.modal,
 .ui.cards > .card{
     border: 3px solid #EF6C33;
+#checkBoxDiv{
+    align-self: center
+}
+
+#checkBoxLabel{
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000000;
 }
