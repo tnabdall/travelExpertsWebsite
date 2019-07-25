@@ -71,7 +71,7 @@
                                 <div class="ui black deny button">
                                     Back
                                 </div>
-                                <div id="contactButton" class="ui button">
+                                <div class="contactButton ui button">
                                     <a class="contactButton" href="contactAgent.php">Contact Agent</a>
                                 </div>
 

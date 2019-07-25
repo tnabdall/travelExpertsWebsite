@@ -66,7 +66,7 @@ include("pageSections/welcomeBanner.php");
                             </div>
                         </div>
                             '.$packageDateInfo.'
-                            <button class="ui olive basic button right floated">Info</button>
+                            <button class="ui button right floated">Info</button>
                     </div>';
                 }
                 else //apply CSS
@@ -104,7 +104,7 @@ include("pageSections/welcomeBanner.php");
                             </div>
                         </div>
                             '.$packageDateInfo.'
-                            <button id="orderButton" class="ui button right floated">Order</button>
+                            <button class="ui button right floated">Order</button>
                     </div>';
                 }
 

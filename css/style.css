@@ -483,9 +483,8 @@ div.cost {
     font-weight:600;
 }
 
-#orderButton,
-#infoButton,
-#contactButton {
+button.ui.button.right.floated,
+div.contactButton.ui.button {
     color: black;
     background-color: #ABDFF1;
 }
@@ -503,16 +502,26 @@ p.company-info {
 #modalCard {
     width:200px; 
     height:200px; 
+    border: 2px solid black;
 }
 
-#partners{
-    width: 34%;
+section.mainContent.rounded.sectionBox{
+    width: 50%;
     margin: auto;
     font-size: 1.5em;
 }
 
 @media screen and (max-width: 770px) {
-    #partners {
+    section.mainContent.rounded.sectionBox {
         width:100%;
     }
+}
+
+.ui.card > .image > img.contactCardImage {
+    border: 2px solid black;
+}
+
+.ui.modal,
+.ui.cards > .card{
+    border: 3px solid #EF6C33;
 }
