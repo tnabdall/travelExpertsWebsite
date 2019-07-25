@@ -453,7 +453,8 @@ img{
 
 }
 
-p#bookingName{
+#bookingName{
     text-align: center;
     line-height: 250%;
+    color:#EF6C33;
 }

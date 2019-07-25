@@ -85,6 +85,16 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     return $executeQuery;
 }
 
+// function getCustomerId () {
+//     $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
+//     if ($mysqli->connect_errno) {
+//         echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+//         return false;
+//     }
+
+//     $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
+//     $executeQuery=$mysqli -> query($query);
+// }
 
 
 ?>

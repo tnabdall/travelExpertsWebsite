@@ -1,13 +1,106 @@
 <?php 
 include("pageSections/header.php");
 ?>
+
 <script src="js/customerRegister.js"></script>
 <main>
     <form class="ui form mainContent" action="" method="POST">
         <fieldset>
+        <?php
+            if(isset($_POST['submit'])){
+                include("phpFunctions/functions.php");
+                $tripType=$_POST['TripTypeId'];
+                
+
+
+                unset($_POST["TripTypeId"]);
+
+                // foreach($_POST as $key){
+                //     echo $key;
+                // }
+
+                // Create customer
+                $customerData = $_POST;
+                unset($customerData["submit"]);
+
+                $customerData['Password'] = password_hash($customerData['Password'],PASSWORD_DEFAULT);
+
+                if($customerData['CustBusPhone']==''){
+                    unset($customerData['CustBusPhone']);
+                }
+
+                $success = insertData($customerData,'customers', 'travelexperts','dbAdmin','L0g1n2db!');
+                // $success=true;
+
+                $bookingData=array();
+                $bookingData['TripTypeId'] = $tripType;
+                $bookingData['PackageId']=$_SESSION['pkgId'];
+                
+                $mysqli = mysqli_connect('localhost', 'dbAdmin' ,'L0g1n2db!' , 'travelexperts');
+
+                if ($mysqli->connect_errno) {
+                    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                    return false;
+                }
+
+                $query = 'SELECT `CustomerId` FROM `customers` WHERE Username = "'.$_POST['Username'].'";';
+
+                // $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
+                $executeQuery=$mysqli -> query($query);
+                $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
+                
+                $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
+                $executeQuery=$mysqli -> query($query);
+                
+                try{   
+                    $logFile = fopen("logs/query_Log.txt","a");
+                    if($executeQuery){
+                        fwrite($logFile,"Successfully executed the query $query.\n");
+                    }
+                    else{
+                        fwrite($logFile,"Failed to execute the query $query.\n");
+                    }
+                    fclose($logFile);
+                }
+                catch(Exception $e){
+                    
+                }
+                mysqli_close($mysqli);
+                
+
+                if($success){
+                    echo "<p>Successfully inserted new customer into the database.</p>";
+                }
+                else{
+                    echo "<p>Failed to insert new customer into the database.</p>";
+                }
+                
+            }
+            //   if(isset($_GET['tripName']) && !empty($_GET['tripName']) AND isset($_GET['tripId']) && !empty($_GET['tripId']))
+            //   {
+            //     $tripName = $_GET['tripName'];
+            //     $tripId = $_GET['tripId'];
+            //     echo $tripName;
+
+            //     $_POST['tripName'] = $tripName;
+            //     $_POST['tripId'] = $tripId;
+            //   }
+            //   else 
+            //   {
+            //     echo 'Travel Booking';
+            //     echo 'No Id';
+            //   }
+        ?>
             <div class = "two fields">
+                
                 <div class = "field">
-                    <p id="bookingName">Test Name</p>
+                    <p id="bookingName" class="bookingName">
+                        Travel Booking for: 
+                        <?php 
+                            echo $_SESSION['pkgName'];
+                        ?>
+                        <br>
+                    </p>
                 </div>
             
                 <div class="focus required field">
@@ -158,11 +251,6 @@ include("pageSections/header.php");
                 <button type="reset" value="Reset" class="negative ui inverted button"
                     onclick="return resetClick()">Reset</button>
             </div>
-            <div class="ui success message">
-                <div class="header">Form Completed</div>
-                <p>You're all signed up.</p>
-            </div>
-            <?php include("phpFunctions/bookingRegisterSubmit.php"); ?>
         </fieldset>
     </form>
 </main>
