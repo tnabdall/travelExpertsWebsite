@@ -154,6 +154,15 @@ function setFormValidation(postalRegex){
                     prompt : 'Please enter your phone number as 10 digits (no spaces or special characters) '
                 }
             ]
+            },
+            TripTypeId: {
+                identifier: 'TripTypeId',
+                rules: [
+                {
+                    type   : 'empty',
+                    prompt : 'Please select your desired trip type.'
+                }
+            ]
             }
         }
     });

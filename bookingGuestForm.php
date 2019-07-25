@@ -2,7 +2,7 @@
 include("pageSections/header.php");
 ?>
 
-<script src="js/customerRegister.js"></script>
+<script src="js/bookingGuestRegister.js"></script>
 <main>
     <form class="ui form mainContent" action="" method="POST">
         <fieldset>
@@ -30,7 +30,11 @@ include("pageSections/header.php");
                 }
 
                 $success = insertData($customerData,'customers', 'travelexperts','dbAdmin','L0g1n2db!');
-                // $success=true;
+
+                if ($success == false) {
+                    echo "<p>Customer was not successfully submitted into db.</p>";
+                    exit();
+                 }
 
                 $bookingData=array();
                 $bookingData['TripTypeId'] = $tripType;
@@ -68,11 +72,11 @@ include("pageSections/header.php");
                 mysqli_close($mysqli);
                 
 
-                if($success){
-                    echo "<p>Successfully inserted new customer into the database.</p>";
+                if($executeQuery){
+                    echo "<p>Successfully booked the package.</p>";
                 }
                 else{
-                    echo "<p>Failed to insert new customer into the database.</p>";
+                    echo "<p>Failed to book the package.</p>";
                 }
                 
             }
