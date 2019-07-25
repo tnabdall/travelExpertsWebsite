@@ -56,7 +56,7 @@
                             </div>
                             <div class="image content">
                                 <div class="ui medium centered image">
-                                    <img src="'.$agent['Image'].'">
+                                    <img id="modalCard" src="'.$agent['Image'].'">
                                 </div>
                                 <div class="description">
                                     <div class="ui header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</div>
@@ -71,8 +71,8 @@
                                 <div class="ui black deny button">
                                     Back
                                 </div>
-                                <div class="ui positive right labeled icon button">
-                                    <a href="contactAgent.php">Contact Agent</a>
+                                <div class="contactButton ui button">
+                                    <a class="contactButton" href="contactAgent.php">Contact Agent</a>
                                 </div>
 
                             </div>
@@ -93,7 +93,7 @@
                         <div class="extra">
                             Rating:
                             <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>
-                            <button class="ui olive basic button right floated">Info</button>
+                            <button id="infoButton" class="ui button right floated">Info</button>
                         </div>
                     </div>
                     ';
@@ -108,8 +108,8 @@
                                 <ul class="agency-info">
                                     <!-- Company Contact Information -->
                                     <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
-                                    <p>Address: '.$agent['AgncyAddress'].'</p>
-                                    <p>Address: '.$agent['AgncyPhone'].'</p>
+                                    <p class="company-info">Address: '.$agent['AgncyAddress'].'</p>
+                                    <p class="company-info">Address: '.$agent['AgncyPhone'].'</p>
                                 </ul>
                             </section>
                                 ';
@@ -125,8 +125,8 @@
                                 <ul class="agency-info">
                                     <!-- Company Contact Information -->
                                     <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
-                                    <p>Address: '.$agent['AgncyAddress'].'</p>
-                                    <p>Address: '.$agent['AgncyPhone'].'</p>
+                                    <p class="company-info">Address: '.$agent['AgncyAddress'].'</p>
+                                    <p class="company-info">Address: '.$agent['AgncyPhone'].'</p>
                                 </ul>
                             </section>
                                 ';
