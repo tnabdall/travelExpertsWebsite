@@ -38,7 +38,8 @@ $(document).ready(function(){
         }
     });
     // resizeCardHeight();
-    $(".orderSubmit").click(function(){
+    $(".modalButton").click(function(){
+        $('#submit').val($(this).val());
         $("#modalConfirm").show();
     })
     // $("#modalConfirm").show();
