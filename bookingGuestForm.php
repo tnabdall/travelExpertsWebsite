@@ -80,20 +80,7 @@ include("pageSections/header.php");
                 }
                 
             }
-            //   if(isset($_GET['tripName']) && !empty($_GET['tripName']) AND isset($_GET['tripId']) && !empty($_GET['tripId']))
-            //   {
-            //     $tripName = $_GET['tripName'];
-            //     $tripId = $_GET['tripId'];
-            //     echo $tripName;
-
-            //     $_POST['tripName'] = $tripName;
-            //     $_POST['tripId'] = $tripId;
-            //   }
-            //   else 
-            //   {
-            //     echo 'Travel Booking';
-            //     echo 'No Id';
-            //   }
+           
         ?>
             <div class = "two fields">
                 

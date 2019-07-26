@@ -80,3 +80,17 @@ Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,Agt
 Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,Image) VALUES ('asdf','sdf','(403) 200-0000','s@g.com','Intermediate Agent',2,'ad','$2y$10$yn51FRZLXMyxAPncqXHwNOk6M9S6tKt/NKFWvMWmkDeKo20JqEAO.','asfd','asdf','images/cards/logo.png');.
 Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,Image) VALUES ('Test','test','(403) 200-0000','t@g.com','Intermediate Agent',2,'jjj','$2y$10$URXdYZmXI3E6inTK4e/avec7H9Zm7ACMuY08orGPp0ntvt4z/61Ha','jop','fdsalkjsadf','images/cards/img-2.jpg');.
 
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",25);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",7);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",2);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",22);.

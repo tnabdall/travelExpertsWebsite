@@ -30,6 +30,7 @@ function verifyUserCredentials($user,$pass){
             // Stores first name as session variable
             $_SESSION['login_user'] = $firstName[0];
             $_SESSION['user_type']='registeredCustomer';
+            $_SESSION['login_username'] = $user;
 
             $pdo=null;
             return password_verify($pass,$hashedPass[0]);
@@ -48,6 +49,7 @@ function verifyUserCredentials($user,$pass){
         // Stores first name as session variable
         $_SESSION['login_user'] = $firstName[0];
         $_SESSION['user_type']='agent';
+        $_SESSION['login_username'] = $user;
 
         $pdo=null;
         return password_verify($pass,$hashedPass[0]);
