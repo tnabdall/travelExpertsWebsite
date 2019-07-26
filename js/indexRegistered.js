@@ -42,8 +42,16 @@ $(document).ready(function(){
         $('#submit').val($(this).val());
         $("#modalConfirm").show();
     })
-    // $("#modalConfirm").show();
    
+    $(".modalCancel").click(function(){
+        $("#modalConfirm").hide();
+    })
+
+    $('.TripTypeIdRegistered').on('change', function() {
+        document.cookie = "var1="+this.value;
+        // alert( this.value );
+      });
+
  });
 
 

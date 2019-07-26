@@ -4,13 +4,67 @@ if(!isset($_SESSION['user_type'])){
     header("Location: index.php");
 }
 include("pageSections/welcomeBanner.php");
+
 if(isset($_POST['submit'])){
-    // $pkgInfo=explode("&",$_POST['submit']);
-    // $_SESSION["pkgName"]=$pkgInfo[0];
-    // $_SESSION["pkgId"]=$pkgInfo[1];
-    echo "<script type='text/javascript'>alert('".$_POST["submit"]."');</script>";
-    // header("Location: bookingGuestForm.php");
-    // exit();
+    if(isset($_COOKIE['var1'])){
+        // $length = count($_POST);
+        // echo "<script type='text/javascript'>alert('".$length."');</script>";
+        // exit();
+        $loggedInUser = $_SESSION['login_username']; //query db for users id
+        $pkgId = $_POST["submit"];
+        $tripType = $_COOKIE['var1'];
+        // $tripType = 'L'; //currently default; set drop down to pass value
+
+        include("phpFunctions/functions.php");
+
+        $bookingData=array();
+        $bookingData['TripTypeId'] = $tripType;
+        $bookingData['PackageId']=$pkgId;
+        
+        $mysqli = mysqli_connect('localhost', 'dbAdmin' ,'L0g1n2db!' , 'travelexperts');
+
+        if ($mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            return false;
+        }
+
+        $query = 'SELECT `CustomerId` FROM `customers` WHERE Username = "'.$loggedInUser.'";';
+
+        // $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
+        $executeQuery=$mysqli -> query($query);
+        $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
+        
+        $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
+        $executeQuery=$mysqli -> query($query);
+        
+        try{   
+            $logFile = fopen("logs/query_Log.txt","a");
+            if($executeQuery){
+                fwrite($logFile,"Successfully executed the query $query.\n");
+            }
+            else{
+                fwrite($logFile,"Failed to execute the query $query.\n");
+            }
+            fclose($logFile);
+        }
+        catch(Exception $e){
+            
+        }
+        mysqli_close($mysqli);
+        
+
+        if($executeQuery){
+            echo "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+            // echo "<p>Successfully booked the package.</p>";
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Failed to book the package.');</script>";
+            // echo "<p>Failed to book the package.</p>";
+        }
+    }
+    else{
+        echo "<script type='text/javascript'>alert('Failed to book the package; no TripType was selected.');</script>";
+    }
 }
 ?>
 <script src="js/indexRegistered.js"></script>
@@ -20,13 +74,13 @@ if(isset($_POST['submit'])){
     <section class = "mainContent" id="travelImageSection">
         <!-- MODAL '.$counter.' CODE -->
         <div id="modalConfirm" class="ui modal">
-            <p>Are you sure you want to order this package?</p>
             <div class="actions">
-                <div class="ui black deny button">
-                    Back
+            <p>Are you sure you want to book this package?</p>
+                <div id = "submitCancel" class="ui black deny button modalCancel">
+                    Cancel
                 </div>
                 <div class="contactButton ui button">
-                    <form method="POST"><button id = "submit" type="submit" value="submit" name="submit">Confirm</button></form>
+                <form method="POST"><button id = "submit" type="submit" value="submit" name="submit">Confirm</button></form>
                 </div>
             </div>
         </div>
@@ -99,7 +153,15 @@ if(isset($_POST['submit'])){
                             </div>
                         </div>
                             '.$packageDateInfo.'
-
+                            <div class="focus required field">
+                                    <label id="tripTypeLabel" for="TripTypeId">Select</label>
+                                    <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
+                                        <option value="">Trip Type</option>
+                                        <option value="B">Business</option>
+                                        <option value="G">Group</option>
+                                        <option value="L">Leisure</option>
+                                    </select>
+                            </div>
                             <button type="button" class="ui olive basic button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
 
                     </div>';
@@ -140,7 +202,15 @@ if(isset($_POST['submit'])){
                             </div>
                             </div>
                             '.$packageDateInfo.'
-
+                            <div class="focus required field">
+                                <label id="tripTypeLabel" for="TripTypeId">Select</label>
+                                <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
+                                    <option value="">Trip Type</option>
+                                    <option value="B">Business</option>
+                                    <option value="G">Group</option>
+                                    <option value="L">Leisure</option>
+                                </select>
+                            </div>
                             <button type="button" class="ui olive basic button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
 
                     </div>';
