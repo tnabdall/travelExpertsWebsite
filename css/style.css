@@ -546,3 +546,6 @@ section.mainContent.rounded.sectionBox{
     color: #000000;
 }
 
+#modalConfirm {
+    width: auto;
+}

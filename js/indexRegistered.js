@@ -39,13 +39,16 @@ $(document).ready(function(){
     });
     // resizeCardHeight();
     $(".modalButton").click(function(){
-        $('#submit').val($(this).val());
-        $("#modalConfirm").show();
+        var pkgId = $(this).val().split("&")[0];
+        var pkgName = $(this).val().split("&")[1];
+        $('#submit').val(pkgId);
+        $('#modalMessage').html("Are you sure you would like to order the "+pkgName+" package?");
+        $("#modalConfirm").modal('show');
     })
    
-    $(".modalCancel").click(function(){
-        $("#modalConfirm").hide();
-    })
+    // $(".modalCancel").click(function(){
+    //     $("#modalConfirm").hide();
+    // })
 
     $('.TripTypeIdRegistered').on('change', function() {
         document.cookie = "var1="+this.value;
