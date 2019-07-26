@@ -1,6 +1,11 @@
 <?php 
 include("pageSections/header.php");
 include("pageSections/welcomeBanner.php");
+if(isset($_SESSION['user_type'])){
+    if($_SESSION['user_type']=='registeredCustomer'){
+        header("Location: indexRegistered.php");
+    }
+}
 if(isset($_POST['submit'])){
     $pkgInfo=explode("&",$_POST['submit']);
     $_SESSION["pkgName"]=$pkgInfo[0];

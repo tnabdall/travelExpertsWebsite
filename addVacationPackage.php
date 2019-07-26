@@ -1,8 +1,14 @@
 <?php
 include("pageSections/header.php");
-if(!isset($_SESSION['login_user'])){
+if(!isset($_SESSION['user_type'])){
     header("Location: login.php");
 }
+else{
+    if($_SESSION['user_type']!='agent'){
+        header("Location: login.php");
+    }
+}
+
 ?>
 <script src="js/packageRegister.js"></script>
 <main>
