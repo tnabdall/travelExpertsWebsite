@@ -81,12 +81,10 @@ if(isset($_POST['submit'])){
         <div id="modalConfirm" class="ui modal">
             <div class="actions">
             <p id="modalMessage">Are you sure you want to book this package?</p>
-                <div id = "submitCancel" class="ui black deny button modalCancel">
-                    Cancel
-                </div>
-                <div class="confirmButton ui button">
-                <form method="POST"><button id = "submit" type="submit" value="submit" name="submit">Confirm</button></form>
-                </div>
+            <div class="ui black deny button">Back</div>
+            <div class="confirmButton ui">
+                <form method="POST"><button id = "submit" class="ui button confirmButton" type="submit" value="submit" name="submit">Confirm</button></form>
+            </div>
             </div>
         </div>
         

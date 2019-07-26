@@ -304,9 +304,6 @@ div#welcomeBanner {
     
 }
 
-
-
-
 section#travelImageSection{
     align-items: center;
     font-size: 1.2em;
@@ -494,9 +491,14 @@ div.cost {
 }
 
 button.ui.button.right.floated,
-div.contactButton.ui.button {
+div.contactButton.ui.button,
+button.ui.button.confirmButton {
     color: black;
     background-color: #ABDFF1;
+}
+
+div.ui.confirmButton {
+    display: inline-block;
 }
 
 a.contactButton{
