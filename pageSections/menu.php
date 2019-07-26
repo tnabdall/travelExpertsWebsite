@@ -3,7 +3,7 @@
 if (isset($_SESSION['user_type'])){
     if($_SESSION['user_type']=='registeredCustomer'){
         echo '<div id="desktopNavBar" class="ui stackable menu five item">
-            <a class="item" href="index.php"><i class="home icon"></i> Home</a>
+            <a class="item" href="indexRegistered.php"><i class="home icon"></i> Home</a>
             <a class="item" href="contact.php"><i class="address card icon"></i> Contact</a>'.
             "<a class='item' href='phpFunctions/logout.php'><i class='sign out icon' ></i> Logout ".$_SESSION['login_user'].  "</a>"
         .'</div>

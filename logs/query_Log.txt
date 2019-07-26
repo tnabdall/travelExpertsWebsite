@@ -94,3 +94,4 @@ Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, 
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",5);.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",5);.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",22);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",1);.

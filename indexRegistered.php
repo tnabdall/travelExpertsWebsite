@@ -3,6 +3,11 @@ include("pageSections/header.php");
 if(!isset($_SESSION['user_type'])){
     header("Location: index.php");
 }
+else{
+    if($_SESSION['user_type']!='registeredCustomer'){
+        header("Location: index.php");
+    }
+}
 include("pageSections/welcomeBanner.php");
 
 if(isset($_POST['submit'])){
@@ -162,7 +167,7 @@ if(isset($_POST['submit'])){
                                         <option value="L">Leisure</option>
                                     </select>
                             </div>
-                            <button type="button" class="ui olive basic button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
 
                     </div>';
                 }
@@ -211,7 +216,7 @@ if(isset($_POST['submit'])){
                                     <option value="L">Leisure</option>
                                 </select>
                             </div>
-                            <button type="button" class="ui olive basic button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
 
                     </div>';
                 }
