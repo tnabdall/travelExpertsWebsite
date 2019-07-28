@@ -1,10 +1,5 @@
 <?php
 
-/**
-* Database
-*
-* A connection to the database
-*/
 class Database
 {
    /**
