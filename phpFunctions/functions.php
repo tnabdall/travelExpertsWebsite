@@ -113,16 +113,58 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     return $executeQuery;
 }
 
-// function getCustomerId () {
-//     $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
-//     if ($mysqli->connect_errno) {
-//         echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-//         return false;
-//     }
+function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
+    if ($type === 'newCustomer')
+    {
+        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A confirmation email will be sent to you.</p>";
+        $notificationFailure =  "<p>Failed to insert new customer into the database.</p>";
+    }
+    else if ($type === 'newCustomerBooking')
+    {
+        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A booking has been made,a confirmation email will be sent to you.</p>";
+        $notificationFailure =  "<p>Failed to book the package.</p>";
+    }
+    else if ($type === 'registeredBooking')
+    {
+        $notificationSuccess = "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+        $notificationFailure =  "<script type='text/javascript'>alert('Failed to book the package.');</script>";
+    }
+    else if ($type === 'agentContact')
+    {
+        $notificationSuccess = "<p>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
+        $notificationFailure =  "<p>Failed to contact the agent</p>";
+    }
+    
+    $email=$emailAddress;
 
-//     $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
-//     $executeQuery=$mysqli -> query($query);
-// }
+    // Sanitize E-mail Address
+    $email =filter_var($email, FILTER_SANITIZE_EMAIL);
+    // Validate E-mail Address
+    $email= filter_var($email, FILTER_VALIDATE_EMAIL);
+    if (!$email)
+    {
+        echo "Invalid Sender's Email - No Message will be sent";
+    }
+    else
+    {
+        $email2 = "cprg210.travelexperts@gmail.com";
+        $headers = 'From:'. $email2 . "rn"; // Sender's Email
+        $headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
+       
+        // Send Mail By PHP Mail Function
+        $to = $email;
+        $subject = $emailSubject;
+        $message = $emailMessage;
+        
+        if (mail($to, $subject, $message, $headers))
+        {
+            echo $notificationSuccess;
+        } else 
+        {
+            echo $notificationFailure;
+        }
+    }
+}
 
 
 ?>

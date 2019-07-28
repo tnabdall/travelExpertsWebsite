@@ -18,6 +18,10 @@ $(document).ready(function() {
             $(modalId).modal('show');
         });
 
+        $(".contactButton").click(function(){
+            $('#submit').val($(this).val());
+        })
+
         $('#rating'+i)
         .rating();
 

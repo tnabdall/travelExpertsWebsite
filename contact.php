@@ -20,6 +20,7 @@
                 , t1.`Description`
                 , t1.`Title`
                 , t1.`Image`
+                , t1.`AgtMessage`
                 , t2.`AgncyName`
                 , t2.`AgncyAddress`
                 , t2.`AgncyProv`
@@ -47,6 +48,8 @@
                 
                 foreach ($agents as $agent)
                 {
+                    $_SESSION['agentData'][] = $agent;
+                    // $agentContactData = json_encode($agent);
                     $ratingMessage=' Rating pending';
                     if($agent['Rating']!=NULL){
                         $ratingMessage='Rating: <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>';
@@ -75,9 +78,11 @@
                                 <div class="ui black deny button">
                                     Back
                                 </div>
-                                <div class="contactButton ui button">
+                                <form method="POST">
+                                <div type="button" class="contactButton ui button">
                                     <a class="contactButton" href="contactAgent.php">Contact Agent</a>
                                 </div>
+                                </form>
 
                             </div>
                         </div>
@@ -138,6 +143,7 @@
                     }
                     
                     $counter++; //counter for each contact card and modal
+                    unset($_SESSION['agentData']); //if our loop gets here destroy variable so it can be built on next iteration
                 }
 
                 echo "<div>".$heavenHeader."</div>";
