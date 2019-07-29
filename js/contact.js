@@ -19,8 +19,13 @@ $(document).ready(function() {
         });
 
         $(".contactButton").click(function(){
-            $('#submit').val($(this).val());
+            // console.log($(this).attr("value"));
+            document.cookie = "varAgent="+$(this).attr("value");
         })
+
+        $('.emailContact').on('change', function() {
+            document.cookie = "emailAgent="+this.value;
+          });
 
         $('#rating'+i)
         .rating();

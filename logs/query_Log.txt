@@ -147,3 +147,5 @@ Successfully executed the query INSERT INTO customers (CustFirstName,CustLastNam
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),168,"G",4);.
 Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustBusPhone,CustEmail,Username,Password) VALUES ('Owiny','Ayorech','334 dkgng','calg','MB','t9t 3k3','Canada','1234512345','1234512345','owinayo@gmail.com','oayorech','$2y$10$ntx58PEIKrFs1CtFk8N8QOU.TrTxnue05g/w90ieSu/J.xwUh/E92');.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),169,"G",4);.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 4.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 4.

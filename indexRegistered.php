@@ -177,7 +177,7 @@ Triptype: '.$tripType;
                                         <option value="L">Leisure</option>
                                     </select>
                             </div>
-                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                            <form><button type="button" class="ui button right floated modalButton" type="submit" value="'.$package['PackageId'].'">Order</button></form>
 
                     </div>';
                 }

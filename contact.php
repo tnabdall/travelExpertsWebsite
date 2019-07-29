@@ -11,6 +11,7 @@
                 $db = new Database();
                 $conn = $db -> getConn();
                 $sql = "SELECT t1.`AgencyId`
+                , t1.`AgentId`
                 , t1.`AgtFirstName`
                 , t1.`AgtLastName`
                 , t1.`AgtBusPhone`
@@ -48,8 +49,6 @@
                 
                 foreach ($agents as $agent)
                 {
-                    $_SESSION['agentData'][] = $agent;
-                    // $agentContactData = json_encode($agent);
                     $ratingMessage=' Rating pending';
                     if($agent['Rating']!=NULL){
                         $ratingMessage='Rating: <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>';
@@ -73,16 +72,22 @@
                                     <p>'.$agent['Description'].'</p>
                                 </div>
                             </div>
-
+                            
+                            <div class="focus required field">
+                            <label id="emailLabel" for="CustEmail">Email Address</label>
+                            <form action="" method="POST">
+                            <input class="emailContact" type="email" id="CustEmail" name="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
+                            </form>
+                            </div>
                             <div class="actions">
                                 <div class="ui black deny button">
                                     Back
                                 </div>
-                                <form method="POST">
-                                <div type="button" class="contactButton ui button">
-                                    <a class="contactButton" href="contactAgent.php">Contact Agent</a>
+                                
+                                <div type="submit" class="contactButton ui button" value="'.$agent['AgentId'].'">
+                                    <a id ="submitContact" href="contactAgent.php">Contact Agent</a>
                                 </div>
-                                </form>
+                               
 
                             </div>
                         </div>
@@ -143,7 +148,6 @@
                     }
                     
                     $counter++; //counter for each contact card and modal
-                    unset($_SESSION['agentData']); //if our loop gets here destroy variable so it can be built on next iteration
                 }
 
                 echo "<div>".$heavenHeader."</div>";
