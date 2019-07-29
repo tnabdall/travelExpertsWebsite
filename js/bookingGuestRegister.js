@@ -27,7 +27,70 @@ $(document).ready(function () {
     });
 })
 
+function focusFunc(textId) {
+    // Get the element of calling ID
+    el = document.getElementById(textId);
+    // Get the parent
+    parentDiv = el.parentNode;
+    // Create a p node to hold help text
+    var pNode = document.createElement("p");
+    var helpText = "";
+    // Adds text depending on calling ID
+    switch (textId) {
+        case "firstName":
+            helpText = "Please enter your first name.";
+            break;
+        case "middleName":
+            helpText = "Please enter your middle name.";
+            break;
+        case "lastName":
+            helpText = "Please enter your last name.";
+            break;
+        case "streetAddress":
+            helpText = "Please enter street address including apt numbers, house number, and street name.";
+            break;
+        case "city":
+            helpText = "Please enter your city.";
+            break;
+        case "postalCode":
+            helpText = "Please enter your postal code in a valid format (with or without space).";
+            break;
+        case "email":
+            helpText = "Please enter a valid email address.";
+            break;
+        case "pWord":
+            helpText = "Please enter a strong password.";
+            break;
+        case "preferredDestinations":
+            helpText = "Please enter your most desired destinations.";
+            break;
+        case "additionalInfo":
+            helpText = "Please enter any additional information or concerns you would like us to know about.";
+            break;
+    }
 
+
+    var textElement = document.createTextNode(helpText);
+    // Adds text to p node and styles it
+    pNode.appendChild(textElement);
+    pNode.className += "col";
+    pNode.style.color = "#FFFFFF";
+    pNode.style.fontSize = "1em";
+    // Creates a div to hold the p node and center it
+    var container = document.createElement("div");
+    container.className += "container-fluid row centered";
+    container.appendChild(pNode);
+    container.id = "helpPar";
+    // Adds div with id helpPar to parentDiv (appears under element)
+    parentDiv.appendChild(container);
+}
+
+// Deletes element with id helpPar created by focusFunc()
+function blurFunc() {
+    el = document.getElementById("helpPar");
+    parentDiv = el.parentNode;
+    parentDiv.removeChild(el);
+}
 
 function setFormValidation(postalRegex){
     $('.ui.form')
@@ -215,67 +278,3 @@ function resetClick() {
     return resetIntent;
 }
 
-function focusFunc(textId) {
-    // Get the element of calling ID
-    el = document.getElementById(textId);
-    // Get the parent
-    parentDiv = el.parentNode;
-    // Create a p node to hold help text
-    var pNode = document.createElement("p");
-    var helpText = "";
-    // Adds text depending on calling ID
-    switch (textId) {
-        case "firstName":
-            helpText = "Please enter your first name.";
-            break;
-        case "middleName":
-            helpText = "Please enter your middle name.";
-            break;
-        case "lastName":
-            helpText = "Please enter your last name.";
-            break;
-        case "streetAddress":
-            helpText = "Please enter street address including apt numbers, house number, and street name.";
-            break;
-        case "city":
-            helpText = "Please enter your city.";
-            break;
-        case "postalCode":
-            helpText = "Please enter your postal code in a valid format (with or without space).";
-            break;
-        case "email":
-            helpText = "Please enter a valid email address.";
-            break;
-        case "pWord":
-            helpText = "Please enter a strong password.";
-            break;
-        case "preferredDestinations":
-            helpText = "Please enter your most desired destinations.";
-            break;
-        case "additionalInfo":
-            helpText = "Please enter any additional information or concerns you would like us to know about.";
-            break;
-    }
-
-
-    var textElement = document.createTextNode(helpText);
-    // Adds text to p node and styles it
-    pNode.appendChild(textElement);
-    pNode.className += "col";
-    pNode.style.color = "#FFFFFF";
-    pNode.style.fontSize = "1em";
-    // Creates a div to hold the p node and center it
-    var container = document.createElement("div");
-    container.className += "container-fluid row centered";
-    container.appendChild(pNode);
-    container.id = "helpPar";
-    // Adds div with id helpPar to parentDiv (appears under element)
-    parentDiv.appendChild(container);
-}
-
-// Deletes element with id helpPar created by focusFunc()
-function blurFunc() {
-    el = document.getElementById("helpPar");
-    parentDiv = el.parentNode;
-    parentDiv.removeChild(el);
-}

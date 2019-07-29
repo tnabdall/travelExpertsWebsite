@@ -76,17 +76,15 @@ if(isset($_POST['submit'])){
 <main>
     
     <!-- Holds the images on home page and changes format depending on screen size -->
-    <section class = "mainContent" id="travelImageSection">
+    <section class ="mainContent" id="travelImageSection">
         <!-- MODAL '.$counter.' CODE -->
         <div id="modalConfirm" class="ui modal">
             <div class="actions">
-            <p>Are you sure you want to book this package?</p>
-                <div id = "submitCancel" class="ui black deny button modalCancel">
-                    Cancel
-                </div>
-                <div class="contactButton ui button">
-                <form method="POST"><button id = "submit" type="submit" value="submit" name="submit">Confirm</button></form>
-                </div>
+            <p id="modalMessage">Are you sure you want to book this package?</p>
+            <div class="ui black deny button">Back</div>
+            <div class="confirmButton ui">
+                <form method="POST"><button id = "submit" class="ui button confirmButton" type="submit" value="submit" name="submit">Confirm</button></form>
+            </div>
             </div>
         </div>
         
@@ -167,7 +165,7 @@ if(isset($_POST['submit'])){
                                         <option value="L">Leisure</option>
                                     </select>
                             </div>
-                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
 
                     </div>';
                 }
@@ -216,7 +214,7 @@ if(isset($_POST['submit'])){
                                     <option value="L">Leisure</option>
                                 </select>
                             </div>
-                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
 
                     </div>';
                 }

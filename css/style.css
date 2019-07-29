@@ -26,69 +26,17 @@ main {
     margin-bottom: 20px;
 }
 
-footer {
-    height: 75px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 30px;
-    padding-left: 1%;
-    background-image: url("../images/airportRunwayBigScreen.png");
-    background-size: 100% 100%;
-}
-
 .mainContent{
     margin-bottom: 28px;
-}
-
-@media screen and (max-width: 740px) {
-    footer{
-        background-image: url("../images/airportRunwayMobile.png");
-    }
-}
-
-#footerText {
-    font-size: 0.8em;    
-    color: #FFFFFF;
-}
-
-
-
-#footerTextDiv{
-    color: #FFFFFF;
-    position: relative;
-    bottom:-60px;
-    left: 0px;
-    display: flex;
-    font-size: 1.6em;
-}
-
-.icon.footerIcon {
-    color: white;
-}
-
-.socialMediaIcons {
-    position: absolute;
-    bottom: 30%;
-}
-
-@media screen and (min-width: 740px) {
-    .socialMediaIcons {
-        left: 47%;
-    }
-}
-
-@media screen and (max-width: 740px) {
-    .socialMediaIcons {
-        left: none;
-        right: 5%;
-    }
 }
 
 #holder {
     min-height: 100%;
     position: relative;
 }
+
+
+
 
 h1.ui.header {
     background-image: url("../images/capturing-the-human-heart-trhlcn1abmu-unsplash.jpg");
@@ -132,59 +80,6 @@ h1#headerRow {
     
 }
 
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #000000;
-    font-size: 1.5em;
-}
-
-dl>dt {
-    font-weight: 700;
-    margin-bottom: 2px;
-    color:#FFFFFF;
-    font-size: 1.4em;
-    font-family: 'Arima Madurai', cursive;
-}
-
-/* Example of text indentation (alignment) */
-dl>dd {
-    text-indent: 15px;
-    margin-top: 1px;
-    color: #000000;
-    font-size: 1.25em;
-    font-family: 'Arima Madurai', cursive;
-}
-
-fieldset {
-    font-weight: 700;
-    font-size: 1.3em;
-    border: 3px solid #EF6C33;
-    border-radius: 10px;
-    padding: 15px;
-    background-color:#C0B3A0;
-}
-
- form.ui.form>fieldset>.field>label,
- form.ui.form>fieldset>.fields>.field>label{
-    font-size: 1em;
-    font-weight: 700;
-    color: #000000;
-}
-
-
-
-/* Light background color */
-form.ui.form>fieldset>.field>input,
-form.ui.form>fieldset>.fields>.field>input,
-form.ui.form>fieldset>.fields>.field>select,
-form.ui.form>fieldset>.field>textarea {
-    background-color: #F1FAEE;
-}
-
-form >textarea.field {
-    background-color: #F1FAEE;
-}
 
 .menu.ui>.item {
     color: #EF6C33;
@@ -209,46 +104,13 @@ form >textarea.field {
     font-weight: 700;
 }
 
-section>.img-thumbnail {
-    background-color:#0C4A60;
-    border-radius: 10px;
-    border-color: #EF6C33;
+.menu.ui{
+    font-family: 'Arima Madurai', cursive;
 }
 
-.row {
-    padding: 10px;
-}
-
-.small-image {
-    max-height: 50px;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.sectionBox {
-    border: 3px solid #EF6C33;
-    border-radius: 10px;
-    background-color:#C0B3A0;
-}
-
-.table {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
-}
-
-a:hover {
-    color: #EF6C33;
-}
-
-
-#descTable {
-    /* background-color: #457b9d; */
-    background-color: #FFFFFF;
-    border: 10px solid #EF6C33;
-    border-radius: 5px;
+.menu.ui,
+.ui.button{
+    font-family: 'Arima Madurai', cursive;
 }
 
 #logo {
@@ -304,6 +166,164 @@ div#welcomeBanner {
     
 }
 
+
+
+
+footer {
+    height: 75px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    padding-left: 1%;
+    background-image: url("../images/airportRunwayBigScreen.png");
+    background-size: 100% 100%;
+}
+
+
+
+@media screen and (max-width: 740px) {
+    footer{
+        background-image: url("../images/airportRunwayMobile.png");
+    }
+}
+
+#footerText {
+    font-size: 0.8em;    
+    color: #FFFFFF;
+}
+
+
+
+#footerTextDiv{
+    color: #FFFFFF;
+    position: relative;
+    bottom:-60px;
+    left: 0px;
+    display: flex;
+    font-size: 1.6em;
+}
+
+.icon.footerIcon {
+    color: white;
+}
+
+.socialMediaIcons {
+    position: absolute;
+    bottom: 30%;
+}
+
+@media screen and (min-width: 740px) {
+    .socialMediaIcons {
+        left: 47%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .socialMediaIcons {
+        left: none;
+        right: 5%;
+    }
+}
+
+
+
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+dl>dt {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color:#FFFFFF;
+    font-size: 1.4em;
+    font-family: 'Arima Madurai', cursive;
+}
+
+/* Example of text indentation (alignment) */
+dl>dd {
+    text-indent: 15px;
+    margin-top: 1px;
+    color: #000000;
+    font-size: 1.25em;
+    font-family: 'Arima Madurai', cursive;
+}
+
+fieldset {
+    font-weight: 700;
+    font-size: 1.3em;
+    border: 3px solid #EF6C33;
+    border-radius: 10px;
+    padding: 15px;
+    background-color:#C0B3A0;
+}
+
+ form.ui.form>fieldset>.field>label,
+ form.ui.form>fieldset>.fields>.field>label{
+    font-size: 1em;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* Light background color */
+form.ui.form>fieldset>.field>input,
+form.ui.form>fieldset>.fields>.field>input,
+form.ui.form>fieldset>.fields>.field>select,
+form.ui.form>fieldset>.field>textarea {
+    background-color: #F1FAEE;
+}
+
+form >textarea.field {
+    background-color: #F1FAEE;
+}
+
+
+
+section>.img-thumbnail {
+    background-color:#0C4A60;
+    border-radius: 10px;
+    border-color: #EF6C33;
+}
+
+.row {
+    padding: 10px;
+}
+
+.small-image {
+    max-height: 50px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.sectionBox {
+    border: 3px solid #EF6C33;
+    border-radius: 10px;
+    background-color:#C0B3A0;
+}
+
+.table {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+a:hover {
+    color: #EF6C33;
+}
+
+
+#descTable {
+    /* background-color: #457b9d; */
+    background-color: #FFFFFF;
+    border: 10px solid #EF6C33;
+    border-radius: 5px;
+}
 
 
 
@@ -449,14 +469,7 @@ img{
     padding-bottom: 10px;
 
 }
-.menu.ui{
-    font-family: 'Arima Madurai', cursive;
-}
 
-.menu.ui,
-.ui.button{
-    font-family: 'Arima Madurai', cursive;
-}
 
 
 #bookingName{
@@ -494,9 +507,14 @@ div.cost {
 }
 
 button.ui.button.right.floated,
-div.contactButton.ui.button {
+div.contactButton.ui.button,
+button.ui.button.confirmButton {
     color: black;
     background-color: #ABDFF1;
+}
+
+div.ui.confirmButton {
+    display: inline-block;
 }
 
 a.contactButton{
@@ -546,3 +564,6 @@ section.mainContent.rounded.sectionBox{
     color: #000000;
 }
 
+#modalConfirm {
+    width: auto;
+}
