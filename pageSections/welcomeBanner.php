@@ -44,9 +44,17 @@ else{
 if($time[0]=="0"){
     $time=substr($time,1,strlen($time));
 }
-$bannerCode = "<div id = 'welcomeBanner'>
-<h4>$greeting!</h4>
-<i class='$icon' ></i>
-</div>";
+if(isset($_SESSION['login_user'])){
+    $bannerCode = "<div id = 'welcomeBanner'>
+    <h4>$greeting ".$_SESSION['login_user']."!</h4>
+    <i class='$icon' ></i>
+    </div>";
+}
+else{
+    $bannerCode = "<div id = 'welcomeBanner'>
+    <h4>$greeting!</h4>
+    <i class='$icon' ></i>
+    </div>";
+}
  echo $bannerCode;
 ?>
