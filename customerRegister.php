@@ -1,4 +1,9 @@
+<!-- Authors: Nicolas Tambellini
+Date: July 31,2019
+Version: 2.5
+Functionality: Add New Customer to DB -->
 <?php
+// Redirect to index page if logged in. Done by Tarik.
 if(isset($_SESSION['user_type'])){
     header("Location: index.php");
 }

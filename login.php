@@ -1,5 +1,10 @@
+<!-- Authors: Owiny Ayorech
+Date: July 31,2019
+Version: 2.5
+Functionality: Shows vacation packages. Order button links to register page since this is an unregistered customer. -->
 <?php
 include("pageSections/header.php");
+// Redirects if user is logged in. Done by Tarik.
 if(isset($_SESSION['user_type'])){
    header("Location: index.php");
 }
@@ -18,7 +23,7 @@ include("phpFunctions/loginProcess.php");
                 </div>
 
             <div style="justify-content: center;">
-            <!-- If failure to login, echo message goes here -->
+            <!-- If failure to login, echo message -->
                 <?php
                     if(isset($_SESSION['failedLogin'])){
                         echo "<p>Failed to login. Please check username and password.</p>";

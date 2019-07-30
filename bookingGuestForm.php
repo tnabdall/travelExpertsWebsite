@@ -1,5 +1,10 @@
+<!-- Authors: Nicolas Tambellini
+Date: July 31,2019
+Version: 2.5
+Functionality: Form to add new customer and booking to DB -->
 <?php
 include("pageSections/header.php");
+// Redirects to index if customer is already logged in. Done by Tarik.
 if(isset($_SESSION['user_type'])){
     header("Location: index.php");
 }
@@ -10,89 +15,8 @@ if(isset($_SESSION['user_type'])){
     <form class="ui form mainContent" action="" method="POST">
         <fieldset>
         <?php
-            if(isset($_POST['submit'])){
-                include("phpFunctions/functions.php");
-                $tripType=$_POST['TripTypeId'];
-
-                unset($_POST["TripTypeId"]);
-
-                // Create customer
-                $customerData = $_POST;
-                unset($customerData["submit"]);
-
-                $customerData['Password'] = password_hash($customerData['Password'],PASSWORD_DEFAULT);
-
-                if($customerData['CustBusPhone']==''){
-                    unset($customerData['CustBusPhone']);
-                }
-
-                $success = insertData($customerData,'customers', 'travelexperts','dbAdmin','L0g1n2db!');
-
-                if ($success == false) {
-                    echo "<p>Customer was not successfully submitted into db.</p>";
-                    exit();
-                 }
-
-                $bookingData=array();
-                $bookingData['TripTypeId'] = $tripType;
-                $bookingData['PackageId']=$_SESSION['pkgId'];
-                
-                $mysqli = mysqli_connect('localhost', 'dbAdmin' ,'L0g1n2db!' , 'travelexperts');
-
-                if ($mysqli->connect_errno) {
-                    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-                    return false;
-                }
-
-                $query = 'SELECT `CustomerId` FROM `customers` WHERE Username = "'.$_POST['Username'].'";';
-
-                // $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
-                $executeQuery=$mysqli -> query($query);
-                $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
-                
-                $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
-                $executeQuery=$mysqli -> query($query);
-                
-                try{   
-                    $logFile = fopen("logs/query_Log.txt","a");
-                    if($executeQuery){
-                        fwrite($logFile,"Successfully executed the query $query.\n");
-                    }
-                    else{
-                        fwrite($logFile,"Failed to execute the query $query.\n");
-                    }
-                    fclose($logFile);
-                }
-                catch(Exception $e){
-                    
-                }
-                mysqli_close($mysqli);
-                
-                if($executeQuery){
-                    $email = $customerData['CustEmail'];
-                    
-                    $msg = 'Hi '.$customerData['CustFirstName'].' '.$customerData['CustLastName'].
-                    ',
-                    
-Thanks for Booking with the Travel Experts!
-
-You have now been registered as a customer and your booking is confirmed. 
-                    
-Booking Info: 
-
-Package: '.$_SESSION['pkgName'].'
-Triptype: '.$tripType.' 
-                    
-An account has been created for your next visit to our site.
-
-Your Username is: '.$customerData['Username'];
-
-                    $subject = 'Travel Booking and Registration';
-                    mailer ($email,$msg,$subject,'newCustomerBooking');
-                    unset($tripType);
-                }
-                header( "refresh:8;url=index.php");
-            }
+        // Adds php functionality to modify db with form
+            include("phpFunctions/bookingGuestRegisterSubmit.php");
         ?>
             <div class = "two fields">
                 
@@ -105,7 +29,6 @@ Your Username is: '.$customerData['Username'];
                         <br>
                     </p>
                 </div>
-            
                 <div class="focus required field">
                     <label id="tripTypeLabel" for="TripTypeId">Trip Type</label>
                     <select id="TripTypeId" name="TripTypeId">

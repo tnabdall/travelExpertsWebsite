@@ -1,3 +1,7 @@
+<!-- Authors: Nicolas Tambellini
+Date: July 31,2019
+Version: 2.5
+Functionality: Adds new vacation package -->
 <?php
 
 if(isset($_POST['submit']) && isset($_FILES['Image'])){
@@ -12,11 +16,12 @@ if(isset($_POST['submit']) && isset($_FILES['Image'])){
     }
 
     include("functions.php");
-    $packageData = $_POST;
 
+    // Grabs form data and removes submit value
+    $packageData = $_POST;
     unset($packageData["submit"]);
 
-    // Put image file path in agent data and move from temp folder to cards folder
+    // Put image file path in vacation data and move from temp folder to cards folder
     $name = basename($_FILES["Image"]["name"]);
     $packageData['Image'] = "images/Package_Pics/$name";
     move_uploaded_file($_FILES['Image']['tmp_name'],$packageData['Image']);
@@ -35,7 +40,7 @@ if(isset($_POST['submit']) && isset($_FILES['Image'])){
         echo "<p>Failed to insert new package into the database.</p>";
     }
     // Try to write to log
-    try{   
+    try{    
         $logFile = fopen("logs/packageLog.txt","a");
         if(!$logFile){
             throw new Exception("Can't write to package register log: ");

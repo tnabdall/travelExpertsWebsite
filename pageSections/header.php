@@ -1,3 +1,9 @@
+<!-- Authors: Tarik Abdalla
+Date: July 31,2019
+Version: 2.5
+Functionality: Page header -->
+
+<!-- Start session for whole website -->
 <?php session_start() ?>
 <!DOCTYPE html>
 <html>
@@ -26,8 +32,8 @@
     <script src="semanticUI/semantic.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
+    <!-- Sticky and shrinking header functionality -->
     <script src="js/header.js"></script>
-
     <!-- Sets the active page in the nav bar and formats as desktop or mobile menu-->
     <script src="js/menu.js"></script>
 </head>

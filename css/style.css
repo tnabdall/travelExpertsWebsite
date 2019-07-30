@@ -1,4 +1,5 @@
-
+/* ************** GENERAL HTML - Nicolas ************* */
+/* Assign imported font to the website */
 html,
 body,
 main {
@@ -7,17 +8,21 @@ main {
     font-family: 'Arima Madurai', cursive;
 }
 
+/* background for body of pages */
 body {
     background: #E8CBC0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+/*background for body of pages when sidebar toggles */
 body.pushable>.pusher {
     background: #E8CBC0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
+/* content between header and footer */  
 main {
     padding-bottom: 120px;
     padding-left: 1%;
@@ -26,26 +31,76 @@ main {
     margin-bottom: 20px;
 }
 
+/* gives margin above footer for plane icons */
 .mainContent{
     margin-bottom: 28px;
 }
 
+/* used to stick footer to bottom of page */
 #holder {
     min-height: 100%;
     position: relative;
 }
 
+/* styling on paragraph elements for echoed statements */
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 1.5em;
+}
 
+/* adds border to section */
+.sectionBox {
+    border: 3px solid #EF6C33;
+    border-radius: 10px;
+    background-color:#C0B3A0;
+}
 
+/* makes images responsive in different browsers */
+img{
+    width: -moz-available;
+}
 
+/* styling for contact card container */
+section.mainContent.rounded.sectionBox{
+    width: 50%;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+/* resizes contact card container on mobile */
+@media screen and (max-width: 770px) {
+    section.mainContent.rounded.sectionBox {
+        width:100%;
+    }
+}
+
+/* cololur styling on buttons */
+button.ui.button.right.floated,
+div.contactButton.ui.button,
+button.ui.button.confirmButton {
+    color: black;
+    background-color: #ABDFF1;
+}
+
+/* ************** Link Hover - Tarik ************* */
+
+/* changes of text when you hover over a link */
+a:hover {
+    color: #EF6C33;
+}
+
+/* ************** Header - Tarik ************* */
+
+/* Background image for header */
 h1.ui.header {
     background-image: url("../images/capturing-the-human-heart-trhlcn1abmu-unsplash.jpg");
     background-position: center;
     background-size: 100%;
 }
 
-
-
+/* Formats header text */
 h1.ui.header>.content {
     font-family: 'Cinzel Decorative', cursive;
     font-weight: 700;
@@ -55,6 +110,7 @@ h1.ui.header>.content {
     font-size: 240%;
     
 }
+/* Formats font size of header based on screen width */
 @media screen and (max-width: 740px) {
     #headingTextDiv{
         font-size: 190%;
@@ -71,6 +127,7 @@ h1.ui.header>.content {
     }
 }
 
+/* Formats height and positioning in header */
 h1#headerRow {
     margin-bottom: 0px;
     height: 200px;
@@ -80,13 +137,27 @@ h1#headerRow {
     
 }
 
+/* Aligns logo */
+#logo {
+    vertical-align: middle;
+}
 
+/* Aligns header text */
+#headingMessage {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* ************** Menu/Sidebar - Tarik ************* */
+
+/* Sets format for inactive menu items */
 .menu.ui>.item {
     color: #EF6C33;
     font-weight: 700;
     font-size: 1.5em;
 }
 
+/* Sets format for active page menu item */
 .menu.ui>.item.active {
     color: #EF6C33;
     background-color: #ABDFF1;
@@ -94,6 +165,7 @@ h1#headerRow {
     font-weight: 700;
 }
 
+/* Sets hover over colors on menu */
 .ui.stackable.menu .dropdown.item:hover,
 .ui.stackable.menu .link.item:hover,
 .ui.stackable.menu a.item:hover,
@@ -104,71 +176,89 @@ h1#headerRow {
     font-weight: 700;
 }
 
+/* Sets font on menu */
 .menu.ui{
     font-family: 'Arima Madurai', cursive;
 }
 
+/* Sets font on menu button */
 .menu.ui,
 .ui.button{
     font-family: 'Arima Madurai', cursive;
 }
 
-#logo {
-    vertical-align: middle;
-}
-
-#headingMessage {
-    vertical-align: middle;
-    text-align: center;
-}
-
+/* Sets formatting for links section */
 #linkSection {
     max-height: 100px;
-    
 }
 
+/* sets format for the desktop nav bar */
 #desktopNavBar {
     background-color:#0C4A60;
     margin-top: 0px;
-    margin-bottom: 0px;
     border: none;
     visibility: visible;
+    margin-bottom: 10px;
 }
 
+/* sets format for the sidebar */
 #mobileNavBar{
     visibility: hidden;
     margin-top: 0px;
-    margin-bottom: 0px;
-    
     border: none;
+    margin-bottom: 10px;
 }
 
+/* sets background color for sidebar */
 #menuButton{
     background-color:#0C4A60;
 }
 
+/* sets color for sidebar */
 #menuButton>a{
     color: #EF6C33;
 }
 
+/* sets sidebar formats */
 #sidebar{
     background-color: #0C4A60;
     font-size: 0.8em;
 }
 
+/* sets icon color on sidebar */
 #sidebar i{
     color: #EF6C33;
 }
 
+/* formats height on sidebar */
+#sidebar>a{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ************** Welcome Banner - Nicolas ************* */
+
+/* welcome banner format */
 div#welcomeBanner {
     margin-top: 0px;
     padding: 5px;
-    
+    color: #ABDFF1;
+    /* display: inline; */
+    font-size: 1.2em;
+    text-align: center;
 }
 
+/* welcome banner text format */
+#welcomeBanner>h4{
+    font-size: 1.5em;
+    display: inline;
+    font-family: 'Arima Madurai', cursive;
+}
 
+/* ************** Footer - Tarik ************* */
 
-
+/* footer formatting with background image */
 footer {
     height: 75px;
     width: 100%;
@@ -180,21 +270,20 @@ footer {
     background-size: 100% 100%;
 }
 
-
-
+/* on smaller screens */
 @media screen and (max-width: 740px) {
     footer{
         background-image: url("../images/airportRunwayMobile.png");
     }
 }
 
+/* footer text formatting */
 #footerText {
     font-size: 0.8em;    
     color: #FFFFFF;
 }
 
-
-
+/* positioning formatting on footer text div */
 #footerTextDiv{
     color: #FFFFFF;
     position: relative;
@@ -204,15 +293,25 @@ footer {
     font-size: 1.6em;
 }
 
+/* footer icon colors */
 .icon.footerIcon {
     color: white;
 }
 
+/* sets color and initial position for footer plane */
+#planeImg{
+    position: absolute; 
+    bottom: 0%;
+    font-size: 50px;
+    color: #EF6C33;
+}
+
+/* social media icon positioning */
 .socialMediaIcons {
     position: absolute;
     bottom: 30%;
 }
-
+/* social media icon positioning on smaller screens */
 @media screen and (min-width: 740px) {
     .socialMediaIcons {
         left: 47%;
@@ -226,33 +325,9 @@ footer {
     }
 }
 
+/* ************** Forms - Nicolas ************* */
 
-
-
-p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #000000;
-    font-size: 1.5em;
-}
-
-dl>dt {
-    font-weight: 700;
-    margin-bottom: 2px;
-    color:#FFFFFF;
-    font-size: 1.4em;
-    font-family: 'Arima Madurai', cursive;
-}
-
-/* Example of text indentation (alignment) */
-dl>dd {
-    text-indent: 15px;
-    margin-top: 1px;
-    color: #000000;
-    font-size: 1.25em;
-    font-family: 'Arima Madurai', cursive;
-}
-
+/* fieldset box format */
 fieldset {
     font-weight: 700;
     font-size: 1.3em;
@@ -262,6 +337,7 @@ fieldset {
     background-color:#C0B3A0;
 }
 
+/* formatting on labels in form */
  form.ui.form>fieldset>.field>label,
  form.ui.form>fieldset>.fields>.field>label{
     font-size: 1em;
@@ -269,7 +345,7 @@ fieldset {
     color: #000000;
 }
 
-/* Light background color */
+/* Light background color on form inputs */ 
 form.ui.form>fieldset>.field>input,
 form.ui.form>fieldset>.fields>.field>input,
 form.ui.form>fieldset>.fields>.field>select,
@@ -277,98 +353,69 @@ form.ui.form>fieldset>.field>textarea {
     background-color: #F1FAEE;
 }
 
+/* light background color on textarea input */
 form >textarea.field {
     background-color: #F1FAEE;
 }
 
-
-
-section>.img-thumbnail {
-    background-color:#0C4A60;
-    border-radius: 10px;
-    border-color: #EF6C33;
+/* formatting on trip name */
+div.trip {
+    font-size: 1.5em;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-weight:900;
+    color: #0C4A60;
 }
 
-.row {
-    padding: 10px;
+/* formatting on trip cost */
+div.cost {
+    color: #0C4A60;
+    font-weight:600;
 }
 
-.small-image {
-    max-height: 50px;
+/* format checkbox element */
+#checkBoxDiv{
+    align-self: center
 }
 
-.justify-center {
-    justify-content: center;
+#checkBoxLabel{
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000000;
 }
 
-.sectionBox {
-    border: 3px solid #EF6C33;
-    border-radius: 10px;
-    background-color:#C0B3A0;
-}
-
-.table {
-    margin: auto;
-    justify-content: center;
+/* formats name of booking */
+#bookingName{
     text-align: center;
+    line-height: 250%;
+    color:#0C4A60;
 }
 
-a:hover {
-    color: #EF6C33;
+/* formats dropdown text size */
+p.dropdown{
+    font-size: 1em;
 }
 
-
-#descTable {
-    /* background-color: #457b9d; */
-    background-color: #FFFFFF;
-    border: 10px solid #EF6C33;
-    border-radius: 5px;
+/* formats itinerary class font size */
+a.itinerary {
+    font-size: 1em;
 }
 
+/* ************** Home Page - Tarik ************* */
 
-
+/* aligns item in center in main section and gives margin */
 section#travelImageSection{
     align-items: center;
     font-size: 1.2em;
+    margin-bottom: 200px;
 }
 
-table tr{
-    padding: 10px;
-}
-
-
-#vacations {
-    position: relative;      /* recommended */
-}
-#vacations .MS-content {
-    white-space: nowrap;     /* required */
-    overflow: hidden;        /* required */
-    margin: 0 5%;            /* makes room for L/R arrows */
-}
-#vacations .MS-content .item {
-    display: inline-block;   /* required */
-    width: 20%;              /* required * Determines number of visible slides */ 
-    position: relative;      /* required */
-    vertical-align: top;     /* required */
-    overflow: hidden;        /* required */
-    height: 100%;            /* recommended */
-    white-space: normal;     /* recommended */
-}
-#vacations .MS-controls button {
-    position: absolute;      /* recommended */
-    top: 35px;
-}
-#vacations .MS-controls .MS-left {
-    left: 10px;
-}
-#vacations .MS-controls .MS-right {
-    right: 10px;
-}
-
+/* gives padding to carousel */
 #cardCarousel{
     padding: 5px;
 }
 
+/* gives formatting to card elements */
 .item.card{
     background-color: #C0B3A0;
     height: auto;
@@ -378,37 +425,33 @@ table tr{
     margin: 5px;
 }
 
-img{
-    width: -moz-available;
+/* makes image div take width of container */
+.packageImageDiv { 
+    width:auto; 
+    text-align:center; 
+} 
+
+/* makes image fit width of div and adds border */
+.packageImage { 
+    max-width:100%; 
+    height:333px; 
+    border: 2px solid black;
+} 
+
+/* warning for start dates that already passed on package */
+.packageWarning {
+    color:red;
+    font-weight: 900;
 }
 
-#welcomeBanner{
-    color: #ABDFF1;
-    /* display: inline; */
-    font-size: 1.2em;
-    text-align: center;
+/* fits modal width to content */
+#modalConfirm {
+    width: auto;
 }
 
-#welcomeBanner>h4{
-    font-size: 1.5em;
-    display: inline;
-    font-family: 'Arima Madurai', cursive;
-}
+/* ************** Login Page - Owiny ************* */
 
-#sidebar>a{
-    height: 20%;
-    display: flex;
-    justify-content: center;
-}
-
-#mobileNavBar{
-    margin-bottom: 10px;
-}
-
-#desktopNavBar{
-    margin-bottom: 10px;
-}
-
+/* sets width of login form */
 #loginForm{
     width: 34%;
     margin: auto;
@@ -420,150 +463,71 @@ img{
     }
 }
 
+/* ************** Contact Page - Owiny ************* */
 
+/* Centers agent card */
 #agentCardInfo {
     margin-left: auto;
     margin-right: auto;
 }
 
-
-.ui.card>.image>img.contactCardImage {
-    width:100%; 
-    height:200px; 
-    /* object-fit: contain; 172.7 x 446.56 */
-}
-
-.imageDiv { 
-    width:auto; 
-    text-align:center; 
-} 
-
-.packageImageDiv { 
-    width:auto; 
-    text-align:center; 
-} 
-
-.packageImage { 
-    max-width:100%; 
-    height:333px; 
-    border: 2px solid black;
-} 
-
-#travelImageSection{
-    margin-bottom: 200px;
-}
-
-.packageWarning {
-    color:red;
-    font-weight: 900;
-}
-
-.ui.centered.small.image.imageDiv{
-    padding: 10px;
-    width:100%;
-}
-
-.ui.five.stackable.cards {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-
-}
-
-
-
-#bookingName{
-    text-align: center;
-    line-height: 250%;
-    color:#0C4A60;
-}
-
-
-
-p#bookingName{
-    text-align: center;
-    line-height: 250%;
-}
-
-p.dropdown{
-    font-size: 1em;
-}
-
-a.itinerary {
-    font-size: 1em;
-}
-
-div.trip {
-    font-size: 1.5em;
-    padding-top:5px;
-    padding-bottom: 5px;
-    font-weight:900;
-    color: #0C4A60;
-}
-
-div.cost {
-    color: #0C4A60;
-    font-weight:600;
-}
-
-button.ui.button.right.floated,
-div.contactButton.ui.button,
-button.ui.button.confirmButton {
-    color: black;
-    background-color: #ABDFF1;
-}
-
-div.ui.confirmButton {
-    display: inline-block;
-}
-
-a.contactButton{
-    color: black;
-}
-
-section.company-info,
-p.company-info {
-    color: #0C4A60;
-    font-weight:600;
-}
-
+Sets dimensions of modal image in card and adds border
 #modalCard {
     width:200px; 
     height:200px; 
     border: 2px solid black;
 }
 
-section.mainContent.rounded.sectionBox{
-    width: 50%;
-    margin: auto;
-    font-size: 1.5em;
+/* Sets dimensions of image in contact card */
+.ui.card>.image>img.contactCardImage {
+    width:100%; 
+    height:200px; 
+    /* object-fit: contain; 172.7 x 446.56 */
 }
 
-@media screen and (max-width: 770px) {
-    section.mainContent.rounded.sectionBox {
-        width:100%;
-    }
+/* Makes image div take width of container */
+.imageDiv { 
+    width:auto; 
+    text-align:center; 
+} 
+
+/* Adds padding to small images */
+.ui.centered.small.image.imageDiv{
+    padding: 10px;
+    width:100%;
 }
 
+/* padding to rows of 5 cards */
+.ui.five.stackable.cards {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+/* adds border to contact image */
 .ui.card > .image > img.contactCardImage {
     border: 2px solid black;
 }
 
+/* adds border to contact cards */
 .ui.modal,
 .ui.cards > .card{
     border: 3px solid #EF6C33;
 }
 
-#checkBoxDiv{
-    align-self: center
+/* adds text color to contact button */
+a.contactButton{
+    color: black;
 }
 
-#checkBoxLabel{
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #000000;
+/* adds formatting to company info */
+section.company-info,
+p.company-info {
+    color: #0C4A60;
+    font-weight:600;
 }
 
-#modalConfirm {
-    width: auto;
+/* makes confirm button inline */
+div.ui.confirmButton {
+    display: inline-block;
 }

@@ -1,3 +1,7 @@
+<!-- Authors: Owiny Ayorech
+Date: July 31,2019
+Version: 2.5
+Functionality: Populate contacts from DB into card format -->
 <?php include("pageSections/header.php") ?>
 
 <main>
@@ -44,7 +48,7 @@
                         $ratingMessage='Rating: <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>';
                     }
 
-                    // HTML formatting for agent and modal
+                    // HTML formatting for agent card and modal
                     $currentCard = '
                     <div id="contactCard'.$counter.'" class="ui card">
                         <!-- MODAL '.$counter.' CODE -->

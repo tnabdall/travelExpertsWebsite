@@ -1,6 +1,12 @@
+<!-- Authors: Tarik Abdalla
+Date: July 31,2019
+Version: 2.5
+Functionality: Page header -->
 
 <?php
+// Sets menu based on login user type (agent, registered customer, or guest customer)
 if (isset($_SESSION['user_type'])){
+    // For registered customer
     if($_SESSION['user_type']=='registeredCustomer'){
         echo '<div id="desktopNavBar" class="ui stackable menu five item">
             <a class="item" href="indexRegistered.php"><i class="home icon"></i> Home</a>
@@ -23,6 +29,7 @@ if (isset($_SESSION['user_type'])){
             </div>
         </div>';
     }
+    // For agents
     else if($_SESSION['user_type']=='agent'){
         echo '<div id="desktopNavBar" class="ui stackable menu five item">
                 <a class="item" href="index.php"><i class="home icon"></i> Home</a>
@@ -48,6 +55,7 @@ if (isset($_SESSION['user_type'])){
             </div>';
     }
 }
+// For unregistered customers
 else{
     echo '<div id="desktopNavBar" class="ui stackable menu five item">
         <a class="item" href="index.php"><i class="home icon"></i> Home</a>

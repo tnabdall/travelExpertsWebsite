@@ -1,3 +1,10 @@
+<!--
+Authors: Owiny Ayorech
+Date: July 31,2019
+Version: 2.5
+Functionality: Connect to database
+-->
+
 <?php
 
 class Database

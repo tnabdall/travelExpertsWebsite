@@ -1,5 +1,11 @@
+<!-- Authors: Nicolas Tambellini
+Date: July 31,2019
+Version: 2.5
+Functionality: Add Vacation Package Form -->
+
 <?php
 include("pageSections/header.php");
+// Redirects to login page if not logged in as an agent. Done by Tarik
 if(!isset($_SESSION['user_type'])){
     header("Location: login.php");
 }

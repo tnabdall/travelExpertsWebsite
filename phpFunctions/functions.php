@@ -1,5 +1,9 @@
 <?php
 
+// Authors: Tarik Abdalla
+// Date: July 31,2019
+// Version: 2.5
+// Functionality: Logs in customer or agent to DB using PDO for better security
 function verifyUserCredentials($user,$pass){
     $dsn = "mysql:host=localhost;dbname=travelexperts";
     $dbUser='dbAdmin';
@@ -56,7 +60,10 @@ function verifyUserCredentials($user,$pass){
     }
 }
 
-// Inserts an associative array of colummns and values into the specified table and database
+// Authors: Nicolas Tambellini
+// Date: July 31,2019
+// Version: 2.5
+// Functionality: Inserts an associative array of colummns and values into the specified table and database
 function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     // Attempt connecting to sql server. Stop execution if unable to connect.
     $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
@@ -65,15 +72,14 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         return false;
     }
     
-    
     // Build columns and values strings for sql statement from array
     $columns='';
     $values='';
     $counter=0;
     foreach ($dataArray as $column=>$value){
         // Check if counter is equal to array length,
-        // so that we can exclude the last comma for poper formatting
-        if($counter==count($dataArray)-1){
+        // so that we can exclude the last comma for proper formatting
+        if($counter==count($dataArray)-1){ // For last element
             $columns.="$column";
             if(is_numeric($value) && strlen($value)<10){
                 $values.="$value";
@@ -82,7 +88,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
                 $values.="'$value'";
             }
         }
-        else{
+        else{ // For any element but last
             $columns.="$column,";
             if(is_numeric($value) && strlen($value)<10){
                 $values.="$value,";
@@ -94,6 +100,7 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
         $counter+=1;
     }
     
+    // Execute insert query
     $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
     $executeQuery=$mysqli -> query($query);
     try{   
@@ -113,60 +120,68 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     return $executeQuery;
 }
 
-
+// Authors: Owiny Ayorech
+// Date: July 31,2019
+// Version: 2.5
+// Functionality: Sends an email to the user
 function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     if ($type === 'newCustomer')
     {
         $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A confirmation email will be sent to you.</p>";
-        $notificationFailure =  "<p>Failed to insert new customer into the database.</p>";
+        $notificationFailure =  "<p>A confirmation email was not able to be sent to you. Please contact us.</p>";
     }
     else if ($type === 'newCustomerBooking')
     {
         $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A booking has been made,a confirmation email will be sent to you.</p>";
-        $notificationFailure =  "<p>Failed to book the package.</p>";
+        $notificationFailure =  "<p>A confirmation email was not able to be sent to you. Please contact us.</p>";
     }
     else if ($type === 'registeredBooking')
     {
         $notificationSuccess = "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
-        $notificationFailure =  "<script type='text/javascript'>alert('Failed to book the package.');</script>";
+        $notificationFailure =  "<script type='text/javascript'>alert('Failed to send confirmation email. Please contact us.');</script>";
     }
     else if ($type === 'agentContact')
     {
         $notificationSuccess = "<p>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
-        $notificationFailure =  "<p>Failed to contact the agent</p>";
+        $notificationFailure =  "<p>Your message was not sent to the agent. Please call the agency.</p>";
     }
     
-    $email=$emailAddress;
+    try{
+        $email=$emailAddress;
 
-    // Sanitize E-mail Address
-    $email =filter_var($email, FILTER_SANITIZE_EMAIL);
-    // Validate E-mail Address
-    $email= filter_var($email, FILTER_VALIDATE_EMAIL);
-    if (!$email)
-    {
-        echo "Invalid Sender's Email - No Message will be sent";
-    }
-    else
-    {
-        $email2 = "cprg210.travelexperts@gmail.com";
-        $headers = 'From:'. $email2 . "rn"; // Sender's Email
-        $headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
-       
-        // Send Mail By PHP Mail Function
-        $to = $email;
-        $subject = $emailSubject;
-        $message = $emailMessage;
-        
-        $success = mail($to, $subject, $message, $headers);
-        
-        if ($success)
+        // Sanitize E-mail Address
+        $email =filter_var($email, FILTER_SANITIZE_EMAIL);
+        // Validate E-mail Address
+        $email= filter_var($email, FILTER_VALIDATE_EMAIL);
+        if (!$email)
         {
-            echo $notificationSuccess;
-        } 
-        else 
-        {
-            echo $notificationFailure;
+            echo "Invalid Sender's Email - No Message will be sent";
         }
+        else
+        {
+            $email2 = "cprg210.travelexperts@gmail.com";
+            $headers = 'From:'. $email2 . "rn"; // Sender's Email
+            $headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
+        
+            // Send Mail By PHP Mail Function
+            $to = $email;
+            $subject = $emailSubject;
+            $message = $emailMessage;
+            
+            $success = @mail($to, $subject, $message, $headers);
+            
+            if ($success)
+            {
+                echo $notificationSuccess;
+            } 
+            else 
+            {
+                echo $notificationFailure;
+            }
+        }
+    }
+    catch(Exception $e){
+        // Do nothing
     }
 
     try{   
@@ -197,7 +212,10 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     }
 }
 
-// Returns all rows in table as numeric array. Each row is an associative array.
+// Authors: Owiny Ayorech
+// Date: July 31,2019
+// Version: 2.5
+// Functionality: Grabs all data from a specified table in db
 function grabAllData($tableName,$dbname,$dbuser,$dbpass){
     // Attempt connecting to sql server. Stop execution if unable to connect.
     $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
@@ -205,6 +223,7 @@ function grabAllData($tableName,$dbname,$dbuser,$dbpass){
         echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         return false;
     }
+    // Executes query
     $query = "SELECT * FROM $tableName;";
     $executeQuery=$mysqli -> query($query);
     try{   
@@ -230,29 +249,32 @@ function grabAllData($tableName,$dbname,$dbuser,$dbpass){
     
 }
 
+// Authors: Tarik Abdalla
+// Date: July 31,2019
+// Version: 2.5
+// Functionality: Grabs all vacation packages and format/calculate a few columns from table data
 function getVacationPackages(){
     require "classes/dbConnect.php";
     try{
         $db = new Database();
         $conn = $db -> getConn();
 
+        // Selects all needed info for package and calculates duration from difference between start and end dates
         $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate,PkgStartDate) AS "Duration", `PkgBasePrice` FROM `packages` WHERE 1;';
-
-
-
-
         $result = $conn->query($sql);
 
         if ($result === false) {
-        var_dump($conn->errorInfo());
+            // Show error info if fails
+            var_dump($conn->errorInfo());
         } 
         else {
-        $packages = $result->fetchAll(PDO::FETCH_ASSOC);
+            // Grab all packagaes into an associative array
+            $packages = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $packages;
     }
     catch(Exception $e){
-        throw(new Exception("Could not retrive vacation packages from db"));
+        throw(new Exception("Could not retrieve vacation packages from db"));
     }
 }
 

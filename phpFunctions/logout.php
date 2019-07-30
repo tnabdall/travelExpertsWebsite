@@ -1,3 +1,7 @@
+<!-- Authors: Owiny Ayroech
+Date: July 31,2019
+Version: 2.5
+Functionality: Destroys all session variables related to logged in customer/agent -->
 <?php
 session_start();
 unset($_SESSION['login_user']);

@@ -96,3 +96,45 @@ Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerI
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",22);.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",1);.
 
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",4);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('asd','asdsad','fsdfafdsa','fdasfdas','IL',90210,'USA','4444444444','j@s.com','me','$2y$10$75MfL61X9jT4n6zvgWN95.4Wwh/Wm2BuEHaKpNQHOXMEpZL5b9AsG');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),145,"L",2);.
+Failed to execute the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('asd','asdsad','fsdfafdsa','fdasfdas','IL',90210,'USA','4444444444','j@s.com','me','$2y$10$FvFT03JBrxWm.ECx3Q7YX.Lv986c9c0SK.pyAxldWDq6xqWdByjQi');.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('afsd','adfsdsaf','dfsadfsaadfs','dfsadafdfa','NS','t1a 1a1','Canada','1112223333','ntambellini13@gmail.com','nico','$2y$10$85sbSLfsvs1iKBgrOLpK3eAX4JeRJf56hJaky/dJw4KG7hEF4dSSq');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),147,"G",4);.
+Failed to execute the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('afsd','adfsdsaf','dfsadfsaadfs','dfsadafdfa','NS','t1a 1a1','Canada','1112223333','ntambellini13@gmail.com','nico','$2y$10$t0PfSdbBicSd.IDPIgTEt.Jo6hAKUGUhH1VA9T4uc5STKuhona6my');.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('fasdfdsa','sadfdsaf','sdafsadfadfs','adfsdfsaaf','QC','t1a1a1','Canada','1112223333','tabdalla@live.com','tadwe','$2y$10$RKNYgVae0t2UXuRSSKFdAeTteoFqStvrSbCWjgYEZdLdB4JVJjyMu');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),149,"L",4);.
+Failed to execute the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('fasdfdsa','sadfdsaf','sdafsadfadfs','adfsdfsaaf','QC','t1a1a1','Canada','1112223333','tabdalla@live.com','tadwe','$2y$10$niy23ivtLochXxP1E27ThOMHq5.LDK4OO8.0bLO2rlaNHXf71Y8yS');.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('fdsadsaf','dsfafsda','dsfafsda','dsfafsdadsa','IA',34123,'USA','2223334444','fsadf@fg.com','safdsa','$2y$10$DplcP43Vc1DoAPlXFCcu3uSnsPb27hTbvBy/SZdSx8px/433EdXN.');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),151,"G",2);.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('sadf','asdfdsfa','assda','asfdsa','NU','r1a1a1','Canada','4445556666','tea@g.com','fasd','$2y$10$7w.7d29pFj8hjnuqeXKnp.FPu21IJvz0WLxu7Li3MAYNFhGMbSOrO');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),152,"L",5);.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('fasdsaf','adfsadfs','fsdafdsadfsa','dfsadfsafdsa','PE','t1a1a1','Canada','2223334444','sadfsa@fdsfsd.com','asfdfad','$2y$10$31lKrB3TptWLPQ5HY2Um5uD5LnvkS5b6M8yTW33kHVXpAdQvGsN4e');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),153,"G",6);.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('asfdfsad','dsafdsf','adfsfdsa','sadfadfs','ID',23132,'USA','1324445555','fsafds@gsdf.com','fadsfdsa','$2y$10$JLZszu0ld60/2ct/yaOvh.FRG2EbF4UijYsjtMZ4N7nzzHzzUNkt2');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),154,"G",2);.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('adsfdfsaadfs','efaefafewa','feaeaedasw','efawsafswe','MA',90000,'USA','6666666666','gh@fs.com','you','$2y$10$A9Xx6JCiGjCeLB7KAK0TC.SpqzRnKpxJuBTXGnaEeDcc6eGkeU3.S');.
+Failed to execute the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('adsfdfsaadfs','efaefafewa','feaeaedasw','efawsafswe','MA',90000,'USA','6666666666','gh@fs.com','you','$2y$10$jY9UmCXxS8ml./jXI/l4jOmqW53dIMIWZrkiTZVVmS0tTxM0nfwj6');.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('fdsafd','fdsadfsa','dsfadfsa','fasfsdadfsa','KS',66666,'USA','1112223333','sadfas@g.cop','billybob','$2y$10$5CLIPhuH8bybBemBsdXrheqVY0PM08/2JNw71QCWxveBv8CxXaIJ.');.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 8.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.

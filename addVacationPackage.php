@@ -1,4 +1,10 @@
+<!-- Authors: Nicolas Tambellini
+Date: July 31,2019
+Version: 2.5
+Functionality: Add Vacation Package Form -->
+
 <?php
+// Redirects to login page if not logged in as an agent. Done by Tarik
 include("pageSections/header.php");
 if(!isset($_SESSION['user_type'])){
     header("Location: login.php");
@@ -53,7 +59,7 @@ else{
             </div>            
             <div class="centered">
                 <?php
-                include("phpFunctions/vacationPackageSubmit.php"); // Submits form to agent table in DB
+                include("phpFunctions/vacationPackageSubmit.php"); // Submits form to packages table in DB
                 ?>
             </div>
             <div class="ui two buttons">

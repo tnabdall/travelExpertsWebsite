@@ -1,4 +1,7 @@
-<!-- Welcome banner -->
+<!-- Authors: Tarik Abdalla
+Date: July 31,2019
+Version: 2.5
+Functionality: Welcome banner -->
 <?php
 // Creates a welcome banner
  // Tries to get user timezone
@@ -9,9 +12,10 @@ $ipData = json_decode( $json, true);
  // Sets timezone
 if (array_key_exists('timezone', $ipData)) {
     $tz = new DateTimeZone( $ipData['timezone']);
-    $now = new DateTime( 'now', $tz); // DateTime object corellated to user's timezone
+    $now = new DateTime( 'now', $tz); // DateTime object correlated to user's timezone
     date_default_timezone_set(tz.name());
-} else {
+} 
+else {
     date_default_timezone_set("America/Edmonton");
 }
  $time = date("h:i a");
@@ -44,6 +48,7 @@ else{
 if($time[0]=="0"){
     $time=substr($time,1,strlen($time));
 }
+// Shows user name if someone is logged in
 if(isset($_SESSION['login_user'])){
     $bannerCode = "<div id = 'welcomeBanner'>
     <h4>$greeting ".$_SESSION['login_user']."!</h4>
