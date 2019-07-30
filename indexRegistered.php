@@ -89,17 +89,15 @@ Triptype: '.$tripType;
 <main>
     
     <!-- Holds the images on home page and changes format depending on screen size -->
-    <section class = "mainContent" id="travelImageSection">
+    <section class ="mainContent" id="travelImageSection">
         <!-- MODAL '.$counter.' CODE -->
         <div id="modalConfirm" class="ui modal">
             <div class="actions">
-            <p>Are you sure you want to book this package?</p>
-                <div id = "submitCancel" class="ui black deny button modalCancel">
-                    Cancel
-                </div>
-                <div class="contactButton ui button">
-                <form method="POST"><button id = "submit" type="submit" value="submit" name="submit">Confirm</button></form>
-                </div>
+            <p id="modalMessage">Are you sure you want to book this package?</p>
+            <div class="ui black deny button">Back</div>
+            <div class="confirmButton ui">
+                <form method="POST"><button id = "submit" class="ui button confirmButton" type="submit" value="submit" name="submit">Confirm</button></form>
+            </div>
             </div>
         </div>
         
@@ -108,70 +106,107 @@ Triptype: '.$tripType;
 
         
         <?php
-            require "classes/dbConnect.php";
-            // $conn = getDatabase();
-            $db = new Database();
-            $conn = $db -> getConn();
+            require "phpFunctions/functions.php";
+            $packages = getVacationPackages();
 
-            $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate,PkgStartDate) AS "Duration", `PkgBasePrice` FROM `packages` WHERE 1;';
+            try{
+                foreach ($packages as $package)
+                { 
 
-
-
-            $result = $conn->query($sql);
-
-            if ($result === false) {
-                var_dump($conn->errorInfo());
-             } else {
-                $packages = $result->fetchAll(PDO::FETCH_ASSOC);
-             }
-
-             foreach ($packages as $package)
-             { 
-                // $bookingTripName.$counter = $package['PkgName'];
-                // $bookingTripId.$counter = $package['PkgName'];
-                if( strtotime($package['PkgEndDate']) < strtotime('now'))   //package starts now or later and package ends now or later
-                {
-                    $packageDisplay=''; 
-                }
-                else if ( strtotime($package['PkgStartDate']) < strtotime('now') ) //dont apply CSS
-                {
-                    $packageDateInfo = '
-                    <div class="extra content">
-                    <span class="packageWarning">
-                    '.$package['PkgStartDate'].'</span> - <span>'.$package['PkgEndDate'].'
-                    </span>
-                    </div>
-                    ';
-                    $packageDisplay = '
-                    <div class="item card">
-                        <div class="image packageImageDiv">
-                            <img class="packageImage" src="'.$package['Image'].'">
+                    if( strtotime($package['PkgEndDate']) < strtotime('now'))   // Don't show package since it ended
+                    {
+                        $packageDisplay=''; 
+                    }
+                    else if ( strtotime($package['PkgStartDate']) < strtotime('now') ) // Apply special bold css to already started package
+                    {
+                        $packageDateInfo = '
+                        <div class="extra content">
+                        <span class="packageWarning">
+                        '.$package['PkgStartDate'].'</span> - <span>'.$package['PkgEndDate'].'
+                        </span>
                         </div>
-                        <br/>
-                        
-                        <div id="packageContent" class="content">
-                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
-                            <div class="meta">
-                                <div class="ui styled fluid accordion">
-                                    <div class="title">
-                                        <i class="dropdown icon"></i>
-                                        Overview
-                                    </div>
-                                    
-                                    <div class="content">
-                                        <p class="transition">'.$package['PkgDesc'].'</p>
-                                        <a href="'.$package['Partner'].'">Full Itinerary</a>
+
+                        ';
+                        $packageDisplay = '
+                        <div class="item card">
+                            <div class="image packageImageDiv">
+                                <img class="packageImage" src="'.$package['Image'].'">
+
+                            </div>
+                            <br/>
+                            
+                            <div id="packageContent" class="content">
+                                <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
+                                <div class="header">'.$package['PkgName'].'</div> <br/>
+                                <div class="meta">
+                                    <div class="ui styled fluid accordion">
+                                        <div class="title">
+                                            <i class="dropdown icon"></i>
+                                            Overview
+                                        </div>
+                                        
+                                        <div class="content">
+                                            <p class="transition">'.$package['PkgDesc'].'</p>
+                                            <a href="'.$package['Partner'].'">Full Itinerary</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div id="packageContent" class="description">
+                                <br/>
+                                '.$package['Duration'].' days
+                                </div>
                             </div>
-                            <div id="packageContent" class="description">
-                            <br/>
-                            '.$package['Duration'].' days
-                            </div>
+                                '.$packageDateInfo.'
+                                <div class="focus required field">
+                                        <label id="tripTypeLabel" for="TripTypeId">Select</label>
+                                        <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
+                                            <option value="">Trip Type</option>
+                                            <option value="B">Business</option>
+                                            <option value="G">Group</option>
+                                            <option value="L">Leisure</option>
+                                        </select>
+                                </div>
+                                <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
+
+                        </div>';
+                    }
+                    else // Apply regular css
+                    {
+                        $packageDateInfo = '
+                        <div class="extra content">
+                        <span>
+                        '.$package['PkgStartDate'].' - '.$package['PkgEndDate'].'
+                        </span>
                         </div>
-                            '.$packageDateInfo.'
-                            <div class="focus required field">
+                        ';
+                        $packageDisplay = '
+                        <div class="item card">
+                            <div class="image packageImageDiv">
+                                <img class="packageImage" src="'.$package['Image'].'">
+                            </div>
+                            <br/>
+                            <div id="packageContent" class="content">
+                                <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                                <div class="trip header">'.$package['PkgName'].'</div> <br/>
+                                <div class="meta">
+                                    <div class="ui styled fluid accordion">
+                                        <div class="title">
+                                            <i class="dropdown icon"></i>
+                                            Overview
+                                        </div>
+                                        <div class="content ">
+                                            <p class="dropdown transition">'.$package['PkgDesc'].'</p>
+                                            <a class="itinerary" href="'.$package['Partner'].'" target="_blank">Full Itinerary</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="packageContent" class="description">
+                                <br/>
+                                '.$package['Duration'].' days
+                                </div>
+                                </div>
+                                '.$packageDateInfo.'
+                                <div class="focus required field">
                                     <label id="tripTypeLabel" for="TripTypeId">Select</label>
                                     <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
                                         <option value="">Trip Type</option>
@@ -179,62 +214,19 @@ Triptype: '.$tripType;
                                         <option value="G">Group</option>
                                         <option value="L">Leisure</option>
                                     </select>
-                            </div>
-                            <form><button type="button" class="ui button right floated modalButton" type="submit" value="'.$package['PackageId'].'">Order</button></form>
 
-                    </div>';
-                }
-                else //apply CSS
-                {
-                    $packageDateInfo = '
-                    <div class="extra content">
-                    <span>
-                    '.$package['PkgStartDate'].' - '.$package['PkgEndDate'].'
-                    </span>
-                    </div>
-                    ';
-                    $packageDisplay = '
-                    <div class="item card">
-                        <div class="image packageImageDiv">
-                            <img class="packageImage" src="'.$package['Image'].'">
-                        </div>
-                        <br/>
-                        <div id="packageContent" class="content">
-                            <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
-                            <div class="meta">
-                                <div class="ui styled fluid accordion">
-                                    <div class="title">
-                                        <i class="dropdown icon"></i>
-                                        Overview
-                                    </div>
-                                    <div class="content ">
-                                        <p class="dropdown transition">'.$package['PkgDesc'].'</p>
-                                        <a class="itinerary" href="'.$package['Partner'].'" target="_blank">Full Itinerary</a>
-                                    </div>
                                 </div>
-                            </div>
-                            <div id="packageContent" class="description">
-                            <br/>
-                            '.$package['Duration'].' days
-                            </div>
-                            </div>
-                            '.$packageDateInfo.'
-                            <div class="focus required field">
-                                <label id="tripTypeLabel" for="TripTypeId">Select</label>
-                                <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
-                                    <option value="">Trip Type</option>
-                                    <option value="B">Business</option>
-                                    <option value="G">Group</option>
-                                    <option value="L">Leisure</option>
-                                </select>
-                            </div>
-                            <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'">Order</button>
+                                <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
 
-                    </div>';
+                        </div>';
+                    }
+
+                    echo $packageDisplay;
                 }
-
-                echo $packageDisplay;
+            
+            }
+            catch(Exception $e){
+                echo "Unable to load vacation packages at the moment";
             }
             ?>
 
