@@ -100,3 +100,18 @@ Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerI
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
 Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.

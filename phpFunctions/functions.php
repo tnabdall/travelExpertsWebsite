@@ -112,4 +112,38 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     mysqli_close($mysqli);
     return $executeQuery;
 }
+
+// Returns all rows in table as numeric array. Each row is an associative array.
+function grabAllData($tableName,$dbname,$dbuser,$dbpass){
+    // Attempt connecting to sql server. Stop execution if unable to connect.
+    $mysqli = mysqli_connect('localhost', $dbuser , $dbpass, $dbname);
+    if ($mysqli->connect_errno) {
+        echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        return false;
+    }
+    $query = "SELECT * FROM $tableName;";
+    $executeQuery=$mysqli -> query($query);
+    try{   
+        $logFile = fopen("logs/query_Log.txt","a");
+        if($executeQuery){
+            fwrite($logFile,"Successfully executed the query $query.\n");
+        }
+        else{
+            fwrite($logFile,"Failed to execute the query $query.\n");
+        }
+        fclose($logFile);
+        $result = array();
+        while($row=mysqli_fetch_array($executeQuery,MYSQLI_ASSOC)){
+            array_push($result,$row);
+        }
+    
+        mysqli_close($mysqli);
+        return $result;
+    }
+    catch(Exception $e){
+        return false;
+    }
+    
+}
+
 ?>
