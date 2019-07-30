@@ -48,7 +48,7 @@ $(document).ready(function(){
     })
 
     $('.TripTypeIdRegistered').on('change', function() {
-        document.cookie = "var1="+this.value;
+        document.cookie = "var1="+this.innerHTML;
         // alert( this.value );
       });
 

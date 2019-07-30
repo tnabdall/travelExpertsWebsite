@@ -89,6 +89,7 @@ Your Username is: '.$customerData['Username'];
 
                     $subject = 'Travel Booking and Registration';
                     mailer ($email,$msg,$subject,'newCustomerBooking');
+                    unset($tripType);
                 }
                 header( "refresh:8;url=index.php");
             }

@@ -1,8 +1,8 @@
 <?php
-include("pageSections/header.php");
 if(isset($_SESSION['user_type'])){
     header("Location: index.php");
 }
+include("pageSections/header.php");
 ?>
 <script src="js/customerRegister.js"></script>
 <main>

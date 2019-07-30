@@ -156,13 +156,43 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
         $subject = $emailSubject;
         $message = $emailMessage;
         
-        if (mail($to, $subject, $message, $headers))
+        $success = mail($to, $subject, $message, $headers);
+        
+        if ($success)
         {
             echo $notificationSuccess;
-        } else 
+        } 
+        else 
         {
             echo $notificationFailure;
         }
+    }
+
+    try{   
+        $logFile = fopen("logs/EmailLog.txt","a");
+        if(!$logFile){
+            throw new Exception("Can't write to email log: ");
+        }
+        if($success){
+            fwrite($logFile,"Successfully sent email.\n");
+        }
+        else{
+            fwrite($logFile,"Failed to send email.\n");
+        }
+        fclose($logFile);
+    }
+    catch(Exception $e){
+        // Try to write to super log if write to agent register log fails
+        $log = fopen("logs/superErrorLog.txt","a");
+        fwrite($log,$e->getMessage());
+        fwrite($log,"Email Log: ");
+        if($success){
+            fwrite($log,"Successfully sent email.\n");
+        }
+        else{
+            fwrite($log,"Failed to send email.\n");
+        }
+        fclose($log);
     }
 }
 

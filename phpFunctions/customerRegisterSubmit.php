@@ -56,8 +56,6 @@ Your Username is: '.$customerData['Username'];
             fwrite($log,"Failed to insert new customer into the database.\n");
         }
         fclose($log);
-    }
-    
-    header( "refresh:8;url=index.php");
+    }    
 }
 ?>

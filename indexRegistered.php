@@ -16,6 +16,8 @@ if(isset($_POST['submit'])){
         $pkgId = $_POST["submit"];
         $tripType = $_COOKIE['var1'];
         // $tripType = 'L'; //currently default; set drop down to pass value
+        unset($_POST["submit"]);
+        unset($_COOKIE['var1']);
 
         include("phpFunctions/functions.php");
 
@@ -72,8 +74,9 @@ Triptype: '.$tripType;
             $subject = 'Travel Booking';
             mailer ($email,$msg,$subject,'registeredBooking');
             // echo "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+            unset($_SESSION['pkgName']);
             unset($_SESSION[$tripType]); 
-            unset($_COOKIE['var1']);
+            unset($tripType);
             // echo "<p>Successfully booked the package.</p>";
         }
     }
@@ -147,8 +150,8 @@ Triptype: '.$tripType;
                         <br/>
                         
                         <div id="packageContent" class="content">
-                            <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div> <br/>
+                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">

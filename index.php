@@ -67,8 +67,8 @@ if(isset($_POST['submit'])){
                         <br/>
                         
                         <div id="packageContent" class="content">
-                            <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
-                            <div class="header">'.$package['PkgName'].'</div> <br/>
+                            <div class="right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
+                            <div class="trip header">'.$package['PkgName'].'</div> <br/>
                             <div class="meta">
                                 <div class="ui styled fluid accordion">
                                     <div class="title">
@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
                         </div>
                             '.$packageDateInfo.'
 
-                            <button type="submit" name="submit" class="ui olive basic button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
+                            <button type="submit" name="submit" class="ui button right floated" value="'.$package['PkgName'].'&'.$package['PackageId'].'">Order</button>
 
                     </div>';
                 }
