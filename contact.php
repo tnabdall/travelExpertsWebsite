@@ -64,14 +64,22 @@
                                     <p>'.$agent['Description'].'</p>
                                 </div>
                             </div>
-
+                            
+                            <div class="focus required field">
+                            <label id="emailLabel" for="CustEmail">Email Address</label>
+                            <form action="" method="POST">
+                            <input class="emailContact" type="email" id="CustEmail" name="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
+                            </form>
+                            </div>
                             <div class="actions">
                                 <div class="ui black deny button">
                                     Back
                                 </div>
-                                <div class="contactButton ui button">
-                                    <a class="contactButton" href="contactAgent.php">Contact Agent</a>
+                                
+                                <div type="submit" class="contactButton ui button" value="'.$agent['AgentId'].'">
+                                    <a id ="submitContact" href="contactAgent.php">Contact Agent</a>
                                 </div>
+                               
 
                             </div>
                         </div>

@@ -13,14 +13,8 @@ if(isset($_SESSION['user_type'])){
             if(isset($_POST['submit'])){
                 include("phpFunctions/functions.php");
                 $tripType=$_POST['TripTypeId'];
-                
-
 
                 unset($_POST["TripTypeId"]);
-
-                // foreach($_POST as $key){
-                //     echo $key;
-                // }
 
                 // Create customer
                 $customerData = $_POST;
@@ -74,16 +68,31 @@ if(isset($_SESSION['user_type'])){
                 }
                 mysqli_close($mysqli);
                 
-
                 if($executeQuery){
-                    echo "<p>Successfully booked the package.</p>";
+                    $email = $customerData['CustEmail'];
+                    
+                    $msg = 'Hi '.$customerData['CustFirstName'].' '.$customerData['CustLastName'].
+                    ',
+                    
+Thanks for Booking with the Travel Experts!
+
+You have now been registered as a customer and your booking is confirmed. 
+                    
+Booking Info: 
+
+Package: '.$_SESSION['pkgName'].'
+Triptype: '.$tripType.' 
+                    
+An account has been created for your next visit to our site.
+
+Your Username is: '.$customerData['Username'];
+
+                    $subject = 'Travel Booking and Registration';
+                    mailer ($email,$msg,$subject,'newCustomerBooking');
+                    unset($tripType);
                 }
-                else{
-                    echo "<p>Failed to book the package.</p>";
-                }
-                
+                header( "refresh:8;url=index.php");
             }
-           
         ?>
             <div class = "two fields">
                 

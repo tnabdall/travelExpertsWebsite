@@ -14,11 +14,22 @@ if(isset($_POST['submit'])){
   
     $success = insertData($customerData,'customers', 'travelexperts','dbAdmin','L0g1n2db!');
     if($success){
-        echo "<p>Successfully inserted new customer into the database.</p>";
+        $email = $customerData['CustEmail'];
+        $msg = 'Hi '.$customerData['CustFirstName'].' '.$customerData['CustLastName'].',
+        
+Thanks for Registering with the Travel Experts!
+        
+You have now been registered as a new customer.
+An account has been created for your next visit to our site,
+        
+Your Username is: '.$customerData['Username'];
+           
+        // $msg = wordwrap($msg,80);
+        $subject = 'New Customer Registration';
+        mailer ($email,$msg,$subject,'newCustomer');
+        // echo "<p>Successfully inserted new customer into the database.</p>";
     }
-    else{
-        echo "<p>Failed to insert new customer into the database.</p>";
-    }
+   
     // Try to write to log
     try{   
         $logFile = fopen("logs/customerRegisterLog.txt","a");
@@ -45,7 +56,6 @@ if(isset($_POST['submit'])){
             fwrite($log,"Failed to insert new customer into the database.\n");
         }
         fclose($log);
-    }
-    
+    }    
 }
 ?>

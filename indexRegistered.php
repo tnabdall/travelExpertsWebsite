@@ -12,13 +12,12 @@ include("pageSections/welcomeBanner.php");
 
 if(isset($_POST['submit'])){
     if(isset($_COOKIE['var1'])){
-        // $length = count($_POST);
-        // echo "<script type='text/javascript'>alert('".$length."');</script>";
-        // exit();
         $loggedInUser = $_SESSION['login_username']; //query db for users id
         $pkgId = $_POST["submit"];
         $tripType = $_COOKIE['var1'];
         // $tripType = 'L'; //currently default; set drop down to pass value
+        unset($_POST["submit"]);
+        unset($_COOKIE['var1']);
 
         include("phpFunctions/functions.php");
 
@@ -33,12 +32,12 @@ if(isset($_POST['submit'])){
             return false;
         }
 
-        $query = 'SELECT `CustomerId` FROM `customers` WHERE Username = "'.$loggedInUser.'";';
+        $query = 'SELECT `CustomerId`, `CustFirstName`, `CustLastName`, `CustEmail` FROM `customers` WHERE Username = "'.$loggedInUser.'";';
 
         // $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
         $executeQuery=$mysqli -> query($query);
         $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
-        
+
         $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
         $executeQuery=$mysqli -> query($query);
         
@@ -59,12 +58,26 @@ if(isset($_POST['submit'])){
         
 
         if($executeQuery){
-            echo "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+            $email = $results['CustEmail'];
+            $msg = 'Welcome Back '.$results['CustFirstName'].' '.$results['CustLastName'].',
+                    
+Thanks for Booking with the Travel Experts!
+            
+We appreciate your customer loyalty, find your booking confirmation details below.
+            
+Booking Info: 
+
+Package: '.$_SESSION['pkgName'].'
+Triptype: '.$tripType;
+            
+            // $msg = wordwrap($msg,80);
+            $subject = 'Travel Booking';
+            mailer ($email,$msg,$subject,'registeredBooking');
+            // echo "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+            unset($_SESSION['pkgName']);
+            unset($_SESSION[$tripType]); 
+            unset($tripType);
             // echo "<p>Successfully booked the package.</p>";
-        }
-        else{
-            echo "<script type='text/javascript'>alert('Failed to book the package.');</script>";
-            // echo "<p>Failed to book the package.</p>";
         }
     }
     else{
@@ -112,11 +125,13 @@ if(isset($_POST['submit'])){
                         '.$package['PkgStartDate'].'</span> - <span>'.$package['PkgEndDate'].'
                         </span>
                         </div>
+
                         ';
                         $packageDisplay = '
                         <div class="item card">
                             <div class="image packageImageDiv">
                                 <img class="packageImage" src="'.$package['Image'].'">
+
                             </div>
                             <br/>
                             
@@ -199,6 +214,7 @@ if(isset($_POST['submit'])){
                                         <option value="G">Group</option>
                                         <option value="L">Leisure</option>
                                     </select>
+
                                 </div>
                                 <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
 

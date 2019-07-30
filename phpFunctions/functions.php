@@ -113,6 +113,90 @@ function insertData($dataArray, $tableName, $dbname, $dbuser, $dbpass){
     return $executeQuery;
 }
 
+
+function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
+    if ($type === 'newCustomer')
+    {
+        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A confirmation email will be sent to you.</p>";
+        $notificationFailure =  "<p>Failed to insert new customer into the database.</p>";
+    }
+    else if ($type === 'newCustomerBooking')
+    {
+        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A booking has been made,a confirmation email will be sent to you.</p>";
+        $notificationFailure =  "<p>Failed to book the package.</p>";
+    }
+    else if ($type === 'registeredBooking')
+    {
+        $notificationSuccess = "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
+        $notificationFailure =  "<script type='text/javascript'>alert('Failed to book the package.');</script>";
+    }
+    else if ($type === 'agentContact')
+    {
+        $notificationSuccess = "<p>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
+        $notificationFailure =  "<p>Failed to contact the agent</p>";
+    }
+    
+    $email=$emailAddress;
+
+    // Sanitize E-mail Address
+    $email =filter_var($email, FILTER_SANITIZE_EMAIL);
+    // Validate E-mail Address
+    $email= filter_var($email, FILTER_VALIDATE_EMAIL);
+    if (!$email)
+    {
+        echo "Invalid Sender's Email - No Message will be sent";
+    }
+    else
+    {
+        $email2 = "cprg210.travelexperts@gmail.com";
+        $headers = 'From:'. $email2 . "rn"; // Sender's Email
+        $headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
+       
+        // Send Mail By PHP Mail Function
+        $to = $email;
+        $subject = $emailSubject;
+        $message = $emailMessage;
+        
+        $success = mail($to, $subject, $message, $headers);
+        
+        if ($success)
+        {
+            echo $notificationSuccess;
+        } 
+        else 
+        {
+            echo $notificationFailure;
+        }
+    }
+
+    try{   
+        $logFile = fopen("logs/EmailLog.txt","a");
+        if(!$logFile){
+            throw new Exception("Can't write to email log: ");
+        }
+        if($success){
+            fwrite($logFile,"Successfully sent email.\n");
+        }
+        else{
+            fwrite($logFile,"Failed to send email.\n");
+        }
+        fclose($logFile);
+    }
+    catch(Exception $e){
+        // Try to write to super log if write to agent register log fails
+        $log = fopen("logs/superErrorLog.txt","a");
+        fwrite($log,$e->getMessage());
+        fwrite($log,"Email Log: ");
+        if($success){
+            fwrite($log,"Successfully sent email.\n");
+        }
+        else{
+            fwrite($log,"Failed to send email.\n");
+        }
+        fclose($log);
+    }
+}
+
 // Returns all rows in table as numeric array. Each row is an associative array.
 function grabAllData($tableName,$dbname,$dbuser,$dbpass){
     // Attempt connecting to sql server. Stop execution if unable to connect.
@@ -153,6 +237,7 @@ function getVacationPackages(){
         $conn = $db -> getConn();
 
         $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate,PkgStartDate) AS "Duration", `PkgBasePrice` FROM `packages` WHERE 1;';
+
 
 
 

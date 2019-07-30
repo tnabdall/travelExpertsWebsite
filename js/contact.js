@@ -18,6 +18,15 @@ $(document).ready(function() {
             $(modalId).modal('show');
         });
 
+        $(".contactButton").click(function(){
+            // console.log($(this).attr("value"));
+            document.cookie = "varAgent="+$(this).attr("value");
+        })
+
+        $('.emailContact').on('change', function() {
+            document.cookie = "emailAgent="+this.value;
+          });
+
         $('#rating'+i)
         .rating();
 

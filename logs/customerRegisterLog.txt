@@ -11,3 +11,9 @@ Successfully inserted new customer into the database.
 Successfully inserted new customer into the database.
 Successfully inserted new customer into the database.
 Successfully inserted new customer into the database.
+Failed to insert new customer into the database.
+Successfully inserted new customer into the database.
+Successfully inserted new customer into the database.
+Successfully inserted new customer into the database.
+Successfully inserted new customer into the database.
+Successfully inserted new customer into the database.

@@ -45,13 +45,16 @@ if(isset($_POST['submit'])){
                         '.$package['PkgStartDate'].'</span> - <span>'.$package['PkgEndDate'].'
                         </span>
                         </div>
+
                         ';
                         $packageDisplay = '
                         <div class="item card">
                             <div class="image packageImageDiv">
                                 <img class="packageImage" src="'.$package['Image'].'">
+
                             </div>
                             <br/>
+
                             
                             <div id="packageContent" class="content">
                                 <div class="cost right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
@@ -67,6 +70,7 @@ if(isset($_POST['submit'])){
                                             <p class="transition">'.$package['PkgDesc'].'</p>
                                             <a href="'.$package['Partner'].'">Full Itinerary</a>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div id="packageContent" class="description">
