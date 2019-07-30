@@ -2,55 +2,49 @@
 
 <main>
     <div class="rounded sectionBox mainContent">
-
-        
-            
             <?php
                 require "classes/dbConnect.php";
-                // $conn = getDatabase();
-                $db = new Database();
-                $conn = $db -> getConn();
-                $sql = "SELECT t1.`AgencyId`
-                , t1.`AgtFirstName`
-                , t1.`AgtLastName`
-                , t1.`AgtBusPhone`
-                , t1.`AgtEmail`
-                , t1.`AgtPosition`
-                , t1.`Rating`
-                , t1.`Description`
-                , t1.`Title`
-                , t1.`Image`
-                , t2.`AgncyName`
-                , t2.`AgncyAddress`
-                , t2.`AgncyProv`
-                , t2.`AgncyPhone`
-                FROM agents t1
-                JOIN agencies t2
-                ON t2.`AgencyId` = t1.`AgencyId`
-                WHERE 1";
+                require "phpFunctions/functions.php";
 
-                $result = $conn->query($sql);
-
-                if ($result === false) {
-                    var_dump($conn->errorInfo());
-                } else {
-                    $agents = $result->fetchAll(PDO::FETCH_ASSOC);
+                // Get all agency and agent data
+                try{
+                    $agencies = grabAllData('agencies','travelexperts','dbAdmin','L0g1n2db!');
+                    $agents = grabAllData('agents','travelexperts','dbAdmin','L0g1n2db!');
                 }
+                catch(Exception $e){
+                    echo "<p>Unable to display contacts at this point in time.</p>";
+                }
+    
+                $counter = 1; // Counter to give each card/modal a unique id
+                
+                // Array to store 1. Agency header, 2.All agents within an agency
+                $agencyData=[];
 
-                $numberOfAgents = count($agents);
-                $counter = 1;
-                $heavenData = [];
-                $hellData = [];
+                // Populating headers for agencies
+                foreach ($agencies as $agency){
+                    $agencyData[(string) $agency['AgencyId']]['header']='
+                    <section class="company-info">
+                        <ul class="agency-info">
+                            <!-- Company Contact Information -->
+                            <h2><b>Agency Name: '.$agency['AgncyName'].'</b></h2>
+                            <p class="company-info">Address: '.$agency['AgncyAddress'].'</p>
+                            <p class="company-info">Address: '.$agency['AgncyPhone'].'</p>
+                        </ul>
+                    </section>
+                        ';
+                        $agencyData[(string) $agency['AgencyId']]['cardData']=[];
+                }
                 
-                $heavenHeader = '';
-                $hellHeader = '';
-                
+                // Populating each agency with agents
                 foreach ($agents as $agent)
                 {
+                    // Determines rating for an agent
                     $ratingMessage=' Rating pending';
                     if($agent['Rating']!=NULL){
                         $ratingMessage='Rating: <div id="rating'.$counter.'" class="ui star rating" data-rating="'.$agent['Rating'].'" data-max-rating="5"></div>';
                     }
+
+                    // HTML formatting for agent and modal
                     $currentCard = '
                     <div id="contactCard'.$counter.'" class="ui card">
                         <!-- MODAL '.$counter.' CODE -->
@@ -102,64 +96,23 @@
                     </div>
                     ';
 
-                    if ($agent['AgencyId'] == 1) //heaven
-                    {
-                        $heavenData[] = $currentCard;
-                        if ($counter == $numberOfAgents or $heavenHeader == '')
-                        {
-                            $heavenHeader = '
-                            <section class="company-info">
-                                <ul class="agency-info">
-                                    <!-- Company Contact Information -->
-                                    <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
-                                    <p class="company-info">Address: '.$agent['AgncyAddress'].'</p>
-                                    <p class="company-info">Address: '.$agent['AgncyPhone'].'</p>
-                                </ul>
-                            </section>
-                                ';
-                        }
-                    }
-                    elseif ($agent['AgencyId'] == 2) //hell
-                    {
-                        $hellData[] = $currentCard;
-                        if ($counter == $numberOfAgents or $hellHeader == '')
-                        {
-                            $hellHeader = '
-                            <section class="company-info">
-                                <ul class="agency-info">
-                                    <!-- Company Contact Information -->
-                                    <h2><b>Agency Name: '.$agent['AgncyName'].'</b></h2>
-                                    <p class="company-info">Address: '.$agent['AgncyAddress'].'</p>
-                                    <p class="company-info">Address: '.$agent['AgncyPhone'].'</p>
-                                </ul>
-                            </section>
-                                ';
-                        }
-                    }
+                    // Add agent to agency that he belongs to
+                    array_push($agencyData[(string) $agent['AgencyId']]['cardData'],$currentCard);
                     
                     $counter++; //counter for each contact card and modal
                 }
 
-                echo "<div>".$heavenHeader."</div>";
-                echo '<div class="ui five stackable cards">';
-                $length = count($heavenData);
-                for ($i = 0; $i < $length; $i++) 
-                {
-                    echo $heavenData[$i];
+                // Print out agency, then all agents beginning to that agency
+                foreach($agencyData as $agencyId){
+                    echo "<div>".$agencyId['header']."</div>";
+                    echo '<div class="ui five stackable cards">';
+                    for ($i = 0; $i < count($agencyId['cardData']); $i++) 
+                    {
+                        echo $agencyId['cardData'][$i];
+                    }
+                    echo '</div>';
                 }
-                echo '</div>';
-
-                echo "<div>".$hellHeader."</div>";
-                echo '<div class="ui five stackable cards">';
-                $length = count($hellData);
-                for ($i = 0; $i < $length; $i++) 
-                {
-                    echo $hellData[$i];
-                }
-                echo '</div>';
-            ?>
-
-        
+            ?>     
     </div>
 </main>
 <script src="js/contact.js"></script>
