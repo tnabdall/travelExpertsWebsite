@@ -7,8 +7,13 @@
                 require "phpFunctions/functions.php";
 
                 // Get all agency and agent data
-                $agencies = grabAllData('agencies','travelexperts','dbAdmin','L0g1n2db!');
-                $agents = grabAllData('agents','travelexperts','dbAdmin','L0g1n2db!');
+                try{
+                    $agencies = grabAllData('agencies','travelexperts','dbAdmin','L0g1n2db!');
+                    $agents = grabAllData('agents','travelexperts','dbAdmin','L0g1n2db!');
+                }
+                catch(Exception $e){
+                    echo "<p>Unable to display contacts at this point in time.</p>";
+                }
     
                 $counter = 1; // Counter to give each card/modal a unique id
                 
