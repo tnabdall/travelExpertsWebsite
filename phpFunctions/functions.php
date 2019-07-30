@@ -146,4 +146,29 @@ function grabAllData($tableName,$dbname,$dbuser,$dbpass){
     
 }
 
+function getVacationPackages(){
+    require "classes/dbConnect.php";
+    try{
+        $db = new Database();
+        $conn = $db -> getConn();
+
+        $sql = 'SELECT `PackageId`, `PkgName`, `Image`, `Partner`, DATE_FORMAT(`PkgStartDate`, "%Y/%m/%d") AS PkgStartDate, DATE_FORMAT(`PkgEndDate`, "%Y/%m/%d") AS PkgEndDate, `PkgDesc`, DATEDIFF(PkgEndDate,PkgStartDate) AS "Duration", `PkgBasePrice` FROM `packages` WHERE 1;';
+
+
+
+        $result = $conn->query($sql);
+
+        if ($result === false) {
+        var_dump($conn->errorInfo());
+        } 
+        else {
+        $packages = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $packages;
+    }
+    catch(Exception $e){
+        throw(new Exception("Could not retrive vacation packages from db"));
+    }
+}
+
 ?>
