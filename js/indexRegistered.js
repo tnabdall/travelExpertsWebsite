@@ -47,22 +47,31 @@ $(document).ready(function () {
     $(".modalButton").click(function () {
         var pkgId = $(this).val().split("&")[0];
         var pkgName = $(this).val().split("&")[1];
+
         $('#submit').val(pkgId);
         $('#modalMessage').html("Are you sure you would like to order the " + pkgName + " package?");
         $("#modalConfirm").modal('show');
         document.cookie = "pkgId=" + pkgId;
         document.cookie = "pkgName=" + pkgName;
+        
+        
     })
 
     // Creates a cookie with selected trip type
     $('.TripTypeIdRegistered').on('change', function () {
         document.cookie = "tripType=" + this.value;
         document.cookie = "tripTypeFull=" + $("option:selected", this).html();
-    });
 
-    $(".selectedTripType").on('click',function(){
-        
-        console.log(this.innerHTML);
-    })
+        // Destroy the trip type and triptype name cookies if no triptype is selected on the indexRegistered page
+        if(this.value === "")
+        {
+            document.cookie = "tripType= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+            document.cookie = "tripTypeFull= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+
+        //create a cookie for the currently selected triptype value, to be compared against the submitted triptype value on the index registered
+        var selectedPackageId = $(this).parent().siblings().last().val().split("&")[0];
+        document.cookie = "selectedPackageId=" + selectedPackageId;
+    });   
 
 });

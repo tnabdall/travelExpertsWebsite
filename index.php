@@ -63,7 +63,7 @@ include("pageSections/welcomeBanner.php");
 
                                 
                                 <div id="packageContent" class="content">
-                                    <div class="cost right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
+                                    <div class="cost right floated meta">$'.$package['PkgBasePrice'].' CAD</div>
                                     <div class="trip header">'.$package['PkgName'].'</div> <br/>
                                     <div class="meta">
                                         <div class="ui styled fluid accordion">
