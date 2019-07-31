@@ -50,4 +50,11 @@ $(document).ready(function () {
         $("#modalConfirm").show();
     })
 
+    // If agent is logged in, delete order buttons
+    if(document.cookie.indexOf('user_type=')!=-1){
+        console.log('removing buttons');
+        $('button').remove();
+        document.cookie = "user_type= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+
 });

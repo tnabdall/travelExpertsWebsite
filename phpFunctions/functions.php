@@ -54,6 +54,7 @@ function verifyUserCredentials($user,$pass){
         $_SESSION['login_user'] = $firstName[0];
         $_SESSION['user_type']='agent';
         $_SESSION['login_username'] = $user;
+        setcookie("user_type", "agent", time()+2*24*60*60); 
 
         $pdo=null;
         return password_verify($pass,$hashedPass[0]);
