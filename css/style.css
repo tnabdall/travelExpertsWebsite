@@ -404,6 +404,10 @@ a.itinerary {
 
 /* ************** Home Page - Tarik ************* */
 
+/* sets colour of itinerary link */
+a.itinerary {
+    color:#421ad4;
+}
 /* aligns item in center in main section and gives margin */
 section#travelImageSection{
     align-items: center;
