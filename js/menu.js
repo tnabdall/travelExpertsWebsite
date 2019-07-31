@@ -40,7 +40,7 @@ $(document).ready(function () {
     // Sidebar functionality
     $('#menuButton').click(function () {
         $("#sidebar").sidebar('toggle');
-        $(body).css("background", "linear-gradient(to right, #636FA4, #E8CBC0);");
+        $(body).css("background", "linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);");
     })
 
 

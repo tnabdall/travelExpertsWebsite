@@ -102,9 +102,9 @@ else{
 
 
             <div class="ui two buttons">
-                <button id="submitButton" type="submit" name="submit" value="Submit" class="positive ui inverted button"
+                <button id="submitButton" type="submit" name="submit" value="Submit" class="positive ui button"
                     onclick="return submitClick()">Submit</button>
-                <button type="reset" value="Reset" class="ui negative inverted button"
+                <button type="reset" value="Reset" class="ui negative button"
                     onclick="return confirm('Do you want to clear the form?')">Reset</button>
             </div>
         </fieldset>
