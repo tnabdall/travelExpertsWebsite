@@ -138,3 +138,4 @@ Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
 Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Spongebob','Squarepants','(403) 111-2222','spongebob@travelexperts.com','Intermediate Agent',2,'spongebob','$2y$10$wcnDwO26Kv90/U3MrCUKRuESai4T8uQw..99wqAvrVQKq9nIX3Z2W','Squarepants','"I love the Krusty Krab"','"I am taking care of Gary. I will get back to you."','images/cards/img-2.jpg');.

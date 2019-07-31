@@ -96,7 +96,7 @@ CREATE TABLE `agents` (
   `Description` varchar(200) DEFAULT NULL,
   `Title` varchar(50) DEFAULT NULL,
   `Image` varchar(100) DEFAULT NULL,
-  `AgtMessage` varchar(100) DEFAULT NULL,
+  `AgtMessage` varchar(255) DEFAULT NULL,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
