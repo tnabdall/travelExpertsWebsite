@@ -42,6 +42,7 @@ Functionality: Populate contacts from DB into card format -->
                 // Populating each agency with agents
                 foreach ($agents as $agent)
                 {
+                    $title = utf8_encode($agent['Title']);
                     // Determines rating for an agent
                     $ratingMessage=' Rating pending';
                     if($agent['Rating']!=NULL){
@@ -94,7 +95,7 @@ Functionality: Populate contacts from DB into card format -->
                         <div id="agentCardInfo" class="content">
                             <p class="header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</p>
                             <div class="meta">
-                                <span class="date">"'.$agent['Title'].'"</span>
+                                <span class="date">"'.$title.'"</span>
                             </div>
                             <div class="description">
                             '.$agent['AgtPosition'].'
