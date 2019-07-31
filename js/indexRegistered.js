@@ -50,12 +50,19 @@ $(document).ready(function () {
         $('#submit').val(pkgId);
         $('#modalMessage').html("Are you sure you would like to order the " + pkgName + " package?");
         $("#modalConfirm").modal('show');
+        document.cookie = "pkgId=" + pkgId;
+        document.cookie = "pkgName=" + pkgName;
     })
 
     // Creates a cookie with selected trip type
     $('.TripTypeIdRegistered').on('change', function () {
-        document.cookie = "var1=" + this.innerHTML;
-        // alert( this.value );
+        document.cookie = "tripType=" + this.value;
+        document.cookie = "tripTypeFull=" + $("option:selected", this).html();
     });
+
+    $(".selectedTripType").on('click',function(){
+        
+        console.log(this.innerHTML);
+    })
 
 });

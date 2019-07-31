@@ -90,6 +90,10 @@ else{
                 <label id='descriptionLabel' for="Description">Favourite Quote</label>
                 <input type="text" id="Description" name="Description" required="required">
             </div>
+            <div class = "required field">
+                <label id='agtMessageLabel' for="AgtMessage">Autoreply Message</label>
+                <input type="text" id="AgtMessage" name="AgtMessage" required="required">
+            </div>
             <div class="centered">
                 <?php
                 include("phpFunctions/agentRegisterSubmit.php"); // Submits form to agent table in DB
@@ -102,10 +106,6 @@ else{
                     onclick="return submitClick()">Submit</button>
                 <button type="reset" value="Reset" class="ui negative button"
                     onclick="return confirm('Do you want to clear the form?')">Reset</button>
-            </div>
-            <div id="successMessage" class="ui success message">
-                <div class="header">Form Completed</div>
-                <p>You're all signed up.</p>
             </div>
         </fieldset>
     </form>

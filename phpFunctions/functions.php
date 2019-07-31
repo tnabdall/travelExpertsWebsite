@@ -137,8 +137,8 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     }
     else if ($type === 'registeredBooking')
     {
-        $notificationSuccess = "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
-        $notificationFailure =  "<script type='text/javascript'>alert('Failed to send confirmation email. Please contact us.');</script>";
+        $notificationSuccess = "<p class='homeMessage'>A confirmation message has been sent.</p>";
+        $notificationFailure =  "<p class='homeMessage'>Failed to send confirmation email. Please contact us.</p>";
     }
     else if ($type === 'agentContact')
     {

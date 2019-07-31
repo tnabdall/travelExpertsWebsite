@@ -27,7 +27,10 @@ if(isset($_POST['submit']) && isset($_FILES['Image'])){
     move_uploaded_file($_FILES['Image']['tmp_name'],$packageData['Image']);
 
     // Sets airfair inclusion to 0 if checkbox isnt set
-    if($packageData['AirfairInclusion']!='1'){
+    if(isset($packageData['AirfairInclusion'])){
+        $packageData['AirfairInclusion']=1;
+    }
+    else{
         $packageData['AirfairInclusion']=0;
     }
     

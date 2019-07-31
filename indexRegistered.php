@@ -13,6 +13,13 @@ else{
         header("Location: index.php");
     }
 }
+
+// On page load, if cookie is set, delete it
+if(isset($_COOKIE['tripTypeFull'])){
+    setcookie('tripType', '', 1);
+    setcookie('tripTypeFull', '', 1);
+}
+
 include("pageSections/welcomeBanner.php");
 include("phpFunctions/indexRegisteredSubmit.php");
 
@@ -39,7 +46,7 @@ include("phpFunctions/indexRegisteredSubmit.php");
 
 
                 <?php
-                    require "phpFunctions/functions.php";
+                    include_once("phpFunctions/functions.php");
 
                     // Grab vacation packages
                     $packages = getVacationPackages();
@@ -96,10 +103,10 @@ include("phpFunctions/indexRegisteredSubmit.php");
                                         <div class="focus required field">
                                                 <label id="tripTypeLabel" for="TripTypeId">Select</label>
                                                 <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
-                                                    <option value="">Trip Type</option>
-                                                    <option value="B">Business</option>
-                                                    <option value="G">Group</option>
-                                                    <option value="L">Leisure</option>
+                                                    <option class="selectedTripType" value="">Trip Type</option>
+                                                    <option class="selectedTripType" value="B">Business</option>
+                                                    <option class="selectedTripType" value="G">Group</option>
+                                                    <option class="selectedTripType" value="L">Leisure</option>
                                                 </select>
                                         </div>
                                         <button type="button" class="ui button right floated modalButton" value="'.$package['PackageId'].'&'.$package['PkgName'].'">Order</button>
@@ -145,10 +152,10 @@ include("phpFunctions/indexRegisteredSubmit.php");
                                         <div class="focus required field">
                                             <label id="tripTypeLabel" for="TripTypeId">Select</label>
                                             <select class="TripTypeIdRegistered" id="TripTypeId" name="TripTypeId">
-                                                <option value="">Trip Type</option>
-                                                <option value="B">Business</option>
-                                                <option value="G">Group</option>
-                                                <option value="L">Leisure</option>
+                                                <option class="selectedTripType" value="">Trip Type</option>
+                                                <option class="selectedTripType" value="B">Business</option>
+                                                <option class="selectedTripType" value="G">Group</option>
+                                                <option class="selectedTripType" value="L">Leisure</option>
                                             </select>
 
                                         </div>
