@@ -292,6 +292,7 @@ footer {
 /* footer text formatting */
 #footerText {
     font-size: 0.8em;    
+    font-weight: 800;
     color: #000000;
 }
 
