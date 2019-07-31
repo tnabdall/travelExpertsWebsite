@@ -151,10 +151,6 @@ include("pageSections/header.php");
                 <button type="reset" value="Reset" class="negative ui inverted button"
                     onclick="return resetClick()">Reset</button>
             </div>
-            <div class="ui success message">
-                <div class="header">Form Completed</div>
-                <p>You're all signed up.</p>
-            </div>
             <?php include("phpFunctions/customerRegisterSubmit.php"); ?>
         </fieldset>
     </form>

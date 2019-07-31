@@ -106,7 +106,14 @@ function setFormValidation() {
                         type: 'empty',
                         prompt: 'Please enter a quote from the agent.',
                     }]
-                }
+                },
+                AgtMessage: {
+                    identifier: 'AgtMessage',
+                    rules: [{
+                        type: 'empty',
+                        prompt: 'Please enter an auto-reply message for when this agent is unavailable.',
+                    }]
+                },
             }
         });
 }
