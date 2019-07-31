@@ -85,7 +85,7 @@ section.mainContent.rounded.sectionBox{
 
 /* colour styling on buttons */
 button.ui.button.right.floated,
-div.contactButton.ui.button,
+button.contactButton.ui.button,
 button.ui.button.confirmButton {
     color: white;
     background-color: #421ad4;
@@ -561,7 +561,14 @@ textarea#agentContactMessage{
     height: 40px;
 }
 
+/* sets width for form on modal */
 td.contactInput{
     width: 400px;
+}
+
+/* centers mailer message on contact page */
+.mailerMessage{
+    text-align: center;
+    padding-top: 15px;
 }
 

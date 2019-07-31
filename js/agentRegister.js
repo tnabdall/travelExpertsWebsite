@@ -103,8 +103,8 @@ function setFormValidation() {
                 Description: {
                     identifier: 'Description',
                     rules: [{
-                        type: 'empty',
-                        prompt: 'Please enter a quote from the agent.',
+                        type: 'regExp[/^"(.*?)"$/]',
+                        prompt: 'Please enter a quote from the agent (wrapped in " quotes).',
                     }]
                 },
                 AgtMessage: {

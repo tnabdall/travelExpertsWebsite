@@ -14,7 +14,7 @@ else{
         header("Location: login.php");
     }
 }
-
+include("pageSections/menu.php");
 ?>
 <script src="js/packageRegister.js"></script>
 <main>

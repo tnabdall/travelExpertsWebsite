@@ -50,4 +50,9 @@ $(document).ready(function () {
         $("#modalConfirm").show();
     })
 
+    // If agent is logged in, delete order buttons
+    if(document.cookie.indexOf('user_type=')!=-1){
+        $('button').remove();
+    }
+
 });

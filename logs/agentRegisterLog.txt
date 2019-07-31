@@ -75,3 +75,5 @@ Successfully inserted new agent into the database.
 Successfully inserted new agent into the database.
 Successfully inserted new agent into the database.
 Successfully inserted new agent into the database.
+Failed to insert new agent into the database.
+Successfully inserted new agent into the database.

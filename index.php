@@ -20,6 +20,7 @@ if(isset($_POST['submit'])){
     header("Location: bookingGuestForm.php");
     exit();
 }
+include("pageSections/menu.php");
 include("pageSections/welcomeBanner.php");
 ?>
 <script src="js/index.js"></script>

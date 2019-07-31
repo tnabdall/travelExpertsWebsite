@@ -37,4 +37,32 @@ $(document).ready(function () {
         $('#rating' + i).rating('disable');
     }
 
+    // Ensures no blank fields before contact is submitted
+    $('.contactButton').click(function(){
+        // Get input and textarea nodes
+        var modalParent = $(this).parent().parent();
+        var input = modalParent.find('input');
+        var textArea = modalParent.find('textarea');
+
+        // Build error msg based on if values are blank
+        var errorMsg='';
+        if (input.val()==''){
+            errorMsg+='No email was inputted.\n';
+        }
+        if (textArea.val()==''){
+            errorMsg+='No message was inputted.\n';
+        }
+
+        // If error is blank, we are good
+        if(errorMsg==''){
+            return true;
+        }
+        else{
+            alert(errorMsg);
+            return false;
+        }
+    });
+
 });
+
+

@@ -8,6 +8,7 @@ include("pageSections/header.php");
 if(isset($_SESSION['user_type'])){
     header("Location: index.php");
 }
+include("pageSections/menu.php");
 ?>
 
 <script src="js/bookingGuestRegister.js"></script>

@@ -46,7 +46,7 @@ Your Username is: '.$customerData['Username'];
         }
     }
     else{
-        echo "<p>You were not able to be successfully registered. Try a different user or email.</p>";
+        echo "<p>You were not able to be successfully registered. Try a different username or email.</p>";
     }
    
     // Try to write to log

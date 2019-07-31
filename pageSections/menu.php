@@ -4,6 +4,7 @@ Version: 2.5
 Functionality: Page header -->
 
 <?php
+
 // Sets menu based on login user type (agent, registered customer, or guest customer)
 if (isset($_SESSION['user_type'])){
     // For registered customer
@@ -82,3 +83,4 @@ else{
 }
 
 ?>
+</header>
