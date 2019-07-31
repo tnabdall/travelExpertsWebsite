@@ -48,7 +48,7 @@ Functionality: Page header -->
         <header>
             <!--Logo and welcome message-->
             <h1 id="headerRow" class="ui center aligned header">
-                <a href="index.html" class="ui image">
+                <a href="index.php" class="ui image">
                     <img class="img-fluid align-self-center m-4 centered" id='logo' src="images/logo.png"
                         title="Travel Experts" alt="Travel Experts Logo">
                 </a>

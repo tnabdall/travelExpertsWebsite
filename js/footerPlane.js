@@ -61,7 +61,10 @@ function animatePlane(planeObj, percent, prevHeight) {
         height = 0;
     }
 
-    if (percent > 100) {
+    if (percent > 87 && $(window).width()<752) {
+        percent = 0;
+    }
+    else if(percent>100){
         percent = 0;
     }
 

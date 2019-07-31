@@ -244,10 +244,15 @@ h1#headerRow {
 
 /* formats height on sidebar */
 #sidebar>a{
-    height: 20%;
+    height: 15%;
     display: flex;
     justify-content: center;
 }
+
+div#sidebar>a.item{
+    color: #FFBB40;
+}
+
 
 /* ************** Welcome Banner - Nicolas ************* */
 

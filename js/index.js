@@ -52,7 +52,15 @@ $(document).ready(function () {
 
     // If agent is logged in, delete order buttons
     if(document.cookie.indexOf('user_type=')!=-1){
-        $('button').remove();
+        console.log(getCookie('user_type'));
+        if(getCookie('user_type')=='agent'){
+            $('button').remove();
+        }
     }
 
 });
+
+function getCookie(name) {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+}

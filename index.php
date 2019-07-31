@@ -10,6 +10,10 @@ if(isset($_SESSION['user_type'])){
         header("Location: indexRegistered.php");
     }
 }
+else{
+    // destroy cookie if not logged in
+    setcookie("user_type","",1);
+}
 if(isset($_POST['submit'])){
     // Pulls package info from form
     $pkgInfo=explode("&",$_POST['submit']);
