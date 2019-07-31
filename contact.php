@@ -69,7 +69,7 @@ include("pageSections/menu.php"); ?>
                                     <!-- Agent Contact Information -->
                                     <p>Phone#: '.$agent['AgtBusPhone'].'</p>
                                     <p>Email: '.$agent['AgtEmail'].'</p>
-                                    <p>'.$agent['Description'].'</p>
+                                    <p>"'.$agent['Description'].'"</p>
                                     <div class="ui grid form" action="" method="POST">
                                     <table>
                                     <tr>

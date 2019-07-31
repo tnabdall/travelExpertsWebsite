@@ -664,3 +664,28 @@ Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
 Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",2);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 9.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 9.
+Failed to execute the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Mike','Smith','(200) 111-1111','mike@smith.com','Senior Agent',1,'mikey','$2y$10$NfGcBGVUfxTLobamwI0o1uLjla16BngnUAIDjyOL29GP.BiGhYIeS','mike','"I'm not Pablo Escobar"','jldfsa','images/cards/PabloEscobar.jpg');.
+Failed to execute the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('dsfdfsafdas','fdaafdsdfs','(111) 222-3333','lasjflkdsjal@mike.com','Intermediate Agent',1,'bjdoctor','$2y$10$7Cl8VNmKA22CG3hcHMI41OkhopX6yiXckTFPJ8f8Wa2JysO7yG6Py','fdasfdsa','"I'm not Pablo Escobar"','fadsdfsa','images/cards/PabloEscobar.jpg');.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,AirfairInclusion,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image) VALUES ('Canada','http://www.canada.com',1,'2019-07-26','2019-08-16',3000,'Lovely trip','images/Package_Pics/img-2.jpg');.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('Ghee','fas','fas','afsd','MB','t1a1a1','Canada','1112223333','fsafdsa@fs.com','newguy','$2y$10$tei90nUwKbw.P3BigeFOj.KYSZ9XA8jk6Jg5XYd1chjWG3sUcLDJO');.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Failed to execute the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Elvis','Presley','(403) 666-1935','asdfdfdss@g.com','Junior Agent',2,'epresley22','$2y$10$J.IucacEbHKr1cJN7YTnRuij7fiGS4Uz/nvkGB/9CW35kn3JKHhSq','fdasfdsa','I'm not Jane Goodall','adfsadfs','images/cards/JaneGoodall.jpg');.
+Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Elvis','Presley','(403) 666-1935','lasjflsdfakdsjal@mike.com','Junior Agent',1,'elvis3232','$2y$10$6za2uCQ7p3IVyB0N47opBeVjQiCw8qOQlZgpibboh6jfMiXBpjP3W','mike','I am not Jane Goodall','fasdfdsa','images/cards/JaneGoodall.jpg');.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
