@@ -133,7 +133,7 @@ h1#headerRow {
     height: 200px;
     text-align: center;
     line-height: 630%;
-    transition: 1s;
+    transition: 0.5s ease-in-out;
     
 }
 
@@ -147,6 +147,7 @@ h1#headerRow {
     vertical-align: middle;
     text-align: center;
 }
+
 
 /* ************** Menu/Sidebar - Tarik ************* */
 
