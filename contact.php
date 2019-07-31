@@ -67,15 +67,28 @@ Functionality: Populate contacts from DB into card format -->
                                     <p>Phone#: '.$agent['AgtBusPhone'].'</p>
                                     <p>Email: '.$agent['AgtEmail'].'</p>
                                     <p>'.$agent['Description'].'</p>
+                                    <form class="ui grid form" action="" method="POST">
+                                    <table>
+                                    <tr>
+                                        <div class="focus field ui grid input">
+                                            <td><label class="four wide column" id="emailLabel" for="CustEmail">Email </label></td>
+                                            <td class="contactInput"><input class="ten wide column emailContact leftMargin" type="email" id="CustEmail" name="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required"></td>
+                                        </div><br/>
+                                    </tr>
+                                    <tr>
+                                        <div class = "focus field ui grid input">
+                                            <td><label class="four wide column" id = "agentContactMessageLabel" for ="agentContactMessage">Message </label></td>
+                                            <td class="contactInput"><textarea class="ten wide column leftMargin" type="text" id="agentContactMessage"></textarea></td>
+                                        </div>
+                                    </tr>
+                                    </table>
+                                    </form>
+                                    
                                 </div>
+                                
                             </div>
                             
-                            <div class="focus required field">
-                            <label id="emailLabel" for="CustEmail">Email Address</label>
-                            <form action="" method="POST">
-                            <input class="emailContact" type="email" id="CustEmail" name="CustEmail" placeholder="Eg. john.doe@gmail.com" required="required">
-                            </form>
-                            </div>
+                            
                             <div class="actions">
                                 <div class="ui black deny button">
                                     Back

@@ -139,3 +139,161 @@ Successfully executed the query SELECT * FROM agents;.
 Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
 
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",2);.
+Failed to execute the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"",21);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",25);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",4);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",21);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('jlkd','fasd','432 st','calgary','KS',90000,'USA','1112223333','tea@g.vcom','fdsa','$2y$10$KV11bzpoK0GpacwKlKjG7.cYpdtM4bP.Bsu3GEkLMqT8QIa0mYg.6');.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),145,"L",1);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 9.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('Ghee','Er','32 st ne','calgary','NB','t1a1a1','Canada','1112223333','fsda@g.com','oiewajr','$2y$10$8Ylb2w/M8rOGgRIPGr/d9uCwBmgOzSP1MJyECQ6NPDUrXOf.zQvmW');.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image,AirfairInclusion) VALUES ('Paris','http://www.google.ca','2019-08-02','2019-08-03',2000.10,'Visit google.ca in Paris','images/Package_Pics/img-2.jpg',0);.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,AirfairInclusion,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image) VALUES ('Paris2','http://www.google.ca',1,'2019-08-03','2019-08-04',2000.10,'Visit google.ca in Paris','images/Package_Pics/img-2.jpg');.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image,AirfairInclusion) VALUES ('Paris3','http://www.google.ca','2019-07-17','2019-07-18',2000.10,'Visit google.ca in Paris','images/Package_Pics/img-2.jpg',0);.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image,AirfairInclusion) VALUES ('Paris5','http://www.google.ca','2019-08-03','2019-09-26',2000.10,'Visit google.ca in Paris','images/Package_Pics/img-2.jpg',0);.
+Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Elvis','Presley','(403) 666-1935','elvis@rrtravel.com','Senior Agent',1,'fdsa','$2y$10$Sl63jSHRrzKoJj0eDwUZSepjGydLfHxGOzW2BuUJx5N9E246OJkBO','das','das','das','images/cards/img-2.jpg');.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"B",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",9);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"L",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",18);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",1);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",1);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",1);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",5);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",2);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",29);.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),104,"G",4);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.

@@ -31,6 +31,12 @@ main {
     margin-bottom: 20px;
 }
 
+/* Table margin */
+table{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 /* gives margin above footer for plane icons */
 .mainContent{
     margin-bottom: 28px;
@@ -76,12 +82,16 @@ section.mainContent.rounded.sectionBox{
     }
 }
 
-/* cololur styling on buttons */
+/* colour styling on buttons */
 button.ui.button.right.floated,
 div.contactButton.ui.button,
 button.ui.button.confirmButton {
     color: black;
     background-color: #ABDFF1;
+}
+
+div.ui.input>input.leftMargin{
+    margin-left: 20px;
 }
 
 /* ************** Link Hover - Tarik ************* */
@@ -450,6 +460,12 @@ section#travelImageSection{
     width: auto;
 }
 
+/* Center and color home success/failure messages */
+.homeMessage{
+    text-align: center;
+    color: #ABDFF1;
+}
+
 /* ************** Login Page - Owiny ************* */
 
 /* sets width of login form */
@@ -532,3 +548,14 @@ p.company-info {
 div.ui.confirmButton {
     display: inline-block;
 }
+
+/* style text area height */
+textarea#agentContactMessage{
+    resize: none;
+    height: 40px;
+}
+
+td.contactInput{
+    width: 400px;
+}
+

@@ -4,13 +4,15 @@ Version: 2.5
 Functionality: Orders package for logged in customer -->
 <?php
 if(isset($_POST['submit'])){
-    if(isset($_COOKIE['var1'])){
+    if(isset($_COOKIE['tripTypeFull'])){
         $loggedInUser = $_SESSION['login_username']; //query db for users id
         $pkgId = $_POST["submit"];
-        $tripType = $_COOKIE['var1'];
+        $tripType = $_COOKIE['tripType'];
+        $tripTypeFull = $_COOKIE['tripTypeFull'];
         // $tripType = 'L'; //currently default; set drop down to pass value
         unset($_POST["submit"]);
-        unset($_COOKIE['var1']);
+        unset($_COOKIE['tripType']);
+        unset($_COOKIE['tripTypeFull']);
 
         include("phpFunctions/functions.php");
 
@@ -28,11 +30,18 @@ if(isset($_POST['submit'])){
         $query = 'SELECT `CustomerId`, `CustFirstName`, `CustLastName`, `CustEmail` FROM `customers` WHERE Username = "'.$loggedInUser.'";';
 
         // $query = "INSERT INTO $tableName ($columns) VALUES ($values);";
-        $executeQuery=$mysqli -> query($query);
-        $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
+        try{
+            $executeQuery=$mysqli -> query($query);
+            $results = mysqli_fetch_array($executeQuery,MYSQLI_ASSOC);
 
-        $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
-        $executeQuery=$mysqli -> query($query);
+            $query = 'INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),'.$results['CustomerId'].',"'.$bookingData['TripTypeId'].'",'.$bookingData['PackageId'].');';
+            $executeQuery=$mysqli -> query($query);
+
+            echo "<p class='homeMessage'>Successfully booked the package ".$_COOKIE['pkgName'].".</p>";
+        }
+        catch(Exception $e){
+            echo "<p class='homeMessage'>Failed to book the package ".$_COOKIE['pkgName'].".</p>";
+        }
         
         try{   
             $logFile = fopen("logs/query_Log.txt","a");
@@ -60,14 +69,14 @@ We appreciate your customer loyalty, find your booking confirmation details belo
             
 Booking Info: 
 
-Package: '.$_SESSION['pkgName'].'
-Triptype: '.$tripType;
+Package: '.$_COOKIE['pkgName'].'
+Triptype: '.$tripTypeFull;
             
             // $msg = wordwrap($msg,80);
             $subject = 'Travel Booking';
             mailer ($email,$msg,$subject,'registeredBooking');
             // echo "<script type='text/javascript'>alert('Successfully booked the package.');</script>";
-            unset($_SESSION['pkgName']);
+            unset($_COOKIE['pkgName']);
             unset($_SESSION[$tripType]); 
             unset($tripType);
             // echo "<p>Successfully booked the package.</p>";
