@@ -52,7 +52,6 @@ $(document).ready(function () {
 
     // If agent is logged in, delete order buttons
     if(document.cookie.indexOf('user_type=')!=-1){
-        console.log('removing buttons');
         $('button').remove();
     }
 
