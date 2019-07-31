@@ -19,7 +19,7 @@ if(isset($_COOKIE['tripTypeFull'])){
     setcookie('tripType', '', 1);
     setcookie('tripTypeFull', '', 1);
 }
-
+include("pageSections/menu.php");
 include("pageSections/welcomeBanner.php");
 include("phpFunctions/indexRegisteredSubmit.php");
 
@@ -79,8 +79,8 @@ include("phpFunctions/indexRegisteredSubmit.php");
                                     <br/>
                                     
                                     <div id="packageContent" class="content">
-                                        <div class="right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
-                                        <div class="header">'.$package['PkgName'].'</div> <br/>
+                                        <div class="cost right floated meta orangeColour">$'.$package['PkgBasePrice'].' CAD</div>
+                                        <div class="trip header">'.$package['PkgName'].'</div> <br/>
                                         <div class="meta">
                                             <div class="ui styled fluid accordion">
                                                 <div class="title">

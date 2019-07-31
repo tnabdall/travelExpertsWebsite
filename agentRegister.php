@@ -14,6 +14,7 @@ else{
         header("Location: login.php");
     }
 }
+include("pageSections/menu.php");
 ?>
 <script src="js/agentRegister.js"></script>
 <main>

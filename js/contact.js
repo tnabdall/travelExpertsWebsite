@@ -37,4 +37,26 @@ $(document).ready(function () {
         $('#rating' + i).rating('disable');
     }
 
+    $('.contactButton').click(function(){
+        var modalParent = $(this).parent().parent();
+        var input = modalParent.find('input');
+        var textArea = modalParent.find('textarea');
+        var errorMsg='';
+        if (input.val()==''){
+            errorMsg+='No email was inputted.\n';
+        }
+        if (textArea.val()==''){
+            errorMsg+='No message was inputted.\n';
+        }
+        if(errorMsg==''){
+            return true;
+        }
+        else{
+            alert(errorMsg);
+            return false;
+        }
+    });
+
 });
+
+

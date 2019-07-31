@@ -142,8 +142,8 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     }
     else if ($type === 'agentContact')
     {
-        $notificationSuccess = "<p>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
-        $notificationFailure =  "<p>Your message was not sent to the agent. Please call the agency.</p>";
+        $notificationSuccess = "<p class='mailerMessage'>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
+        $notificationFailure =  "<p class='mailerMessage'>Your message was not sent to the agent. Please call the agency.</p>";
     }
     
     try{
@@ -153,9 +153,10 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
         $email =filter_var($email, FILTER_SANITIZE_EMAIL);
         // Validate E-mail Address
         $email= filter_var($email, FILTER_VALIDATE_EMAIL);
+        $success=false;
         if (!$email)
         {
-            echo "Invalid Sender's Email - No Message will be sent";
+            echo "<p class='mailerMessage'>Invalid Sender's Email - No Message will be sent</p>";
         }
         else
         {
@@ -179,36 +180,35 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
                 echo $notificationFailure;
             }
         }
+        try{   
+            $logFile = fopen("logs/EmailLog.txt","a");
+            if(!$logFile){
+                throw new Exception("Can't write to email log: ");
+            }
+            if($success){
+                fwrite($logFile,"Successfully sent email.\n");
+            }
+            else{
+                fwrite($logFile,"Failed to send email.\n");
+            }
+            fclose($logFile);
+        }
+        catch(Exception $e){
+            // Try to write to super log if write to agent register log fails
+            $log = fopen("logs/superErrorLog.txt","a");
+            fwrite($log,$e->getMessage());
+            fwrite($log,"Email Log: ");
+            if($success){
+                fwrite($log,"Successfully sent email.\n");
+            }
+            else{
+                fwrite($log,"Failed to send email.\n");
+            }
+            fclose($log);
+        }
     }
     catch(Exception $e){
         // Do nothing
-    }
-
-    try{   
-        $logFile = fopen("logs/EmailLog.txt","a");
-        if(!$logFile){
-            throw new Exception("Can't write to email log: ");
-        }
-        if($success){
-            fwrite($logFile,"Successfully sent email.\n");
-        }
-        else{
-            fwrite($logFile,"Failed to send email.\n");
-        }
-        fclose($logFile);
-    }
-    catch(Exception $e){
-        // Try to write to super log if write to agent register log fails
-        $log = fopen("logs/superErrorLog.txt","a");
-        fwrite($log,$e->getMessage());
-        fwrite($log,"Email Log: ");
-        if($success){
-            fwrite($log,"Successfully sent email.\n");
-        }
-        else{
-            fwrite($log,"Failed to send email.\n");
-        }
-        fclose($log);
     }
 }
 

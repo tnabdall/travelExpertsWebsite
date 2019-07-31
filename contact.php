@@ -2,11 +2,12 @@
 Date: July 31,2019
 Version: 2.5
 Functionality: Populate contacts from DB into card format -->
-<?php include("pageSections/header.php") ?>
+<?php include("pageSections/header.php");
+include("pageSections/menu.php"); ?>
 
 <main>
     <div class="rounded sectionBox mainContent">
-            <?php
+        <?php
                 require "classes/dbConnect.php";
                 require "phpFunctions/functions.php";
 
@@ -18,6 +19,8 @@ Functionality: Populate contacts from DB into card format -->
                 catch(Exception $e){
                     echo "<p>Unable to display contacts at this point in time.</p>";
                 }
+                
+                include_once("phpFunctions/contactAgent.php");
     
                 $counter = 1; // Counter to give each card/modal a unique id
                 
@@ -32,7 +35,7 @@ Functionality: Populate contacts from DB into card format -->
                             <!-- Company Contact Information -->
                             <h2><b>Agency Name: '.$agency['AgncyName'].'</b></h2>
                             <p class="company-info">Address: '.$agency['AgncyAddress'].'</p>
-                            <p class="company-info">Address: '.$agency['AgncyPhone'].'</p>
+                            <p class="company-info">Phone Number: '.$agency['AgncyPhone'].'</p>
                         </ul>
                     </section>
                         ';
@@ -67,7 +70,7 @@ Functionality: Populate contacts from DB into card format -->
                                     <p>Phone#: '.$agent['AgtBusPhone'].'</p>
                                     <p>Email: '.$agent['AgtEmail'].'</p>
                                     <p>'.$agent['Description'].'</p>
-                                    <form class="ui grid form" action="" method="POST">
+                                    <div class="ui grid form" action="" method="POST">
                                     <table>
                                     <tr>
                                         <div class="focus field ui grid input">
@@ -82,24 +85,24 @@ Functionality: Populate contacts from DB into card format -->
                                         </div>
                                     </tr>
                                     </table>
-                                    </form>
+                                    </div>
+                                    
                                     
                                 </div>
                                 
                             </div>
                             
-                            
-                            <div class="actions">
+                            <form class="modalForm actions" action="" method="post">
+                          
                                 <div class="ui black deny button">
                                     Back
                                 </div>
                                 
-                                <div type="submit" class="contactButton ui button" value="'.$agent['AgentId'].'">
-                                    <a id ="submitContact" href="contactAgent.php">Contact Agent</a>
-                                </div>
-                               
-
-                            </div>
+                                <button type="submit" name="submit" class="contactButton ui button" value="'.$agent['AgentId'].'">
+                                    Contact Agent
+                                </button>
+                           
+                            </form>
                         </div>
                         <!-- CONTACT CARD '.$counter.' -->
                         <div class="ui centered small image imageDiv">
@@ -138,7 +141,7 @@ Functionality: Populate contacts from DB into card format -->
                     }
                     echo '</div>';
                 }
-            ?>     
+            ?>
     </div>
 </main>
 <script src="js/contact.js"></script>

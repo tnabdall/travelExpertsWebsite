@@ -4,10 +4,13 @@ Version: 2.5
 Functionality: Add New Customer to DB -->
 <?php
 // Redirect to index page if logged in. Done by Tarik.
-if(isset($_SESSION['user_type'])){
-    header("Location: index.php");
-}
 include("pageSections/header.php");
+if(isset($_SESSION['user_type'])){
+    if($_SESSION['user_type']=='registeredCustomer' || $_SESSION['user_type']=='agent'){
+        header("Location: index.php");
+    }
+}
+include("pageSections/menu.php");
 ?>
 <script src="js/customerRegister.js"></script>
 <main>
