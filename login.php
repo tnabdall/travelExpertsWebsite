@@ -8,8 +8,8 @@ include("pageSections/header.php");
 if(isset($_SESSION['user_type'])){
    header("Location: index.php");
 }
-include("pageSections/menu.php");
 include("phpFunctions/loginProcess.php");
+include("pageSections/menu.php");
 ?>
 <main>
     <form id='loginForm' class="ui form mainContent" action="" method="POST">

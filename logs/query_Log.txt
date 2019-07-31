@@ -646,3 +646,8 @@ Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessag
 Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
 Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 9.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 9.
+Failed to execute the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Elvis','Presley','(403) 666-1935','elvis@rrtravel.com','Senior Agent',2,'fdsafasdfae','$2y$10$nV1.LZ9xBx2e5ha6T6uQ4eYxA8QLHrNeWdmTbwE5YrmgwJFIM3MiG','fadsafds','"adsa"','im elvis','images/cards/img-2.jpg');.
+Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('fadsdafs','adsfdfsa','(403) 666-1935','asdfdfas@g.com','Intermediate Agent',1,'agaewrtgfawesefcwa','$2y$10$tdIB9Yht2X9NOlshVlHI6.dgFqg.vBQCeA1DW9Pkxp.8KMu1nlZyS','dasf','"Im elvis"','fadafds','images/cards/img-2.jpg');.
