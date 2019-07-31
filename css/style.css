@@ -10,18 +10,19 @@ main {
 
 /* background for body of pages */
 body {
-    background: #E8CBC0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #CC95C0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /*background for body of pages when sidebar toggles */
 body.pushable>.pusher {
-    background: #E8CBC0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #636FA4, #E8CBC0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+    background: #CC95C0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 /* content between header and footer */  
 main {
     padding-bottom: 120px;
@@ -52,9 +53,9 @@ p {
 
 /* adds border to section */
 .sectionBox {
-    border: 3px solid #EF6C33;
+    border: 3px solid #D500A6;
     border-radius: 10px;
-    background-color:#C0B3A0;
+    background-color:#f2eee2;
 }
 
 /* makes images responsive in different browsers */
@@ -80,22 +81,22 @@ section.mainContent.rounded.sectionBox{
 button.ui.button.right.floated,
 div.contactButton.ui.button,
 button.ui.button.confirmButton {
-    color: black;
-    background-color: #ABDFF1;
+    color: white;
+    background-color: #421ad4;
 }
 
 /* ************** Link Hover - Tarik ************* */
 
 /* changes of text when you hover over a link */
 a:hover {
-    color: #EF6C33;
+    color: #D500A6;
 }
 
 /* ************** Header - Tarik ************* */
 
 /* Background image for header */
 h1.ui.header {
-    background-image: url("../images/capturing-the-human-heart-trhlcn1abmu-unsplash.jpg");
+    background-image: url("../images/photo-1487219650409-128e5b819b2d.jpg");
     background-position: center;
     background-size: 100%;
 }
@@ -104,9 +105,9 @@ h1.ui.header {
 h1.ui.header>.content {
     font-family: 'Cinzel Decorative', cursive;
     font-weight: 700;
-    color: #0C4A60;
+    color: #421ad4;
     padding: 15px;
-    text-shadow: 5px 5px #ABDFF1;
+    text-shadow: 3px 3px #f2eee2;
     font-size: 240%;
     
 }
@@ -152,15 +153,15 @@ h1#headerRow {
 
 /* Sets format for inactive menu items */
 .menu.ui>.item {
-    color: #EF6C33;
+    color: #FFBB40;
     font-weight: 700;
     font-size: 1.5em;
 }
 
 /* Sets format for active page menu item */
 .menu.ui>.item.active {
-    color: #EF6C33;
-    background-color: #ABDFF1;
+    color: #D500A6;
+    background-color: #f2eee2;
     border-radius: 0px;
     font-weight: 700;
 }
@@ -170,8 +171,8 @@ h1#headerRow {
 .ui.stackable.menu .link.item:hover,
 .ui.stackable.menu a.item:hover,
 .ui.link.stackable.menu .item:hover {
-    background-color: #ABDFF1;
-    color: #EF6C33;
+    background-color: #f2eee2;
+    color: #D500A6;
     border-radius: 0px;
     font-weight: 700;
 }
@@ -194,7 +195,7 @@ h1#headerRow {
 
 /* sets format for the desktop nav bar */
 #desktopNavBar {
-    background-color:#0C4A60;
+    background-color:#421ad4;
     margin-top: 0px;
     border: none;
     visibility: visible;
@@ -211,23 +212,23 @@ h1#headerRow {
 
 /* sets background color for sidebar */
 #menuButton{
-    background-color:#0C4A60;
+    background-color:#421ad4;
 }
 
 /* sets color for sidebar */
 #menuButton>a{
-    color: #EF6C33;
+    color: #FFBB40;
 }
 
 /* sets sidebar formats */
 #sidebar{
-    background-color: #0C4A60;
+    background-color: #421ad4;
     font-size: 0.8em;
 }
 
 /* sets icon color on sidebar */
 #sidebar i{
-    color: #EF6C33;
+    color: #FFBB40;
 }
 
 /* formats height on sidebar */
@@ -243,7 +244,7 @@ h1#headerRow {
 div#welcomeBanner {
     margin-top: 0px;
     padding: 5px;
-    color: #ABDFF1;
+    color: #D500A6;
     /* display: inline; */
     font-size: 1.2em;
     text-align: center;
@@ -280,12 +281,12 @@ footer {
 /* footer text formatting */
 #footerText {
     font-size: 0.8em;    
-    color: #FFFFFF;
+    color: #000000;
 }
 
 /* positioning formatting on footer text div */
 #footerTextDiv{
-    color: #FFFFFF;
+    color: #000000;
     position: relative;
     bottom:-60px;
     left: 0px;
@@ -295,7 +296,7 @@ footer {
 
 /* footer icon colors */
 .icon.footerIcon {
-    color: white;
+    color: #000000;
 }
 
 /* sets color and initial position for footer plane */
@@ -303,7 +304,7 @@ footer {
     position: absolute; 
     bottom: 0%;
     font-size: 50px;
-    color: #EF6C33;
+    color: #D500A6;
 }
 
 /* social media icon positioning */
@@ -331,10 +332,10 @@ footer {
 fieldset {
     font-weight: 700;
     font-size: 1.3em;
-    border: 3px solid #EF6C33;
+    border: 3px solid #D500A6;
     border-radius: 10px;
     padding: 15px;
-    background-color:#C0B3A0;
+    background-color:#f2eee2;
 }
 
 /* formatting on labels in form */
@@ -364,12 +365,12 @@ div.trip {
     padding-top:5px;
     padding-bottom: 5px;
     font-weight:900;
-    color: #0C4A60;
+    color: #421ad4;
 }
 
 /* formatting on trip cost */
 div.cost {
-    color: #0C4A60;
+    color: #421ad4;
     font-weight:600;
 }
 
@@ -388,7 +389,7 @@ div.cost {
 #bookingName{
     text-align: center;
     line-height: 250%;
-    color:#0C4A60;
+    color:#421ad4;
 }
 
 /* formats dropdown text size */
@@ -417,9 +418,9 @@ section#travelImageSection{
 
 /* gives formatting to card elements */
 .item.card{
-    background-color: #C0B3A0;
+    background-color: #f2eee2;
     height: auto;
-    border: 3px solid #EF6C33;
+    border: 3px solid #D500A6;
     border-radius: 8px;
     padding: 10px;
     margin: 5px;
@@ -512,18 +513,18 @@ Sets dimensions of modal image in card and adds border
 /* adds border to contact cards */
 .ui.modal,
 .ui.cards > .card{
-    border: 3px solid #EF6C33;
+    border: 3px solid #D500A6;
 }
 
 /* adds text color to contact button */
-a.contactButton{
-    color: black;
+a#submitContact{
+    color: white;
 }
 
 /* adds formatting to company info */
 section.company-info,
 p.company-info {
-    color: #0C4A60;
+    color: #421ad4;
     font-weight:600;
 }
 

@@ -34,8 +34,8 @@ include("phpFunctions/loginProcess.php");
         
             <div class="ui two buttons">
                 <button id="submitButton" type="submit" value="Submit" name="submitButton" onclick="return submitClick()"
-                    class="positive ui inverted button">Submit</button>
-                <button type="reset" value="Reset" class="negative ui inverted button"
+                    class="positive ui button">Submit</button>
+                <button type="reset" value="Reset" class="negative ui button"
                     onclick="return resetClick()">Reset</button>
             </div>
         </fieldset>

@@ -147,8 +147,8 @@ include("pageSections/header.php");
             </div>
             <div class="ui two buttons">
                 <button id="submitButton" type="submit" value="Submit" name="submit" onclick="return confirm('Would you like to submit?')"
-                    class="positive ui inverted button">Submit</button>
-                <button type="reset" value="Reset" class="negative ui inverted button"
+                    class="positive ui button">Submit</button>
+                <button type="reset" value="Reset" class="negative ui button"
                     onclick="return resetClick()">Reset</button>
             </div>
             <div class="ui success message">
