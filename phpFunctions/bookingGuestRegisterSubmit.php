@@ -87,9 +87,9 @@ if(isset($_POST['submit'])){
             
     An account has been created for your next visit to our site.
 
-    Your Username is: '.$customerData['Username']
+    Your Username is: '.$customerData['Username'].'
     
-    .'We appreciate your business, Thank you for using Travel Experts.';
+    We appreciate your business, Thank you for using Travel Experts.';
 
             $subject = 'Travel Booking and Registration';
             mailer ($email,$msg,$subject,'newCustomerBooking');
