@@ -62,7 +62,7 @@ include("pageSections/menu.php"); ?>
                             </div>
                             <div class="image content">
                                 <div class="ui medium centered image">
-                                    <img id="modalCard" src="'.$agent['Image'].'">
+                                    <img class="modalImage" id="modalCard" src="'.$agent['Image'].'">
                                 </div>
                                 <div class="description">
                                     <div class="ui header">'.$agent['AgtFirstName'].' '.$agent['AgtLastName'].'</div>

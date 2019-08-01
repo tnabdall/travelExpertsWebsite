@@ -497,12 +497,13 @@ section#travelImageSection{
 #agentCardInfo {
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 
-Sets dimensions of modal image in card and adds border
-#modalCard {
-    width:200px; 
-    height:200px; 
+/* Sets dimensions of modal image in card and adds border */
+div.ui>img.modalImage {
+    width:100%; 
+    height:300px; 
     border: 2px solid black;
 }
 
