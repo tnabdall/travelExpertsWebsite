@@ -133,7 +133,7 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     }
     else if ($type === 'newCustomerBooking')
     {
-        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A booking has been made,a confirmation email will be sent to you.</p>";
+        $notificationSuccess = "<p>Congratulations, you have been successfully added as a customer.</p><br><p>A booking has been made, a confirmation email will be sent to you.</p>";
         $notificationFailure =  "<p>A confirmation email was not able to be sent to you. Please contact us.</p>";
     }
     else if ($type === 'registeredBooking')
@@ -143,7 +143,7 @@ function mailer ($emailAddress,$emailMessage,$emailSubject,$type) {
     }
     else if ($type === 'agentContact')
     {
-        $notificationSuccess = "<p class='mailerMessage'>Your message has been sent to the agent</p><br><p>You will receive a confirmation email</p>";
+        $notificationSuccess = "<p class='mailerMessage'>Your message has been sent to the agent</p><p class='mailerMessage'>You will receive a confirmation email</p>";
         $notificationFailure =  "<p class='mailerMessage'>Your message was not sent to the agent. Please call the agency.</p>";
     }
     

@@ -41,9 +41,9 @@ if(isset($_POST['submit'])){
 
         if($executeQuery)
         {
-        $msg = 'Thanks For contacting '.$result['AgtFirstName'].' '.$result['AgtLastName'].',
+        $msg = 'Thanks for contacting '.$result['AgtFirstName'].' '.$result['AgtLastName'].' at Travel Experts,
                             
-        '.$result['AgtMessage'];
+'.$result['AgtMessage'];
                     
         $subject = 'Contact Agent';
         mailer ($email,$msg,$subject,'agentContact');

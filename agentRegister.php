@@ -20,6 +20,9 @@ include("pageSections/menu.php");
 <main>
     <form id="agentForm" class="ui form mainContent" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
+        <?php
+        include("phpFunctions/agentRegisterSubmit.php"); // Submits form to agent table in DB
+        ?>
             <div class="three fields">
                 <div class="required field">
                     <label id='nameLabel' for="firstName">First Name</label>
@@ -96,9 +99,7 @@ include("pageSections/menu.php");
                 <input type="text" id="AgtMessage" name="AgtMessage" required="required">
             </div>
             <div class="centered">
-                <?php
-                include("phpFunctions/agentRegisterSubmit.php"); // Submits form to agent table in DB
-                ?>
+                
             </div>
 
 

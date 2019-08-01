@@ -82,15 +82,14 @@ if(isset($_POST['submit'])){
     Thanks for Booking with the Travel Experts!
 
     You have now been registered as a customer and your booking is confirmed. 
-            
-    Booking Info: 
 
     Package: '.$_SESSION['pkgName'].'
-    Triptype: '.$tripType.' 
             
     An account has been created for your next visit to our site.
 
-    Your Username is: '.$customerData['Username'];
+    Your Username is: '.$customerData['Username']
+    
+    .'We appreciate your business, Thank you for using Travel Experts.';
 
             $subject = 'Travel Booking and Registration';
             mailer ($email,$msg,$subject,'newCustomerBooking');

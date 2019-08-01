@@ -689,3 +689,32 @@ Failed to execute the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusP
 Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Elvis','Presley','(403) 666-1935','lasjflsdfakdsjal@mike.com','Junior Agent',1,'elvis3232','$2y$10$6za2uCQ7p3IVyB0N47opBeVjQiCw8qOQlZgpibboh6jfMiXBpjP3W','mike','I am not Jane Goodall','fasdfdsa','images/cards/JaneGoodall.jpg');.
 Successfully executed the query SELECT * FROM agencies;.
 Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query INSERT INTO `bookings`(`BookingDate`, `CustomerId`, `TripTypeId`, `PackageId`) VALUES (CURRENT_DATE(),146,"B",2);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 4.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 13.
+Successfully executed the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('Nico','Tambellini','1234 Fuck Ave','Calgary','AB','T2E1A4','Canada','4038632115','ntambellini13@gmail.com','ntambellini','$2y$10$1EY5S2.TDDBQ04YQkAHtsu.X3nC5n74565.sK4z9FbTKeTrwc8jv6');.
+Failed to execute the query INSERT INTO customers (CustFirstName,CustLastName,CustAddress,CustCity,CustProv,CustPostal,CustCountry,CustHomePhone,CustEmail,Username,Password) VALUES ('Nico','Tambellini','1234 Fuck Ave','Calgary','AB','T2E1A4','Canada','4038632115','ntambellini13@gmail.com','ntambellini','$2y$10$4HJFtwLTe9ZAX9FjIu.FnOVKNbGLpkEFKrseVv.HfFp14u/TCmMUm');.
+Successfully executed the query INSERT INTO agents (AgtFirstName,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition,AgencyId,Username,Password,Title,Description,AgtMessage,Image) VALUES ('Hugo','Chavez','(403) 123-4567','hchavez@travelexperts.com','Junior Agent',2,'hchavez','$2y$10$3G.iN51feXQ73KAdP6c2/eNRwmKu2mHLC5OdjvXLxk0eAX20uyh5e','Former President of Venezuela','I have said it already, I am convinced that the way to build a new and better world is not capitalism. Capitalism leads us straight to hell.','I am arguing with the US currently, I will get back to you when I am done.','images/cards/HugoChavez.jpg');.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image,AirfairInclusion) VALUES ('Newfoundland and Labrador','https://www.tourradar.com/t/117873#p=2_','2019-09-09','2019-09-20',3059,'Start in Corner Brook and end in St. Johns! With the discovery tour Newfoundland & Labrador, you have a 12 day tour package taking you through Corner Brook, Canada and 17 other destinations in Canada.','images/Package_Pics/paulius-dragunas-Nhs0sLAn1Is-unsplash.jpg',0);.
+Successfully executed the query INSERT INTO packages (PkgName,Partner,PkgStartDate,PkgEndDate,PkgBasePrice,PkgDesc,Image,AirfairInclusion) VALUES ('Newfoundland and Labrador','https://www.tourradar.com/t/117873#p=2_','2019-09-09','2019-09-20',3059,'Start in Corner Brook and end in St. Johns! With the discovery tour Newfoundland & Labrador, you have a 12 day tour package taking you through Corner Brook, Canada and 17 other destinations in Canada.','images/Package_Pics/paulius-dragunas-Nhs0sLAn1Is-unsplash.jpg',0);.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 16.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 16.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT * FROM agencies;.
+Successfully executed the query SELECT * FROM agents;.
+Successfully executed the query SELECT `AgtFirstName`, `AgtLastName`, `AgtMessage` FROM `agents` WHERE `AgentId` = 3.

@@ -20,6 +20,9 @@ include("pageSections/menu.php");
 <main>
     <form id="vacationForm" class="ui form mainContent" action="" method="POST" enctype="multipart/form-data">
         <fieldset>
+        <?php
+        include("phpFunctions/vacationPackageSubmit.php"); // Submits form to packages table in DB
+        ?>
             <div class="three fields">
                 <div class="required field">
                     <label id='pkgNameLabel' for="PkgName">Package Name</label>
@@ -58,9 +61,7 @@ include("pageSections/menu.php");
                 <input type="file" id="Image" name="Image" accept="image/*" required="required">
             </div>            
             <div class="centered">
-                <?php
-                include("phpFunctions/vacationPackageSubmit.php"); // Submits form to packages table in DB
-                ?>
+                
             </div>
             <div class="ui two buttons">
                 <button id="submitButton" type="submit" name="submit" value="Submit" class="positive ui button"

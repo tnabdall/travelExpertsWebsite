@@ -73,11 +73,8 @@ if(isset($_POST['submit'])){
 Thanks for Booking with the Travel Experts!
             
 We appreciate your customer loyalty, find your booking confirmation details below.
-            
-Booking Info: 
 
-Package: '.$_COOKIE['pkgName'].'
-Triptype: '.$tripTypeFull;
+Package: '.$_COOKIE['pkgName'];
                 
                     // $msg = wordwrap($msg,80);
                     $subject = 'Travel Booking';

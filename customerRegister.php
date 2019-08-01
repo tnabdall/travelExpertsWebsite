@@ -16,6 +16,7 @@ include("pageSections/menu.php");
 <main>
     <form class="ui form mainContent" action="" method="POST">
         <fieldset>
+        <?php include("phpFunctions/customerRegisterSubmit.php"); ?>
             <div class="two fields">
                 <div class="focus required field">
                     <label id='nameLabel' for="CustFirstName">First Name</label>
@@ -154,7 +155,7 @@ include("pageSections/menu.php");
                 <button type="reset" value="Reset" class="negative ui button"
                     onclick="return resetClick()">Reset</button>
             </div>
-            <?php include("phpFunctions/customerRegisterSubmit.php"); ?>
+            
         </fieldset>
     </form>
 </main>
